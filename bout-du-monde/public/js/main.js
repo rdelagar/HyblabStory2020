@@ -117,23 +117,23 @@ $(document).ready(function () {
         }, 1100);
     }
 
-    /*let anim;
+    let anim;
 
     let animData = {
-        container: document.getElementById('animation1'),
+        container: document.getElementById('test'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
         rendererSettings: {
             progressiveLoad:false
         },
-        path: 'data.json'
+        path: 'data/rejointtashi.json'
     };
 
     anim = bodymovin.loadAnimation(animData);
 
     anim.addEventListener('DOMLoaded', function () {
-        console.log("loaded");
-    });*/
+        console.log("ok")
+    });
 
 });
