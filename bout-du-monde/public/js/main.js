@@ -11,27 +11,19 @@ $(document).ready(function () {
   $("button.choice").on("click", function () {
 
     if ($(this).hasClass("choice1")) {
-      if ($(this).attr("id") === "tashi") {
-        $("#s7").show().css('display', 'flex');
-        $("#scroll").delay(1100).show(0);
-      } else {
-        $("#s6").show().css('display', 'flex');
-      }
-
+      Choice("tashi", "#s7", "s6");
     } else if ($(this).hasClass("choice2")) {
-      if ($(this).attr("id") === "catch") {
-        $("#s11").show().css('display', 'flex');
-        $("#scroll").delay(1100).show(0);
-      } else {
-        $("#s10").show().css('display', 'flex');
-      }
-
+      Choice("catch", "#s11", "s10");
     } else if ($(this).hasClass("choice3")) {
-      if ($(this).attr("id") === "food") {
-        $("#s15").show().css('display', 'flex');
+      Choice("food", "#s15", "s14");
+    }
+
+    function Choice(cond, s1, s2){
+      if ($(this).attr("id") === cond) {
+        $(s1).show().css('display', 'flex');
         $("#scroll").delay(1100).show(0);
       } else {
-        $("#s14").show().css('display', 'flex');
+        $(s2).show().css('display', 'flex');
       }
     }
 
@@ -43,6 +35,7 @@ $(document).ready(function () {
   });
 
   $("button.attack").on("click", function () {
+    $(window).off("wheel", Scroll)
     SlideD();
   });
 
@@ -75,15 +68,17 @@ $(document).ready(function () {
 
   function SlideD(){
     $("#scroll").hide();
-
+    console.log("salut");
     let section = $("section:visible").first();
-    section.next().show().css('display', 'flex');
     section.slideUp(1000,EndScroll).css('display', 'flex');
   }
 
   function SlideU(){
     $("#scroll").hide();
     let section = $("section:visible").first();
+    if(section.prev().hasClass("answer")){
+      section=section.prev();
+    }
     section.prev().slideDown(1000, EndScroll).css('display', 'flex');
   }
 
