@@ -321,6 +321,11 @@ $(document).ready(function () {
     $("#start-story").on("click", function () {
         $("#s1-map").hide();
         $("#sec-story").show();
+
+        let script = document.createElement("script");  // create a script DOM node
+        script.src = "js/main.js";  // set its src to the provided URL
+
+        document.head.appendChild(script);
     });
 
 });

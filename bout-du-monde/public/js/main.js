@@ -17,18 +17,17 @@ $(document).ready(function () {
     } else if ($(this).hasClass("choice3")) {
       Choice("food", "#s15", "s14");
     }
-
-    function Choice(cond, s1, s2){
-      if ($(this).attr("id") === cond) {
-        $(s1).show().css('display', 'flex');
-        $("#scroll").delay(1100).show(0);
-      } else {
-        $(s2).show().css('display', 'flex');
-      }
-    }
-
     $("section:visible").first().slideUp(1000).css('display', 'flex');
   });
+
+  function Choice(cond, s1, s2){
+    if ($(this).attr("id") === cond) {
+      $(s1).show().css('display', 'flex');
+      $("#scroll").delay(1100).show(0);
+    } else {
+      $(s2).show().css('display', 'flex');
+    }
+  }
 
   $("button.back").on("click", function () {
     SlideU();
@@ -63,14 +62,13 @@ $(document).ready(function () {
       SlideD();
     } else if (e.originalEvent.deltaY < 0) {
       SlideU();
-    }
+    } 
   }
 
   function SlideD(){
     $("#scroll").hide();
-    console.log("salut");
     let section = $("section:visible").first();
-    section.slideUp(1000,EndScroll).css('display', 'flex');
+    section.slideUp(1000,EndScroll);
   }
 
   function SlideU(){
@@ -79,11 +77,10 @@ $(document).ready(function () {
     if(section.prev().hasClass("answer")){
       section=section.prev();
     }
-    section.prev().slideDown(1000, EndScroll).css('display', 'flex');
+    section.prev().slideDown(1000, EndScroll);
   }
 
   function EndScroll(){
-    console.log($("section:visible").first());
     if($("section:visible").first().hasClass("normal")){
       $("#scroll").show();
     }
