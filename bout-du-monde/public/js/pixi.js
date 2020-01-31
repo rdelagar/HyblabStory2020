@@ -4,7 +4,7 @@ $(document).ready(function () {
     const h = window.innerHeight;
 
     const renderer = new PIXI.Renderer({width: w, height: h});
-    const wrap = document.querySelector('.img-5');
+    const wrap = document.querySelector('section.tashi');
     wrap.appendChild(renderer.view);
 
     let stage = new PIXI.Container();
@@ -20,8 +20,8 @@ $(document).ready(function () {
     let ploader = new PIXI.Loader();
 
     function init() {
-        ploader.add('fg', 'img/good/5.png');
-        ploader.add('depth', 'img/good/5-prof.png');
+        ploader.add('fg', 'img/6.jpg');
+        ploader.add('depth', 'img/6-prof.jpg');
         ploader.once('complete', start);
         ploader.load();
 
