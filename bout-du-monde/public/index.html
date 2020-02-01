@@ -21,11 +21,12 @@
 
     <!--JS pour bodymovin-->
     <script src="js/bodymovin.js"></script>
-    <script src="js/animation.js"></script>
+    <!--<script src="js/animation.js"></script>-->
 
-    <!--JS pour fixi-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
-    <script src="js/pixi.js"></script>
+    <!--JS pour animation image-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <script src="js/pixi.js"></script>-->
+    <script src="js/animation-image.js"></script>
 
 </head>
 <body>
@@ -33,10 +34,13 @@
     <div class="bb-custom-wrapper">
         <div id="bb-bookblock" class="bb-bookblock">
             <section class="bb-item">
-                <h1 style="font-size: 60px; position: absolute">Test Animation</h1>
+                <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+                    <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="img/6.jpg"/>
+                    <rect class="infos" x="120" y="400" fill="#fff" opacity="0.5"/>
+                </svg>
             </section>
             <section class="bb-item">
-                <h1 style="font-size: 60px; position: absolute">Test Animation</h1>
+                Riviere
             </section>
             <section class="bb-item no-scroll">
                 <button class="next">Commencer</button>
@@ -52,9 +56,9 @@
                 <button class="next">Retour</button>
             </section>
             <section class="bb-item no-back tashi">
+                <img src="img/6.jpg">
             </section>
-            <section class="bb-item">
-                <img src="img/7.png">
+            <section class="bb-item walk">
             </section>
             <section class="bb-item no-scroll">
                 <img src="img/8.png">

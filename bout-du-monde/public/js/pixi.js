@@ -25,12 +25,10 @@ $(document).ready(function () {
         ploader.once('complete', start);
         ploader.load();
 
-        let ratio;
-
-        ploader.resources.fg.data.height = h;
         ploader.resources.fg.data.width = w;
-        ploader.resources.depth.data.height = h;
         ploader.resources.depth.data.width = w;
+        ploader.resources.fg.data.height = h;
+        ploader.resources.depth.data.height = h;
 
     }
 
