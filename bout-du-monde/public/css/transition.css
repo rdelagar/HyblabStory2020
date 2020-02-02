@@ -1,0 +1,53 @@
+.exitTransition{
+	-webkit-animation: exit .7s ease both;
+	animation: exit .7s ease both;
+}
+
+.enterTransition{
+	-webkit-animation: enter .7s ease both;
+	animation: enter .7s ease both;
+}
+
+.exitBackTransition{
+	-webkit-animation: exitBack .7s ease both;
+	animation: exitBack .7s ease both;
+}
+
+.enterBackTransition{
+	-webkit-animation: enterBack .7s ease both;
+	animation: enterBack .7s ease both;
+}
+
+
+@-webkit-keyframes exit {
+	from { }
+	to { opacity: 0.3;}
+}
+@keyframes exit {
+	from { }
+	to { opacity: 0.3;}
+}
+
+@-webkit-keyframes enter {
+	from {-webkit-transform: translateX(-100%); }
+}
+@keyframes enter {
+	from {-webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes exitBack {
+	from { }
+  to {-webkit-transform: translateX(-100%); }
+}
+@keyframes exitBack {
+	from { }
+  to {-webkit-transform: translateX(-100%); transform: translateX(-100%); }
+
+}
+
+@-webkit-keyframes enterBack {
+	from { opacity: 0.3;}
+}
+@keyframes enterBack {
+	from { opacity: 0.3;}
+}

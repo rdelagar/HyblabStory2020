@@ -1,6 +1,7 @@
 body {
     margin: 0;
     color: black;
+    background-color: black;
     font-family: Consolas;
 }
 
@@ -83,25 +84,37 @@ section:nth-child(16) {
 }
 
 section {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height : 100%;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.active{
+    display: flex;
+    visibility: visible;
+    z-index: 1;
+}
+
+.onTop{
+    z-index: 999;
 }
 
 button {
+    bottom: 30px;
     margin: 30px;
+    margin-top: auto;
     width: 200px;
     height: 40px;
     background-color: darkgoldenrod;
     border: 0px;
     color: white;
     cursor: pointer;
-}
-
-#animation1 {
-    height: 100%;
-    width: 100%;
 }
 
 .i-animate {

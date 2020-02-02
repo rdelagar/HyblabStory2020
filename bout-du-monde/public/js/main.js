@@ -1,8 +1,7 @@
 $(document).ready(function () {
 
-  $(".answer").hide();
   $("#retry").hide();
-
+  $(".start").addClass("active");
   $('html, body').css({
     overflow: 'hidden',
     height: '100%'
@@ -11,35 +10,39 @@ $(document).ready(function () {
   $("button.choice").on("click", function () {
 
     if ($(this).hasClass("choice1")) {
-      Choice("tashi", "#s7", "s6");
+      Choice($(this), "tashi", "#s7", "#s6");
     } else if ($(this).hasClass("choice2")) {
-      Choice("catch", "#s11", "s10");
+      Choice($(this), "catch", "#s11", "#s10");
     } else if ($(this).hasClass("choice3")) {
-      Choice("food", "#s15", "s14");
+      Choice($(this), "food", "#s15", "#s14");
     }
-    $("section:visible").first().slideUp(1000).css('display', 'flex');
   });
 
-  function Choice(cond, s1, s2){
-    if ($(this).attr("id") === cond) {
-      $(s1).show().css('display', 'flex');
-      $("#scroll").delay(1100).show(0);
+  function Choice(button, cond, s1, s2){
+    let section = $("section:visible").first()
+    $(window).off("wheel", Scroll);
+    if (button.attr("id") === cond) {
+      SlideD(section, $(s1).first());
     } else {
-      $(s2).show().css('display', 'flex');
+      SlideD(section, $(s2).first());
     }
   }
 
   $("button.back").on("click", function () {
-    SlideU();
+    let section = $("section:visible").first()
+    SlideU(section, section.prev());
   });
 
   $("button.attack").on("click", function () {
-    $(window).off("wheel", Scroll)
-    SlideD();
+    $(window).off("wheel", Scroll);
+    let section = $("section:visible").first()
+    SlideD(section, section.next());
   });
 
   $("#scroll").on("click", function () {
-    SlideD();
+    $(window).off("wheel", Scroll);
+    let section = $("section:visible").first()
+    SlideD(section, section.next());
   });
 
   $("#retry").on("click", function () {
@@ -58,26 +61,47 @@ $(document).ready(function () {
 
   function Scroll(e){
     let section = $("section:visible").first();
-    if (e.originalEvent.deltaY > 0 && section.hasClass("normal")) {
-      SlideD();
+    if (e.originalEvent.deltaY > 0) {
+      if(section.hasClass("normal")){
+        let section = $("section:visible").first()
+        SlideD(section, section.next());
+      }else{
+        $(window).one("wheel", Scroll);
+      }
     } else if (e.originalEvent.deltaY < 0) {
-      SlideU();
-    } 
-  }
-
-  function SlideD(){
-    $("#scroll").hide();
-    let section = $("section:visible").first();
-    section.slideUp(1000,EndScroll);
-  }
-
-  function SlideU(){
-    $("#scroll").hide();
-    let section = $("section:visible").first();
-    if(section.prev().hasClass("answer")){
-      section=section.prev();
+      let section = $("section:visible").first()
+      if(section.prev().hasClass("answer")){
+        SlideU(section, section.prev().prev());
+      }else{
+        SlideU(section, section.prev());
+      }
     }
-    section.prev().slideDown(1000, EndScroll);
+  }
+
+  function SlideD(s1,s2){
+    $("#scroll").hide();
+    s1.addClass("exitTransition");
+    s2.addClass("active enterTransition onTop");
+
+    s2.one("animationend",
+              function() {
+                s2.removeClass("enterTransition onTop");
+                s1.removeClass("active exitTransition");
+                EndScroll();
+              });
+  }
+
+  function SlideU(s1,s2){
+    $("#scroll").hide();
+    s1.addClass("exitBackTransition onTop");
+    s2.addClass("active enterBackTransition");
+
+    s1.one("animationend",
+              function() {
+                s2.removeClass("enterBackTransition");
+                s1.removeClass("active exitBackTransition onTop");
+                EndScroll();
+              });
   }
 
   function EndScroll(){
