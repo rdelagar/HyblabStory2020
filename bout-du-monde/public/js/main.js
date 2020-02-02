@@ -7,6 +7,26 @@ $(document).ready(function () {
     height: '100%'
   });
 
+  function whichAnimationEvent(){
+    var t,
+        el = document.createElement("fakeelement");
+
+    var animations = {
+      "animation"      : "animationend",
+      "OAnimation"     : "oAnimationEnd",
+      "MozAnimation"   : "animationend",
+      "WebkitAnimation": "webkitAnimationEnd"
+    }
+
+    for (t in animations){
+      if (el.style[t] !== undefined){
+        return animations[t];
+      }
+    }
+  }
+
+  var animationEvent = whichAnimationEvent();
+
   $("button.choice").on("click", function () {
 
     if ($(this).hasClass("choice1")) {
@@ -83,7 +103,7 @@ $(document).ready(function () {
     s1.addClass("exitTransition");
     s2.addClass("active enterTransition onTop");
 
-    s2.one("animationend",
+    s2.one(animationEvent,
               function() {
                 s2.removeClass("enterTransition onTop");
                 s1.removeClass("active exitTransition");
@@ -96,7 +116,7 @@ $(document).ready(function () {
     s1.addClass("exitBackTransition onTop");
     s2.addClass("active enterBackTransition");
 
-    s1.one("animationend",
+    s1.one(animationEvent,
               function() {
                 s2.removeClass("enterBackTransition");
                 s1.removeClass("active exitBackTransition onTop");
