@@ -92,6 +92,8 @@ $(document).ready(function () {
       let section = $("section:visible").first()
       if(section.prev().hasClass("answer")){
         SlideU(section, section.prev().prev());
+      }else if(section.hasClass("normal")){
+        $(window).one("wheel", Scroll);
       }else{
         SlideU(section, section.prev());
       }
