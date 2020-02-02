@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
-    var svgContainer = document.getElementsByClassName('bb-item')[0];
+    var svgContainer = document.getElementsByClassName('bb-item')[5];
     var animItem = bodymovin.loadAnimation({
         wrapper: svgContainer,
         animType: 'svg',
-        loop: false,
+        loop: true,
         autoplay: true,
         path: 'json/anim-chute.json'
     });
