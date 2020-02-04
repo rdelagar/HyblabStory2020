@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var svgContainer = document.getElementsByClassName('bb-item')[5];
+    var svgContainer = document.getElementsByTagName("section")[7];
     var animItem = bodymovin.loadAnimation({
         wrapper: svgContainer,
         animType: 'svg',

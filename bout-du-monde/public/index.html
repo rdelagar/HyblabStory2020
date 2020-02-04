@@ -6,102 +6,141 @@
     <title>Bouts du monde</title>
 
     <!--CSS pour animation slide-->
-    <!--<link rel="stylesheet" type="text/css" href="css/default.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bookblock.css"/>
-    <link rel="stylesheet" type="text/css" href="css/slide.css  "/>-->
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/base.css">
 
     <!--JQUERY-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <!--JS pour animation slide-->
-    <!--<script src="js/modernizr.custom.js"></script>-->
-    <!--<script src="js/slide.js"></script>-->
-    <!--<script src="js/jquerypp.custom.js"></script>-->
-    <!--<script src="js/jquery.bookblock.js"></script>-->
+    <script src="js/main.js"></script>
 
     <!--JS pour bodymovin-->
     <script src="js/bodymovin.js"></script>
     <script src="js/animation.js"></script>
 
     <!--JS pour animation image-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
     <script src="js/pixi.js"></script>
     <script src="js/pixi2.js"></script>
     <script src="js/pixi3.js"></script>
-    <!--<script src="js/animation-image.js"></script>-->
+    <script src="js/animation-image.js"></script>-->
 
 </head>
 <body>
 <div class="container">
-    <div class="bb-custom-wrapper">
-        <div id="bb-bookblock" class="bb-bookblock">
-            <section class="bb-item alone">
-            </section>
-            <section class="bb-item tashi">
-            </section>
-            <section class="bb-item walk">
-            </section>
-            <!--<section class="bb-item no-scroll">
-                <button class="next">Commencer</button>
-                <img src="img/3.png">
-            </section>
-            <section class="bb-item no-scroll">
-                <img src="img/4.png">
-                <button class="choice1 next tashi">Tashi</button>
-                <button class="choice2 next seul">Seul</button>
-            </section>
-            <section class="bb-item no-scroll no-back">
-                <img src="img/5.png">
-                <button class="next">Retour</button>
-            </section>
-            <section class="bb-item no-back">
-                <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
-                    <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="img/6.jpg"/>
-                </svg>
-            </section>
-            <section class="bb-item walk">
-                <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
-                    <image x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="img/7.jpg"/>
-                </svg>
-            </section>
-            <section class="bb-item no-scroll">
-                <img src="img/8.png">
-                <button class="choice1 next seul">Seul</button>
-                <button class="choice2 next aide">Aide</button>
-            </section>
-            <section class="bb-item no-scroll np-back">
-                <img src="img/9.png">
-                <button class="next">Retour</button>
-            </section>
-            <section class="bb-item no-back">
-                <img src="img/10.png">
-            </section>
-            <section class="bb-item">
-                <img src="img/11.png">
-            </section>
-            <section class="bb-item no-scroll">
-                <img src="img/12.png">
-                <button class="choice1 next grotte">Grotte</button>
-                <button class="choice2 next tentes">Tentes</button>
-            </section>
-            <section class="bb-item no-scroll no-back">
-                <img src="img/13.png">
-                <button class="next">Retour</button>
-            </section>
-            <section class="bb-item no-back">
-                <img src="img/14.png">
-            </section>
-            <section class="bb-item">
-                <img src="img/15.png">
-            </section>
-            <section class="bb-item">
-                <img src="img/16.png">
-            </section>
-            <section class="bb-item">
-                <img src="img/17.png">
-            </section>-->
+    <section class="no-back">
+        <img src="img/1.png">
+    </section>
+    <section class="">
+        <img src="img/2.png">
+    </section>
+    <section class="no-scroll">
+        <button class="next">Commencer</button>
+        <img src="img/3.png">
+    </section>
+    <section class="no-scroll">
+        <img src="img/4.png">
+        <button class="choice1 next tashi">Rejoindre Tashi</button>
+        <button class="choice2 next seul">Partir Seul</button>
+    </section>
+    <section class="no-scroll no-back anim-img">
+            <div id="gl" class="gl"
+                 data-imageOriginal="img/5.jpg"
+                 data-imageDepth="img/5-prof.jpg"
+                 data-horizontalThreshold="80"
+                 data-verticalThreshold="80">
+            </div>
+        <button class="next">Retour</button>
+    </section>
+    <section class="no-back anim-img">
+        <div id="gl2" class="gl"
+             data-imageOriginal="img/6.jpg"
+             data-imageDepth="img/6-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
         </div>
-    </div>
+    </section>
+    <section class="anim-img">
+        <div id="gl3" class="gl"
+             data-imageOriginal="img/7.jpg"
+             data-imageDepth="img/7-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="no-scroll anim-chute">
+        <button class="choice1 next seul">S'en sortir seul</button>
+        <button class="choice2 next aide">Demander de l'aide</button>
+    </section>
+    <section class=" no-scroll np-back">
+        <img src="img/9.png">
+        <button class="next">Retour</button>
+    </section>
+    <section class="no-back anim-img">
+        <div id="gl4" class="gl"
+             data-imageOriginal="img/10.jpg"
+             data-imageDepth="img/10-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="anim-img">
+        <div id="gl5" class="gl"
+             data-imageOriginal="img/11.jpg"
+             data-imageDepth="img/11.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="no-scroll">
+        <img src="img/12.png">
+        <button class="choice1 next grotte">Grotte</button>
+        <button class="choice2 next tentes">Tentes</button>
+    </section>
+    <section class="no-scroll no-back anim-img">
+        <div id="gl6" class="gl"
+             data-imageOriginal="img/13.jpg"
+             data-imageDepth="img/13-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+        <button class="next">Retour</button>
+    </section>
+    <section class="no-back anim-img">
+        <div id="gl7" class="gl"
+             data-imageOriginal="img/14.jpg"
+             data-imageDepth="img/14-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="anim-img">
+        <div id="gl8" class="gl"
+             data-imageOriginal="img/15.jpg"
+             data-imageDepth="img/15-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="anim-img">
+        <div id="gl9" class="gl"
+             data-imageOriginal="img/16.jpg"
+             data-imageDepth="img/16-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
+    <section class="no-scroll anim-img">
+        <div id="gl10" class="gl"
+             data-imageOriginal="img/17.jpg"
+             data-imageDepth="img/17-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+    </section>
 </div>
 </body>
+<script src="js/app.js"></script>
 </html>
