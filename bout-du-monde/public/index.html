@@ -5,32 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouts du monde</title>
 
-    <!--CSS pour animation slide-->
-    <link rel="stylesheet" href="css/slide.css">
-    <link rel="stylesheet" href="css/base.css">
-
     <!--JQUERY-->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    <!--JS pour animation slide-->
+    <!--LOADER-->
+    <script src="js/loader.js"></script>
+    <link rel="stylesheet" href="css/loader.css">
+
+    <!--FONT-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">
+
+    <!--ANIM SLIDE-->
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/texte.css">
     <script src="js/main.js"></script>
 
-    <!--JS pour bodymovin-->
+    <!--ANIM IMAGE-->
+    <script src="js/app.js"></script>
+
+    <!--ANIM SCROLL-->
+    <link rel="stylesheet" href="css/anim-scroll.css">
+    <script src="js/anim-scroll.js"></script>
+
+    <!--BODYMOVIN-->
     <script src="js/bodymovin.js"></script>
     <script src="js/animation.js"></script>
 
-    <!--JS pour animation image-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
-    <script src="js/pixi.js"></script>
-    <script src="js/pixi2.js"></script>
-    <script src="js/pixi3.js"></script>
-    <script src="js/animation-image.js"></script>-->
-
 </head>
 <body>
+
+<!--LOADER-->
+<div id="overlay">
+    <div id="progstat"></div>
+    <div id="progress"></div>
+</div>
+
+<!--ANIM SCROLL-->
+<div class="center-con">
+    <button class="container-scroll">
+        <span class="text-scroll">Scroll</span>
+        <span class="arrow primera next-scroll "></span>
+        <span class="arrow segunda next-scroll "></span>
+    </button>
+</div>
+
+<!--SECTION HISTOIRE-->
 <div class="container">
     <section class="no-back">
+        <p>CARTE EN CONSTRUCTION</p>
         <img src="img/1.png">
     </section>
     <section class="">
@@ -46,12 +70,19 @@
         <button class="choice2 next seul">Partir Seul</button>
     </section>
     <section class="no-scroll no-back anim-img">
-            <div id="gl" class="gl"
-                 data-imageOriginal="img/5.jpg"
-                 data-imageDepth="img/5-prof.jpg"
-                 data-horizontalThreshold="80"
-                 data-verticalThreshold="80">
-            </div>
+        <p>Il nous est impossible de parcourir la vallée sans être accompagnés. Après les quelques jours d’acclimatation
+            obligatoire, nous devons respecter les règles imposées par le gouvernement indien. Ces règles limitent les
+            accidents, de plus en plus nombreux. Depuis quelques années, la Chadar est très fréquentée par des Indiens
+            peu entraînés à la marche pour cet environnement si changeant, si hasardeux et si dangereux ! Les agences
+            indiennes présentent ce trek comme étant l’aventure à vivre absolument. Résultat, plusieurs morts l’an
+            dernier par ignorance et mauvaise préparation. L’altitude ne pardonne pas. Par prudence, nous prendrons donc
+            la route avec Tashi et Lundup.</p>
+        <div id="gl" class="gl"
+             data-imageOriginal="img/5.jpg"
+             data-imageDepth="img/5-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
         <button class="next">Retour</button>
     </section>
     <section class="no-back anim-img">
@@ -87,15 +118,10 @@
         </div>
     </section>
     <section class="anim-img">
-        <div id="gl5" class="gl"
-             data-imageOriginal="img/11.jpg"
-             data-imageDepth="img/11.jpg"
-             data-horizontalThreshold="80"
-             data-verticalThreshold="80">
-        </div>
+        <img src="img/11.jpg">
     </section>
     <section class="no-scroll">
-        <img src="img/12.png">
+        <img src="img/12.jpg">
         <button class="choice1 next grotte">Grotte</button>
         <button class="choice2 next tentes">Tentes</button>
     </section>
@@ -133,14 +159,8 @@
         </div>
     </section>
     <section class="no-scroll anim-img">
-        <div id="gl10" class="gl"
-             data-imageOriginal="img/17.jpg"
-             data-imageDepth="img/17-prof.jpg"
-             data-horizontalThreshold="80"
-             data-verticalThreshold="80">
-        </div>
+        <img src="img/17.jpg">
     </section>
 </div>
 </body>
-<script src="js/app.js"></script>
 </html>

@@ -43,3 +43,8 @@ section button.choice2 {
 section.anim-chute {
     background-image: url("../json/anim-chute/img_3.jpg");
 }
+
+section img {
+    height: 100vh;
+    width: 100vw;
+}

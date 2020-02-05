@@ -13,8 +13,6 @@ $(document).ready(function () {
     loadImage();
 
     $(window).on("wheel", function (e) {
-
-
         if(scroll) {
             let s = $("section:visible").first();
             if (e.originalEvent.deltaY > 0 && !s.hasClass("no-scroll")) {
@@ -23,7 +21,6 @@ $(document).ready(function () {
                 slideR(s);
             }
         }
-
     });
 
     $("button.next").on("click", function () {
@@ -39,15 +36,17 @@ $(document).ready(function () {
 
     function slideL(s) {
         $(s).delay(1000).hide(0);
-        $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "2");
+        $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "6");
         scroll = false;
+        displayScroll(s.next());
         wait();
     }
 
     function slideR(s) {
         $(s).delay(1000).hide(0);
-        $(s.prev()).show("slide", {direction: "left"}, 1000).css("z-index", "3");
+        $(s.prev()).show("slide", {direction: "left"}, 1000).css("z-index", "7");
         scroll = false;
+        displayScroll(s.prev());
         wait();
     }
 
@@ -56,7 +55,15 @@ $(document).ready(function () {
     }
 
     function loadImage() {
-        setTimeout(function() {$(".anim-img").hide().css("z-index", "1")}, 1000);
+        setTimeout(function() {$(".anim-img").hide().css("z-index", "1")}, 10);
+    }
+
+    function displayScroll(s) {
+        if(s.hasClass("no-scroll")) {
+            $(".center-con").delay(500).hide(0);
+        } else {
+            $(".center-con").delay(1000).show(0);
+        }
     }
 
 });
