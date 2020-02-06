@@ -9,6 +9,7 @@ section {
     justify-content: center;
     position: absolute;
     display: none;
+    background-color: white;
 }
 
 section button {
@@ -52,10 +53,6 @@ section button.choice1 {
 
 section button.choice2 {
     left: 350px;
-}
-
-section.anim-chute {
-    background-image: url("../json/anim-chute/img_3.jpg");
 }
 
 section img {

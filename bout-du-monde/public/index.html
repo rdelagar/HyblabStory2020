@@ -19,6 +19,8 @@
 
     <!--FONT-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">
+    <link href="//db.onlinewebfonts.com/c/03cbeb913835a1cc045d31bd91168ffd?family=Garamond+Premier+Pro" rel="stylesheet"
+          type="text/css"/>
 
     <!--ANIM IMAGE-->
     <!--<script src="js/anim-img.js" defer></script>-->
@@ -53,6 +55,7 @@
     <!--DETECT CHANGE DOM-->
     <script src="js/attrchange.js"></script>
     <script src="js/attrchange_ext.js"></script>
+    <link rel="stylesheet" href="css/anim-illus.css">
 
 </head>
 <body>
@@ -64,16 +67,19 @@
 </div>
 
 <!--ANIM SCROLL-->
-<div class="center-con">
+<!--<div class="center-con">
     <button class="container-scroll">
         <span class="text-scroll">Scroll</span>
         <span class="arrow primera next-scroll "></span>
         <span class="arrow segunda next-scroll "></span>
     </button>
-</div>
+</div>-->
 
 <!--SECTION HISTOIRE-->
 <div class="container">
+
+
+
     <section class="no-back">
         <p>CARTE EN CONSTRUCTION</p>
         <img src="img/1.png">
@@ -81,19 +87,36 @@
     <section class="">
         <img src="img/2.png">
     </section>
-    <section class="no-scroll">
+    <section class="no-scroll anim-attack">
+        <div class="anim anim-attack"></div>
         <button class="next">Commencer</button>
-        <img src="img/3.png">
     </section>
     <section class="no-scroll">
+        <p id="txt-titre-choice1" class="txt-titre">“À l’orée de mes 70 ans, j’ai décidé de refaire ce périple”
+        </p>
+        <p id="txt-choice1" class="txt-p">
+            À l’aéroport de Leh, Tashi et son fils Lundup attendent de pied ferme. Pour cet ultime voyage, mon
+            hésitation est grande. Faire cette traversée avec mes amis Zanskarpas, ou relever un objectif personnel, de
+            rejoindre, seul, la vallée du Zanskar.
+            Et vous, quel choix feriez vous ?
+        </p>
         <img src="img/4.png">
         <button class="choice1 next tashi">Rejoindre Tashi</button>
         <button class="choice2 next seul">Partir Seul</button>
     </section>
     <section class="no-scroll no-back anim-img sec-txt-seul">
-        <p class="txt-titre">« De nombreuses agences indiennes présentent ce trek comme étant l’aventure à vivre
-            absolument. Résultat : plusieurs morts l’an dernier ! »</p>
-        <p id="txt-seul" class="txt-p"></p>
+        <p id="txt-titre-seul" class="txt-titre">“De nombreuses agences indiennes présentent ce trek comme étant
+            l’aventure à vivre
+            absolument. Résultat : plusieurs morts l’an dernier !”
+        </p>
+        <p id="txt-seul" class="txt-p">Il nous est impossible de parcourir la vallée sans être accompagnés. Après les
+            quelques jours d’acclimatation obligatoire, nous devons respecter les règles imposées par le gouvernement
+            indien. Ces règles limitent les accidents, de plus en plus nombreux. Depuis quelques années, la Chadar est
+            très fréquentée par des Indiens peu entraînés à la marche pour cet environnement si changeant, si hasardeux
+            et si dangereux ! Les agences indiennes présentent ce trek comme étant l’aventure à vivre absolument.
+            Résultat, plusieurs morts l’an dernier par ignorance et mauvaise préparation. L’altitude ne pardonne pas.
+            Par prudence, nous prendrons donc la route avec Tashi et Lundup.
+        </p>
         <div id="gl1" class="gl"
              data-imageOriginal="img/5.jpg"
              data-imageDepth="img/5-prof.jpg"
@@ -103,8 +126,11 @@
         <button class="next">Retour</button>
     </section>
     <section class="no-back anim-img sec-txt-tashi wait-scroll">
-        <p class="txt-titre">« Je ressens une très forte émotion en reconnaissant le visage et le sourire de Tashi. »</p>
-        <p id="txt-tashi" class="txt-p"></p>
+        <p id="txt-titre-tashi" class="txt-titre">"Je ressens une très forte émotion en reconnaissant le visage et le
+            sourire de Tashi."</p>
+        <p id="txt-tashi" class="txt-p">Mais, pendant deux secondes, en apercevant Lundup qui avait 6 ans lors de mon
+            dernier séjour, mon esprit bascule vingt-cinq ans en arrière, il ressemble tellement à son père ! Nous
+            tombons dans leurs bras avec la même complicité qu’autrefois.</p>
         <div id="gl2" class="gl"
              data-imageOriginal="img/6.jpg"
              data-imageDepth="img/6-prof.jpg"
@@ -113,9 +139,12 @@
         </div>
     </section>
     <section class="anim-img sec-txt-walk wait-scroll">
-        <p class="txt-titre">« Après les quelques jours d’acclimatation obligatoire à Leh, nous voilà sur la Chadar.
-            »</p>
-        <p id="txt-walk" class="txt-p"></p>
+        <p id="txt-titre-walk" class="txt-titre">"Après les quelques jours d’acclimatation obligatoire à Leh, nous voilà
+            sur la Chadar.
+            "</p>
+        <p id="txt-walk" class="txt-p">Il y a 25 ans, nous étions accompagnés d’un guide. Aujourd’hui, Tashi est notre
+            guide. Six porteurs font le voyage avec nous. Ils sont agiles, adroits, résistants et courageux et
+            n’hésitent pas à nous venir en aide malgré les tentes et affaires qu’ils transportent. </p>
         <div id="gl3" class="gl"
              data-imageOriginal="img/7.jpg"
              data-imageDepth="img/7-prof.jpg"
@@ -124,16 +153,35 @@
         </div>
     </section>
     <section class="no-scroll anim-chute">
+        <p id="txt-titre-chute" class="txt-titre">“La glace sur laquelle nous marchons est très fragile”</p>
+        <p id="txt-chute" class="txt-p">Mais aujourd’hui la glace a cédé sous mon poids, et je suis tombé dans l’eau
+            jusqu’aux cuisses. Pourrais-je m’en sortir seul ou est-il judicieux de demander de l’aide à mon ami Tashi,
+            bien plus entrainé pour ces situations délicates ?
+
+        </p>
+        <div class="anim"></div>
         <button class="choice1 next seul">S'en sortir seul</button>
         <button class="choice2 next aide">Demander de l'aide</button>
     </section>
     <section class=" no-scroll np-back">
+        <p id="txt-titre-seul2" class="txt-titre">“Je me trouve dans une situation dangereuse”
+        </p>
+        <p id="txt-seul2" class="txt-p">Se déplacer sur l’eau gelée demande une concentration constante. Avec un
+            environnement si hasardeux, les chutes sont fréquentes. Je tente de me sortir seul de cette situation, mais
+            l’eau glaciale et les parois glacées ne me le permettent pas. Sans aide, je me trouve dans une situation
+            dangereuse.
+
+        </p>
         <img src="img/9.png">
         <button class="next">Retour</button>
     </section>
     <section class="no-back anim-img sec-txt-help wait-scroll">
-        <p class="txt-titre">« Tashi en voulant me retenir a subi le même sort. »</p>
-        <p id="txt-help" class="txt-p"></p>
+        <p id="txt-titre-help" class="txt-titre">"Tashi en voulant me retenir a subi le même sort."</p>
+        <p id="txt-help" class="txt-p">L’aide de nos compagnons de voyage m’est précieuse. Malheureusement, Tashi, en
+            voulant me retenir, a subi le même sort. Nous avons eu très peur. Les porteurs, agiles dans ces
+            circonstances, nous ont aidé à sortir de l’eau. Et, David, mon fils, s’est empressé de nous sécher.
+
+        </p>
         <div id="gl4" class="gl"
              data-imageOriginal="img/10.jpg"
              data-imageDepth="img/10-prof.jpg"
@@ -142,9 +190,11 @@
         </div>
     </section>
     <section class="anim-img sec-txt-rewalk wait-scroll">
-        <p class="txt-titre">« Parfois aucun passage n’est possible à moins d’escalader les pentes à pic et glissantes
-            de la montagne.  »</p>
-        <p id="txt-rewalk" class="txt-p"></p>
+        <p id="txt-titre-rewalk" class="txt-titre">"Parfois aucun passage n’est possible à moins d’escalader les pentes
+            à pic et glissantes
+            de la montagne. "</p>
+        <p id="txt-rewalk" class="txt-p">Ces escalades scabreuses nous paraissent encore plus dangereuses que la
+            progression sur la glace. Au moindre faux pas c’est la chute mortelle.</p>
         <div id="gl5" class="gl"
              data-imageOriginal="img/11.jpg"
              data-imageDepth="img/11-prof.jpg"
@@ -153,13 +203,27 @@
         </div>
     </section>
     <section class="no-scroll">
-        <img src="img/12.jpg">
+        <p id="txt-titre-choice2" class="txt-titre">“Nous cherchions des grottes pour passer la nuit. Des nuits à la
+            belle étoile”.
+        </p>
+        <p id="txt-choice2" class="txt-p">
+            Au cours de la journée, la glace devient de moins en moins praticable en raison des nombreux passages. Pour
+            cette raison, nous nous arrêtons l’après-midi. Moment idéal pour profiter de ce qui nous entoure. Je me
+            rappelle, il y a 25 ans de cela, nous cherchions des grottes pour passer la nuit. Des nuits à la belle
+            étoile réchauffée au feu de camp. De beaux souvenirs. Aujourd’hui tentes et réchaud nous suivent. Mais pour
+            mon ultime voyage sur la Chadar, la nostalgie m’emporte, devrait-on chercher une grotte ou profiter du
+            confort des tentes ?
+        </p>
+        <img src="img/12.png">
         <button class="choice1 next grotte">Grotte</button>
         <button class="choice2 next tentes">Tentes</button>
     </section>
     <section class="no-scroll no-back anim-img sec-txt-grotte">
-        <p class="txt-titre">« L’environnement est différent de ce que j’ai connu il y a 25 ans.  »</p>
-        <p id="txt-grotte" class="txt-p"></p>
+        <p id="txt-titre-grotte" class="txt-titre">"L’environnement est différent de ce que j’ai connu il y a 25
+            ans. "</p>
+        <p id="txt-grotte" class="txt-p">L’afflux de voyageur ne nous permet plus de trouver des grottes aussi
+            facilement. Le bois se fait de plus en plus rare. Malgré moi, les tentes représentent un confort indéniable
+            pour notre voyage. </p>
         <div id="gl6" class="gl"
              data-imageOriginal="img/13.jpg"
              data-imageDepth="img/13-prof.jpg"
@@ -169,9 +233,14 @@
         <button class="next">Retour</button>
     </section>
     <section class="no-back anim-img sec-txt-tentes wait-scroll">
-        <p class="txt-titre">« Lundup, le fils de Tashi, nous a préparé une expédition avec nuits sous tente et
-            cuisinier.  »</p>
-        <p id="txt-tentes" class="txt-p"></p>
+        <p id="txt-titre-tentes" class="txt-titre">"Lundup, le fils de Tashi, nous a préparé une expédition avec nuits
+            sous tente et
+            cuisinier. "</p>
+        <p id="txt-tentes" class="txt-p">Alors pour nous aujourd’hui, plus de nuits inconfortables dans les grottes, ni
+            de tsampa la farine d’orge grillée à tous les repas. Lundup, le fils de Tashi, nous a préparé une expédition
+            avec nuits sous tente et cuisinier. Les porteurs nous rejoignent pour installer le campement, 3 tentes et un
+            espace cuisine. Une cuisine digne d’un 3*, et des repas à base de poulet, riz, lentilles et épices. Bien
+            loin des soupes réchauffées au feu de camp. </p>
         <div id="gl7" class="gl"
              data-imageOriginal="img/14.jpg"
              data-imageDepth="img/14-prof.jpg"
@@ -180,7 +249,13 @@
         </div>
     </section>
     <section class="anim-img sec-txt-meet">
-        <p class="txt-titre">« Il nous accompagnait l’été 1990 pour sortir du Zanskar, par les cols. »</p>
+        <p id="txt-titre-meet" class="txt-titre">"Il nous accompagnait l’été 1990 pour sortir du Zanskar, par les
+            cols."</p>
+        <p id="txt-meet" class="txt-p"> Au détour d’un escarpement rocheux, nous croisons un vieil homme solitaire vêtu
+            d’une concha usagée et tirant son traîneau sur la glace. « C’est Stobdan » me dit David !
+            Quelle rencontre improbable ! Je ne l’avais pas reconnu, et pourtant il nous accompagnait l’été 1990 pour
+            sortir du Zanskar par les cols.
+        </p>
         <div id="gl8" class="gl"
              data-imageOriginal="img/15.jpg"
              data-imageDepth="img/15-prof.jpg"
@@ -189,8 +264,12 @@
         </div>
     </section>
     <section class="anim-img sec-txt-back wait-scroll">
-        <p class="txt-titre">« C’est là que s’arrête notre périple sur glace.  »</p>
-        <p id="txt-back" class="txt-p"></p>
+        <p id="txt-titre-back" class="txt-titre">"C’est là que s’arrête notre périple sur la glace. "</p>
+        <p id="txt-back" class="txt-p"> Deux jeeps nous attendent pour rejoindre le village de Pishu en empruntant une
+            piste nouvellement construite à coup de dyna- mite et d’efforts éprouvants. Cette piste étroite et
+            dangereuse, la Zanskar Valley Road, est en construction depuis des décennies pour relier Padum, la capitale
+            du Zanskar, à Leh, la capitale du Ladakh. Il en faudra encore autant pour la terminer.
+        </p>
         <div id="gl9" class="gl"
              data-imageOriginal="img/16.jpg"
              data-imageDepth="img/16-prof.jpg"

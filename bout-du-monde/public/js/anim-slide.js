@@ -54,6 +54,7 @@ $(document).ready(function () {
     function slideL(s) {
         $(s).delay(1000).hide(0).removeClass("active"); //slide active
         $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "6").addClass("active"); //slide suivante
+        window.setTimeout(function(){$(s.next()).addClass("loaded");}, 4000);
         scroll = false; //scroll block pendant la transition
         displayScroll(s.next()); //afficher ou non l'animation "scroll"
         wait(); //activer le scroll à la fin de la transition
@@ -70,14 +71,7 @@ $(document).ready(function () {
 
     /*======Réactive le scroll après la transition======*/
     function wait() {
-        setTimeout(function() {scroll = true}, 1000);
-    }
-
-    /*======Cache les images quand elles ont été chargées======*/
-    function isLoadImage() {
-        setTimeout(function() {
-            $(".anim-img").hide().css("z-index", "1")
-        }, 6000);
+        setTimeout(function() {scroll = true;}, 1000);
     }
 
     /*======Affiche ou non l'animation scroll======*/

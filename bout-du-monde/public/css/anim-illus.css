@@ -1,0 +1,17 @@
+.anim {
+    position: absolute;
+    height: 100%;
+    right: 0;
+}
+
+.anim-attack {
+    width: 100%;
+}
+
+div.anim-attack {
+    background-color: #f1f5f6;
+}
+
+div.anim-chute {
+    background-image: url("../json/anim-chute/img_3.jpg");
+}
