@@ -13,41 +13,45 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
     <!--LOADER-->
-    <script src="js/loader.js"></script>
+    <script src="js/loader.js" defer></script>
     <link rel="stylesheet" href="css/loader.css">
 
     <!--FONT-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">
 
     <!--ANIM IMAGE-->
-    <script src="js/anim-img.js"></script>
-    <!--<script src="js/attrchange.js"></script>
-    <script src="js/attrchange_ext.js"></script>-->
+    <!--<script src="js/anim-img.js" defer></script>-->
+    <script src="js/lib/gyronorm.js" defer></script>
+    <script src="js/src.js" defer></script>
 
     <!--ANIM SLIDE-->
     <link rel="stylesheet" href="css/anim-slide.css">
     <link rel="stylesheet" href="css/anim-img.css">
     <link rel="stylesheet" href="css/texte.css">
-    <script src="js/anim-slide.js"></script>
+    <script src="js/anim-slide.js" defer></script>
 
     <!--ANIM SCROLL-->
     <link rel="stylesheet" href="css/anim-scroll.css">
-    <script src="js/anim-scroll.js"></script>
+    <script src="js/anim-scroll.js" defer></script>
 
     <!--ANIM TXT-->
-    <script src="js/typewriter.js"></script>
-    <script src="js/anim-text/anim-txt-1.js"></script>
+    <script src="js/typewriter.js" defer></script>
+    <!--<script src="js/anim-text/anim-txt-1.js"></script>
     <script src="js/anim-text/anim-txt-2.js"></script>
     <script src="js/anim-text/anim-txt-3.js"></script>
     <script src="js/anim-text/anim-txt-4.js"></script>
     <script src="js/anim-text/anim-txt-5.js"></script>
     <script src="js/anim-text/anim-txt-6.js"></script>
     <script src="js/anim-text/anim-txt-7.js"></script>
-    <script src="js/anim-text/anim-txt-8.js"></script>
+    <script src="js/anim-text/anim-txt-8.js"></script>-->
 
     <!--BODYMOVIN-->
-    <script src="js/bodymovin.js"></script>
-    <script src="js/anim-illus.js"></script>
+    <script src="js/bodymovin.js" defer></script>
+    <script src="js/anim-illus.js" defer></script>
+
+    <!--DETECT CHANGE DOM-->
+    <script src="js/attrchange.js"></script>
+    <script src="js/attrchange_ext.js"></script>
 
 </head>
 <body>
@@ -86,13 +90,14 @@
         <button class="choice2 next seul">Partir Seul</button>
     </section>
     <section class="no-scroll no-back anim-img sec-txt-seul">
-        <p class="txt-titre">« De nombreuses agences indiennes présentent ce trek comme étant l’aventure à vivre absolument. Résultat : plusieurs morts l’an dernier ! »</p>
+        <p class="txt-titre">« De nombreuses agences indiennes présentent ce trek comme étant l’aventure à vivre
+            absolument. Résultat : plusieurs morts l’an dernier ! »</p>
         <p id="txt-seul" class="txt-p"></p>
-        <div id="gl" class="gl"
+        <div id="gl1" class="gl"
              data-imageOriginal="img/5.jpg"
              data-imageDepth="img/5-prof.jpg"
-             data-horizontalThreshold="80"
-             data-verticalThreshold="80">
+             data-horizontalThreshold="40"
+             data-verticalThreshold="40">
         </div>
         <button class="next">Retour</button>
     </section>
@@ -107,7 +112,8 @@
         </div>
     </section>
     <section class="anim-img sec-txt-walk wait-scroll">
-        <p class="txt-titre">« Après les quelques jours d’acclimatation obligatoire à Leh, nous voilà sur la Chadar. »</p>
+        <p class="txt-titre">« Après les quelques jours d’acclimatation obligatoire à Leh, nous voilà sur la Chadar.
+            »</p>
         <p id="txt-walk" class="txt-p"></p>
         <div id="gl3" class="gl"
              data-imageOriginal="img/7.jpg"
@@ -135,7 +141,8 @@
         </div>
     </section>
     <section class="anim-img sec-txt-rewalk wait-scroll">
-        <p class="txt-titre">« Parfois aucun passage n’est possible à moins d’escalader les pentes à pic et glissantes de la montagne.  »</p>
+        <p class="txt-titre">« Parfois aucun passage n’est possible à moins d’escalader les pentes à pic et glissantes
+            de la montagne.  »</p>
         <p id="txt-rewalk" class="txt-p"></p>
         <div id="gl5" class="gl"
              data-imageOriginal="img/11.jpg"
@@ -161,7 +168,8 @@
         <button class="next">Retour</button>
     </section>
     <section class="no-back anim-img sec-txt-tentes wait-scroll">
-        <p class="txt-titre">« Lundup, le fils de Tashi, nous a préparé une expédition avec nuits sous tente et cuisinier.  »</p>
+        <p class="txt-titre">« Lundup, le fils de Tashi, nous a préparé une expédition avec nuits sous tente et
+            cuisinier.  »</p>
         <p id="txt-tentes" class="txt-p"></p>
         <div id="gl7" class="gl"
              data-imageOriginal="img/14.jpg"

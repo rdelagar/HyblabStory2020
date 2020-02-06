@@ -5,8 +5,8 @@ $(document).ready(function () {
         height: '100%'
     });
 
-    $("section").hide();
-    $(".anim-img").show().css("z-index", "-1"); //Obliger d'afficher les images en arrière plan pour les faire charger
+    //$("section").hide();
+    //$(".anim-img").show().css("z-index", "-1"); //Obliger d'afficher les images en arrière plan pour les faire charger
     //isLoadImage(0); //Affichage pendant 100ms puis on les cacher
 
     $("section").first().show().addClass("active");
@@ -89,16 +89,5 @@ $(document).ready(function () {
         }
     }
 
-    /*$("canvas").attrchange({
-        trackValues: true,
-        callback: function (e) {
-            if(e.attributeName === "height") {
-                if(e.newValue !== "0") {
-                    console.log(e.newValue)
-                    //$(this).parent().parent().hide();
-                }
-            }
-        }
-    });*/
 
 });
