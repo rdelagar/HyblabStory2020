@@ -16,22 +16,35 @@
     <!--FONT-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">
 
-    <!--ANIM SLIDE-->
-    <link rel="stylesheet" href="css/slide.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/texte.css">
-    <script src="js/main.js"></script>
-
     <!--ANIM IMAGE-->
-    <script src="js/app.js"></script>
+    <script src="js/anim-img.js"></script>
+    <!--<script src="js/attrchange.js"></script>
+    <script src="js/attrchange_ext.js"></script>-->
+
+    <!--ANIM SLIDE-->
+    <link rel="stylesheet" href="css/anim-slide.css">
+    <link rel="stylesheet" href="css/anim-img.css">
+    <link rel="stylesheet" href="css/texte.css">
+    <script src="js/anim-slide.js"></script>
 
     <!--ANIM SCROLL-->
     <link rel="stylesheet" href="css/anim-scroll.css">
     <script src="js/anim-scroll.js"></script>
 
+    <!--ANIM TXT-->
+    <script src="js/typewriter.js"></script>
+    <script src="js/anim-text/anim-txt-1.js"></script>
+    <script src="js/anim-text/anim-txt-2.js"></script>
+    <script src="js/anim-text/anim-txt-3.js"></script>
+    <script src="js/anim-text/anim-txt-4.js"></script>
+    <script src="js/anim-text/anim-txt-5.js"></script>
+    <script src="js/anim-text/anim-txt-6.js"></script>
+    <script src="js/anim-text/anim-txt-7.js"></script>
+    <script src="js/anim-text/anim-txt-8.js"></script>
+
     <!--BODYMOVIN-->
     <script src="js/bodymovin.js"></script>
-    <script src="js/animation.js"></script>
+    <script src="js/anim-illus.js"></script>
 
 </head>
 <body>
@@ -69,14 +82,9 @@
         <button class="choice1 next tashi">Rejoindre Tashi</button>
         <button class="choice2 next seul">Partir Seul</button>
     </section>
-    <section class="no-scroll no-back anim-img">
-        <p>Il nous est impossible de parcourir la vallée sans être accompagnés. Après les quelques jours d’acclimatation
-            obligatoire, nous devons respecter les règles imposées par le gouvernement indien. Ces règles limitent les
-            accidents, de plus en plus nombreux. Depuis quelques années, la Chadar est très fréquentée par des Indiens
-            peu entraînés à la marche pour cet environnement si changeant, si hasardeux et si dangereux ! Les agences
-            indiennes présentent ce trek comme étant l’aventure à vivre absolument. Résultat, plusieurs morts l’an
-            dernier par ignorance et mauvaise préparation. L’altitude ne pardonne pas. Par prudence, nous prendrons donc
-            la route avec Tashi et Lundup.</p>
+    <section class="no-scroll no-back anim-img sec-txt-seul">
+        <p class="txt-titre">« De nombreuses agences indiennes présentent ce trek comme étant l’aventure à vivre absolument. Résultat : plusieurs morts l’an dernier ! »</p>
+        <p id="txt-seul" class="txt-p"></p>
         <div id="gl" class="gl"
              data-imageOriginal="img/5.jpg"
              data-imageDepth="img/5-prof.jpg"
@@ -85,7 +93,9 @@
         </div>
         <button class="next">Retour</button>
     </section>
-    <section class="no-back anim-img">
+    <section class="no-back anim-img sec-txt-tashi wait-scroll">
+        <p class="txt-titre">« Je ressens une très forte émotion en reconnaissant le visage et le sourire de Tashi. »</p>
+        <p id="txt-tashi" class="txt-p"></p>
         <div id="gl2" class="gl"
              data-imageOriginal="img/6.jpg"
              data-imageDepth="img/6-prof.jpg"
@@ -93,7 +103,9 @@
              data-verticalThreshold="80">
         </div>
     </section>
-    <section class="anim-img">
+    <section class="anim-img sec-txt-walk wait-scroll">
+        <p class="txt-titre">« Après les quelques jours d’acclimatation obligatoire à Leh, nous voilà sur la Chadar. »</p>
+        <p id="txt-walk" class="txt-p"></p>
         <div id="gl3" class="gl"
              data-imageOriginal="img/7.jpg"
              data-imageDepth="img/7-prof.jpg"
@@ -109,7 +121,9 @@
         <img src="img/9.png">
         <button class="next">Retour</button>
     </section>
-    <section class="no-back anim-img">
+    <section class="no-back anim-img sec-txt-help wait-scroll">
+        <p class="txt-titre">« Tashi en voulant me retenir a subi le même sort. »</p>
+        <p id="txt-help" class="txt-p"></p>
         <div id="gl4" class="gl"
              data-imageOriginal="img/10.jpg"
              data-imageDepth="img/10-prof.jpg"
@@ -117,15 +131,24 @@
              data-verticalThreshold="80">
         </div>
     </section>
-    <section class="anim-img">
-        <img src="img/11.jpg">
+    <section class="anim-img sec-txt-rewalk wait-scroll">
+        <p class="txt-titre">« Parfois aucun passage n’est possible à moins d’escalader les pentes à pic et glissantes de la montagne.  »</p>
+        <p id="txt-rewalk" class="txt-p"></p>
+        <div id="gl5" class="gl"
+             data-imageOriginal="img/11.jpg"
+             data-imageDepth="img/11-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
     </section>
     <section class="no-scroll">
         <img src="img/12.jpg">
         <button class="choice1 next grotte">Grotte</button>
         <button class="choice2 next tentes">Tentes</button>
     </section>
-    <section class="no-scroll no-back anim-img">
+    <section class="no-scroll no-back anim-img sec-txt-grotte">
+        <p class="txt-titre">« L’environnement est différent de ce que j’ai connu il y a 25 ans.  »</p>
+        <p id="txt-grotte" class="txt-p"></p>
         <div id="gl6" class="gl"
              data-imageOriginal="img/13.jpg"
              data-imageDepth="img/13-prof.jpg"
@@ -134,7 +157,9 @@
         </div>
         <button class="next">Retour</button>
     </section>
-    <section class="no-back anim-img">
+    <section class="no-back anim-img sec-txt-tentes wait-scroll">
+        <p class="txt-titre">« Lundup, le fils de Tashi, nous a préparé une expédition avec nuits sous tente et cuisinier.  »</p>
+        <p id="txt-tentes" class="txt-p"></p>
         <div id="gl7" class="gl"
              data-imageOriginal="img/14.jpg"
              data-imageDepth="img/14-prof.jpg"
@@ -142,7 +167,8 @@
              data-verticalThreshold="80">
         </div>
     </section>
-    <section class="anim-img">
+    <section class="anim-img sec-txt-meet">
+        <p class="txt-titre">« Il nous accompagnait l’été 1990 pour sortir du Zanskar, par les cols. »</p>
         <div id="gl8" class="gl"
              data-imageOriginal="img/15.jpg"
              data-imageDepth="img/15-prof.jpg"
@@ -150,7 +176,9 @@
              data-verticalThreshold="80">
         </div>
     </section>
-    <section class="anim-img">
+    <section class="anim-img sec-txt-back wait-scroll">
+        <p class="txt-titre">« C’est là que s’arrête notre périple sur glace.  »</p>
+        <p id="txt-back" class="txt-p"></p>
         <div id="gl9" class="gl"
              data-imageOriginal="img/16.jpg"
              data-imageDepth="img/16-prof.jpg"
@@ -159,7 +187,13 @@
         </div>
     </section>
     <section class="no-scroll anim-img">
-        <img src="img/17.jpg">
+        <div id="gl10" class="gl"
+             data-imageOriginal="img/17.jpg"
+             data-imageDepth="img/17-prof.jpg"
+             data-horizontalThreshold="80"
+             data-verticalThreshold="80">
+        </div>
+        <button class="abo">Vivez d'autres récits</button>
     </section>
 </div>
 </body>

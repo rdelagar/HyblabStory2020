@@ -22,19 +22,6 @@ body {
     overscroll-behavior: none;
 }
 
-.demo-2 {
-    font-family: Futura, "futura-pt", Arial, sans-serif;
-}
-
-.demo-2,
-.demo-3 {
-    --color-link: #fbc966;
-}
-
-.demo-4 {
-    --color-link: #52e093;
-}
-
 .gl {
     width: 100vw;
     height: 100vh;
