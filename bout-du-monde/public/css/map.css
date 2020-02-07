@@ -2,7 +2,6 @@
 
 .map-container {
 	position: fixed;
-	z-index: -1;
 	top: 0;
 	left: 0;
 }
@@ -14,8 +13,8 @@
 /* Story */
 
 .text {
-	position: relative;
-	z-index: 1000;
+	position: relative!important;
+	z-index: 1000!important;
 	padding-left: 15%;
 	padding-top: 50px;
 	margin-top: 10px;
