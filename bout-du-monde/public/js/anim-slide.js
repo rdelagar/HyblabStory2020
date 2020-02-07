@@ -5,38 +5,43 @@ $(document).ready(function () {
         height: '100%'
     });
 
-    //$("section").hide();
-    //$(".anim-img").show().css("z-index", "-1"); //Obliger d'afficher les images en arrière plan pour les faire charger
-    //isLoadImage(0); //Affichage pendant 100ms puis on les cacher
-
     $("section").first().show().addClass("active");
 
     let scroll = true;
     let first = true;
 
     /*======Détecte scroll======*/
-    $(window).on("wheel", function (e) {
+
+
+    let n = 1;
+    $("section").on("wheel", function (e) {
+
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            console.log("c bon")
+            scroll = true; //activer le scroll a la fin de la transition
+        }, 250));
+
         if(scroll) {
             let s = $("section:visible").first();
             if (e.originalEvent.deltaY > 0 && !s.hasClass("no-scroll")) { //scroll next
-                if(first) {
-                    $(".anim-img").hide().css("z-index", "1");
-                    first = false;
-                }
                 slideL(s);
             } else if(e.originalEvent.deltaY < 0 && !s.hasClass("no-back")) { //scroll back
                 slideR(s);
             }
+        } else {
+            console.log("non")
         }
     });
 
-    $(".center-con").on("click", function () {
+    /*$(".center-con").on("click", function () {
         let s = $("section:visible").first();
         slideL(s);
-    });
+    });*/
 
     /*======Détecte click sur bouton======*/
     $("button.next").on("click", function () {
+        wait();
         let s = $("section:visible").first();
         if($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) { //choix faux
             $(s).delay(1000).hide(0);
@@ -53,25 +58,25 @@ $(document).ready(function () {
     /*======Affiche la slide suivante======*/
     function slideL(s) {
         $(s).delay(1000).hide(0).removeClass("active"); //slide active
-        $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "6").addClass("active"); //slide suivante
+        $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "9").addClass("active"); //slide suivante
         window.setTimeout(function(){$(s.next()).addClass("loaded");}, 4000);
         scroll = false; //scroll block pendant la transition
+        //wait();
         displayScroll(s.next()); //afficher ou non l'animation "scroll"
-        wait(); //activer le scroll à la fin de la transition
     }
 
     /*======Affiche la slide précédante======*/
     function slideR(s) {
         $(s).delay(1000).hide(0).removeClass("active"); //slide active
-        $(s.prev()).show("slide", {direction: "left"}, 1000).css("z-index", "7").addClass("active"); //slide précédante
+        $(s.prev()).show("slide", {direction: "left"}, 1000).css("z-index", "10").addClass("active"); //slide précédante
         scroll = false; //scroll block pendant la transition
+        //wait();
         displayScroll(s.prev()); //afficher ou non l'animation "scroll"
-        wait(); //activer le scroll a la fin de la transition
     }
 
     /*======Réactive le scroll après la transition======*/
     function wait() {
-        setTimeout(function() {scroll = true;}, 1000);
+        setTimeout(function() {scroll = true;}, 500);
     }
 
     /*======Affiche ou non l'animation scroll======*/

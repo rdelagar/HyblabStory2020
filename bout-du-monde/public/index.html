@@ -6,10 +6,6 @@
     <title>Bouts du monde</title>
 
     <!--JQUERY-->
-    <!--<script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>-->
     <script src="js/jquery3.1.0.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
@@ -35,10 +31,9 @@
 
     <!--ANIM SCROLL-->
     <link rel="stylesheet" href="css/anim-scroll.css">
-    <script src="js/anim-scroll.js" defer></script>
+    <!--<script src="js/anim-scroll.js" defer></script>-->
 
     <!--ANIM TXT-->
-    <script src="js/typewriter.js" defer></script>
     <!--<script src="js/anim-text/anim-txt-1.js"></script>
     <script src="js/anim-text/anim-txt-2.js"></script>
     <script src="js/anim-text/anim-txt-3.js"></script>
@@ -53,9 +48,9 @@
     <script src="js/anim-illus.js" defer></script>
 
     <!--DETECT CHANGE DOM-->
-    <script src="js/attrchange.js"></script>
+    <!--<script src="js/attrchange.js"></script>
     <script src="js/attrchange_ext.js"></script>
-    <link rel="stylesheet" href="css/anim-illus.css">
+    <link rel="stylesheet" href="css/anim-illus.css">-->
 
 </head>
 <body>
@@ -80,18 +75,18 @@
 
 
 
-    <section class="no-back">
+    <section class="no-back" n="1">
         <p>CARTE EN CONSTRUCTION</p>
         <img src="img/1.png">
     </section>
-    <section class="">
+    <section class="" n="2">
         <img src="img/2.png">
     </section>
-    <section class="no-scroll anim-attack">
-        <div class="anim anim-attack"></div>
+    <section class="no-scroll anim-attaque" n="3">
+        <div class="anim"></div>
         <button class="next">Commencer</button>
     </section>
-    <section class="no-scroll">
+    <section class="no-scroll anim-arrivee">
         <p id="txt-titre-choice1" class="txt-titre">“À l’orée de mes 70 ans, j’ai décidé de refaire ce périple”
         </p>
         <p id="txt-choice1" class="txt-p">
@@ -100,7 +95,7 @@
             rejoindre, seul, la vallée du Zanskar.
             Et vous, quel choix feriez vous ?
         </p>
-        <img src="img/4.png">
+        <div class="anim"></div>
         <button class="choice1 next tashi">Rejoindre Tashi</button>
         <button class="choice2 next seul">Partir Seul</button>
     </section>
