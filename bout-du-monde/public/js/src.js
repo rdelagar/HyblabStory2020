@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     class Sketch {
         constructor(id) {
-            console.log(id)
             this.fragment = "#ifdef GL_ES\n" +
                 "  precision mediump float;\n" +
                 "#endif\n" +
@@ -177,7 +176,7 @@ $(document).ready(function () {
 
 
             // start application
-            this.resize();
+            //this.resize();
             this.render();
         }
 
@@ -189,7 +188,6 @@ $(document).ready(function () {
             const rotationCoef = 0.15;
 
             gn.init({gravityNormalized: true}).then(function () {
-              console.log("then")
                 gn.start(function (data) {
 
                     let y = data.do.gamma;
@@ -200,7 +198,6 @@ $(document).ready(function () {
 
                 });
             }).catch(function (e) {
-                console.log('not supported');
             });
 
         }

@@ -1,93 +1,100 @@
 $(document).ready(function () {
 
-    $('html, body').css({
-        overflow: 'hidden',
-        height: '100%'
-    });
-
+    $("section").hide();
     $("section").first().show().addClass("active");
 
-    let scroll = true;
-    let first = true;
+    let scroll = false;
+    let launch = false;
 
-    /*======Détecte scroll======*/
     $("section").on("wheel", function (e) {
 
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            scroll = true; //activer le scroll a la fin de la transition
-        }, 250));
-
-        if(scroll) {
+        if (!launch) {
+            scrollMap();
+        } else if (scroll) {
             let s = $("section:visible").first();
             if (e.originalEvent.deltaY > 0 && !s.hasClass("no-scroll")) { //scroll next
                 slideL(s);
-            } else if(e.originalEvent.deltaY < 0 && !s.hasClass("no-back")) { //scroll back
+                scroll = false;
+            } else if (e.originalEvent.deltaY < 0 && !s.hasClass("no-back")) { //scroll back
                 slideR(s);
+                scroll = false;
             }
-        } else {
-            console.log("non")
         }
+
+        scrollStop();
     });
 
-    /*$(".center-con").on("click", function () {
-        let s = $("section:visible").first();
-        slideL(s);
-    });*/
-
-    /*======Détecte click sur bouton======*/
     $("button.next").on("click", function () {
-        wait();
         let s = $("section:visible").first();
-        if($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) { //choix faux
-            $(s).delay(1000).hide(0);
+
+        if($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
+            s.delay(1000).hide(0);
             slideL(s.next());
-        } else { //choix bon
+        } else {
             slideL(s);
         }
     });
-    
-    $("button.abo").on("click", function () {
-        window.location.href = 'https://www.revue-boutsdumonde.com/produit/abonnement/';
-    });
 
-    /*======Affiche la slide suivante======*/
     function slideL(s) {
-        $(s).css("z-index", "-1").removeClass("active");
-        $(s).delay(1000).hide(0); //slide active
-        //$(s).hide()
-        $(s.next()).css("z-index", "9");
-        $(s.next()).show("slide", {direction: "right"}, 1000).css("z-index", "9").addClass("active"); //slide suivante
-        scroll = false; //scroll block pendant la transition
-        //wait();
-        displayScroll(s.next()); //afficher ou non l'animation "scroll"
-    }
+        s.css("z-index", "-1");
+        s.next().css({"z-index": "1"});
+        s.delay(1000).hide(0);
+        s.next().show("slide", {direction: "right"}, 1000);
 
-    /*======Affiche la slide précédante======*/
-    function slideR(s) {
-        $(s).css("z-index", "-1").removeClass("active");
-        $(s).delay(1000).hide(0); //slide active
-        //$(s).hide()
-        $(s.prev()).css("z-index", "10");
-        $(s.prev()).show("slide", {direction: "left"}, 1000).css("z-index", "10").addClass("active"); //slide précédante
-        scroll = false; //scroll block pendant la transition
-        //wait();
-        displayScroll(s.prev()); //afficher ou non l'animation "scroll"
-    }
-
-    /*======Réactive le scroll après la transition======*/
-    function wait() {
-        setTimeout(function() {scroll = true;}, 500);
-    }
-
-    /*======Affiche ou non l'animation scroll======*/
-    function displayScroll(s) {
-        if(s.hasClass("no-scroll") || s.hasClass("wait-scroll")) {
-            $(".center-con").delay(500).hide(0);
-        } else {
-            $(".center-con").delay(1000).show(0);
+        if(s.next().hasClass("anim-attaque")) {
+            loadAnim(0, "json/anim-attaque.json", false);
+        } else if(s.next().hasClass("anim-arrivee")) {
+            loadAnim(1, "json/anim-arrivee.json", true);
+        } else if(s.next().hasClass("anim-chute")) {
+            loadAnim(2, "json/anim-chute.json", true);
+        } else if(s.next().hasClass("anim-seul")) {
+            loadAnim(3, "json/anim-seul.json", true);
+        } else if(s.next().hasClass("anim-grotte")) {
+            loadAnim(4, "json/anim-grotte.json", true);
         }
     }
 
+    function slideR(s) {
+        s.css("z-index", "-1");
+        s.prev().css("z-index", "1");
+        s.delay(1000).hide(0);
+        s.prev().show("slide", {direction: "left"}, 1000);
+    }
+
+    function scrollStop() {
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function () {
+            scroll = true;
+        }, 500));
+    }
+
+    function scrollMap() {
+        if ($(window).scrollTop() + $(window).height() + 1 >= $(document).height()) {
+            $('html, body').css({
+                overflow: 'hidden'
+            });
+            launch = true;
+            let s = $("section:visible").first();
+            $("section").css({"top": $(".main").height() - s.next().height()});
+        }
+    }
+
+    function loadAnim(id, path, loop) {
+        let wrapp = document.getElementsByClassName("anim")[id];
+        let anim = bodymovin.loadAnimation({
+            wrapper: wrapp,
+            animType: 'svg',
+            loop: loop,
+            autoplay: false,
+            path: path
+        });
+        startAnim(anim);
+    }
+
+    function startAnim(anim) {
+        setTimeout(function () {
+            anim.play();
+        }, 200);
+    }
 
 });
