@@ -6,162 +6,36 @@
 
 section p {
     position: absolute;
+    font-style: normal;
+    color: #FFFFFF;
     z-index: 5;
-    font-size: 18px;
 }
 
 .txt-p {
-    width: 672px;
-    left: 211px;
-    top: 230px;
-    font-style: normal;
+    font-family: Dosis;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
-    color: #FFFFFF;
-    font-family: 'Dosis', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
 }
 
 .txt-titre {
-    width: 657px;
-    left: 211px;
-    top: 120px;
-    font-style: normal;
+    font-family: Adobe Garamond;
     font-weight: 600;
-    font-size: 30px;
-    line-height: 30px;
-    color: #FFFFFF;
-    font-family: Garamond, EB Garamond;
+    font-size: 40px;
+    line-height: 48px;
 }
 
-#txt-titre-help {
-    top: 250px;
-    left: 400px;
+#txt-titre-seul {
+    width: 857px;
+    height: 157px;
+    left: 261px;
+    top: 226px;
 }
 
-#txt-titre-rewalk {
-    top: auto;
-    bottom: 80px;
+#txt-seul {
+    width: 672px;
+    height: 312px;
+    left: 261px;
+    top: 408px;
 }
 
-#txt-titre-grotte {
-    top: auto;
-    bottom: 230px;
-    left: 300px;
-    width: 400px;
-}
-
-#txt-titre-tentes {
-    top: 10px;
-    left: 50px;
-    width: 600px;
-}
-
-#txt-titre-meet {
-    top: 50px
-}
-
-#txt-titre-walk {
-    top: 20px;
-    left: 20px;
-    width: 450px;
-}
-
-#txt-titre-chute {
-    top: 30px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-titre-choice1 {
-    top: 30px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-titre-choice2 {
-    top: 30px;
-    left: 80px;
-    width: 500px;
-    color: #485F62;
-}
-
-#txt-titre-seul2 {
-    top: 30px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-titre-back {
-    top: 50px;
-    left: 50px;
-}
-
-#txt-chute {
-    top: 120px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-choice1 {
-    top: 120px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-choice2 {
-    top: 120px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-seul2 {
-    top: 120px;
-    left: 80px;
-    width: 400px;
-    color: #485F62;
-}
-
-#txt-walk {
-    top: 130px;
-    left: 20px;
-    width: 450px;
-}
-
-#txt-back {
-    top: 100px;
-    left: 50px;
-}
-
-#txt-tentes {
-    top: 90px;
-    left: 50px;
-    width: 600px;
-}
-
-#txt-grotte {
-    top: auto;
-    bottom: 120px;
-    left: 300px;
-    width: 400px;
-}
-
-#txt-rewalk {
-    top: 90%;
-}
-
-#txt-tashi {
-    top: 200px;
-}
-
-#txt-help {
-    top: 320px;
-    left: 400px;
-    width: 472px;
-}
