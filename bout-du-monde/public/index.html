@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouts du monde</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--JQUERY-->
     <!--<script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -12,7 +12,8 @@
             crossorigin="anonymous"></script>-->
     <script src="js/jquery3.1.0.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+    <!--Font awesome-->
+    <script src="https://kit.fontawesome.com/3c3db5688d.js" crossorigin="anonymous"></script>
     <!--LOADER-->
     <script src="js/loader.js" defer></script>
     <link rel="stylesheet" href="css/loader.css">
@@ -32,6 +33,7 @@
     <link rel="stylesheet" href="css/anim-img.css">
     <link rel="stylesheet" href="css/texte.css">
     <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/audio.css">
     <script src="js/anim-slide.js" defer></script>
 
     <!--ANIM SCROLL-->
@@ -78,8 +80,9 @@
 
 <!--SECTION HISTOIRE-->
 <div class="container">
-    <div class="main">
-        <div class="map-container"></div>
+    <div class="no-back">
+        carte
+        <!--<div class="map-container"></div>
         <div class="text">
             <div class="js-section" data-zoom-middle="2"  data-icon="img/plane.svg">
     
@@ -105,7 +108,17 @@
                     he had been at sea for the greater part of his life, and had in the course of his journeyings seen much of the world; he was our nautical adviser, and we referred to him in matters connected with the sea. W. Glen, Miss Hastie's cousin, was known as the "handy man" of the party. If anybody was in difficulties, Glen was always on the spot to lend a helping hand. He produced all sorts of things at the right moment. Did any one require a screw-driver, then Glen had it; want a corkscrew, Glen could supply it; a pair of scissors, he produced them—some string, a strap, it was all the same. If a camera struck work, Glen could render the strike ineffective, for he carried two, and could lend one without interfering with his own photographic work. A. W. Hill, of King's College, Cambridge, was our botanist—who describes what he saw. H. H. Thomas, of Balliol, paid special attention to the geological formation of the country that we traversed, and he was frequently to be seen, camera in hand, taking shots at interesting formations—a glaciated lava surface, a volcanic vent, or an immense "erratic" boulder or "perched block," for instance; he also sketched industriously, and sometimes paced the ground compass in hand in order that he might record in his note-book the direction of a line of fissure, or the position of hot springs along that line; or something else of interest to geologists in particular. I was the geographer, whose mission it was to make a map of a small portion of the country traversed, to get a general idea of its conformation, and to note valleys and mountains, ice-fields and snow slopes, lava flows and hot springs, mighty rivers and tiny rivulets.</p>
                 </div>
             </div>
+        </div>-->
+        <!--<div class="wrapper">
+            <a href="#" title="Listen to the song" class="player-controls">
+                <span class="play"></span>
+                <span class="pause"></span>
+            </a>
+            <audio class="player">
+            <source src="audios/screen1.mp3" type="audio/mp3">
+            </audio>
         </div>
+    -->
     </div>
 
     <section class="">
@@ -113,6 +126,21 @@
     </section>
     <section class="no-scroll anim-attack">
         <div class="anim anim-attack"></div>
+        <div class="wrapper">
+            <div class="audio">
+                <a href="#"  title="Listen to the song" class="player-controls" id="player-controls1">
+                    <span class="play"></span>
+                    <span class="pause"></span>
+                </a>
+                <audio class="player">
+                <source src="audios/screen1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <span class="audio-text">
+                <i class="fas fa-align-justify"></i>
+            </span>
+        </div>
+        
         <button class="next">Commencer</button>
     </section>
     <section class="no-scroll">
@@ -155,6 +183,20 @@
         <p id="txt-tashi" class="txt-p">Mais, pendant deux secondes, en apercevant Lundup qui avait 6 ans lors de mon
             dernier séjour, mon esprit bascule vingt-cinq ans en arrière, il ressemble tellement à son père ! Nous
             tombons dans leurs bras avec la même complicité qu’autrefois.</p>
+            <div class="wrapper">
+                <div class="audio">
+                    <a href="#" title="Listen to the song" class="player-controls" id="player-controls2">
+                        <span class="play"></span>
+                        <span class="pause"></span>
+                    </a>
+                    <audio class="player">
+                    <source src="audios/rencontre.mp3" type="audio/mp3">
+                    </audio>
+                </div>
+                <span class="audio-text">
+                    <i class="fas fa-align-justify"></i>
+                </span>
+            </div>
         <div id="gl2" class="gl"
              data-imageOriginal="img/6.jpg"
              data-imageDepth="img/6-prof.jpg"
@@ -183,6 +225,7 @@
             bien plus entrainé pour ces situations délicates ?
 
         </p>
+        
         <div class="anim"></div>
         <button class="choice1 next seul">S'en sortir seul</button>
         <button class="choice2 next aide">Demander de l'aide</button>
@@ -311,6 +354,7 @@
         <button class="abo">Vivez d'autres récits</button>
     </section>
 </div>
-<script src="js/map.js"></script>
+<!--<script src="js/map.js"></script>-->
+<script src="js/audio.js"></script>
 </body>
 </html>

@@ -1,18 +1,26 @@
+
 .wrapper {
-   align-items: center;
-   display: flex;
-   height: 100vh;
-   justify-content: left;
-   margin-left: 5em;
+   position: absolute;
+   top: 50vh;
+   left: 100px;
+   border: 2px solid #000000!important;
+   padding: 20px;
+   z-index: 9999;
 }
 
-.audio-text {
+.wrapper .audio-text {
+   border: 1px solid #000000;
+   margin-top: 20px;
    display: block;
-   border: 2px solid #000000;
-   font-size: 200px;
+   border-radius: 80px;
+   
 }
 
-.player-controls {
+.wrapper .audio-text i {
+   padding: 10px;
+}
+
+.wrapper  .player-controls {
    color: #fff;
    cursor: pointer;
    display: block;
@@ -24,25 +32,14 @@
    -webkit-transition: transform 0.25s ease-in-out;
    transition: transform 0.25s ease-in-out;
 }
-.player-controls .audio-label {
-   line-height: 1;
-   position: absolute;
-   right: 1.35em;
-   text-align: right;
-   text-transform: uppercase;
-   top: -0.4em;
-}
-.player-controls .audio-label span {
-   font-size: 18px;
-}
-.player-controls .audio-label span small {
-   display: block;
-   font-size: 0.83em;
-}
+
 .player-controls .play, .player-controls .pause {
    display: block;
    background: url('https://www.dropbox.com/s/aukpnwpj8b77tqy/play.svg?raw=1') no-repeat 0 0;
    background-size: 100% 100%;
+   background-color: blueviolet;
+   border-radius: 20px;
+   border-color: #000000!important;
    height: 1em;
    position: absolute;
    width: 1em;
@@ -50,6 +47,7 @@
    transition: all 0.25s linear;
    z-index: 5;
 }
+
 .player-controls .play::before, .player-controls .pause::before, .player-controls .play::after, .player-controls .pause::after {
    -webkit-border-radius: 1000px;
    -moz-border-radius: 1000px;
@@ -63,6 +61,7 @@
    width: 1em;
    z-index: 0;
 }
+
 .player-controls .play::before {
    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
    -webkit-transition: all 0.25s linear;
@@ -74,12 +73,14 @@
    right: 0;
    top: 0;
 }
+
 .player-controls.playing .play {
    opacity: 0;
 }
 .player-controls.playing .pause {
    opacity: 1;
 }
+
 .player-controls.playing .pause::before {
    -moz-animation: audio1 1.5s infinite ease-in-out;
    -o-animation: audio1 1.5s infinite ease-in-out;
@@ -102,6 +103,7 @@
    -webkit-animation: audio1 1.5s infinite ease-in-out;
    animation: audio1 1.5s infinite ease-in-out;
 }
+
 @keyframes audio1 {
    0%, 100% {
       box-shadow: 0 0 0 0.4em rgba(255, 255, 255, 0.4);
