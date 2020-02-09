@@ -40,6 +40,8 @@ $(".audio span").click(function() {
             
          }, 2500);
          
+      }else {
+         console.log('timeover 2500');
       }
       
    });
@@ -50,7 +52,7 @@ $(".audio span").click(function() {
          
          window.clearTimeout(mouseovertimer);
          mouseovertimer = null;
-         
+         console.log('timeover window');
       }
       
    });
@@ -106,7 +108,7 @@ $(".audio span").click(function() {
          $(playerControls).removeClass('playing');
          window.clearTimeout(mouseovertimer);
          audiostatus = 'on';
-         
+         console.log('timeover hasClass');
       }
       
       return false;
@@ -138,5 +140,12 @@ $(".audio span").click(function() {
       window.clearTimeout(mouseovertimer);
       audiostatus = 'off';
   });
-
 });
+
+function finished(btn) {
+   
+   //background: 
+   btn.previousElementSibling.children[1].style.background = "url('https://www.dropbox.com/s/aukpnwpj8b77tqy/play.svg?raw=1') no-repeat 0 0";
+   //console.log(btn.previousElementSibling.children[1]);
+   //transition: all 0.25s linear;
+}

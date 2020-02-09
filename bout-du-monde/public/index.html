@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="css/texte.css">
     <link rel="stylesheet" href="css/map.css">
     <link rel="stylesheet" href="css/audio.css">
+    <link rel="stylesheet" href="css/modal.css">
     <script src="js/anim-slide.js" defer></script>
 
     <!--ANIM SCROLL-->
@@ -109,17 +110,47 @@
                 </div>
             </div>
         </div>-->
-        <!--<div class="wrapper">
-            <a href="#" title="Listen to the song" class="player-controls">
-                <span class="play"></span>
-                <span class="pause"></span>
-            </a>
-            <audio class="player">
-            <source src="audios/screen1.mp3" type="audio/mp3">
-            </audio>
+        <!--
+        <div class="wrapper">
+            <div class="audio">
+                <a href="#"  title="Listen to the song" class="player-controls" id="player-controls1">
+                    <span class="play"></span>
+                    <span class="pause"></span>
+                </a>
+                <audio class="player" onended="finished(this);">
+                <source src="audios/screen1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <span class="audio-text">
+                <a class="modal-toggle" title="Textes audio"><i class="fas fa-align-justify"></i></a>
+            </span>
         </div>
-    -->
-    </div>
+        
+        <div class="modal">
+            <div class="modal-wrapper modal-transition">
+
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="textes-audio">
+                            <i class="fas fa-align-justify"></i>
+                            <br>
+                            Textes audio
+                        </div>
+                        <p class="modal-content-text">
+                            Je m'appelle Jacques. Je suis photographe, réalisateur, 
+                            conférencier, mais je suis surtout voyageur. J'ai parcouru le 
+                            monde. Des terres gelées du grand nord canadien aux 
+                            terres ventées de Patagonie en passant par L'Himalaya.
+                        </p>
+                        <div class="close-btn">
+                            <a class="modal-toggle"><i class="fas fa-times"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
 
     <section class="">
         <img src="img/2.png">
@@ -132,13 +163,36 @@
                     <span class="play"></span>
                     <span class="pause"></span>
                 </a>
-                <audio class="player">
-                <source src="audios/screen1.mp3" type="audio/mp3">
+                <audio class="player" onended="finished(this);">
+                <source src="audios/hover-jacques.mp3" type="audio/mp3">
                 </audio>
             </div>
             <span class="audio-text">
-                <i class="fas fa-align-justify"></i>
+                <a class="modal-toggle" title="Textes audio"><i class="fas fa-align-justify"></i></a>
             </span>
+        </div>
+        
+        <div class="modal">
+            <div class="modal-wrapper modal-transition">
+
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="textes-audio">
+                            <i class="fas fa-align-justify"></i>
+                            <br>
+                            Textes audio
+                        </div>
+                        <p class="modal-content-text">
+                            Aujourd’hui, nous nous apprêtons à vivre un voyage 
+                            hors du temps sur les terres sacrées du Zanskar.
+                        </p>
+                        <div class="close-btn">
+                            <a class="modal-toggle"><i class="fas fa-times"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
         
         <button class="next">Commencer</button>
@@ -185,7 +239,7 @@
             tombons dans leurs bras avec la même complicité qu’autrefois.</p>
             <div class="wrapper">
                 <div class="audio">
-                    <a href="#" title="Listen to the song" class="player-controls" id="player-controls2">
+                    <a href="#" title="Listen to the song" class="player-controls" id="player-controls3">
                         <span class="play"></span>
                         <span class="pause"></span>
                     </a>
@@ -223,8 +277,47 @@
         <p id="txt-chute" class="txt-p">Mais aujourd’hui la glace a cédé sous mon poids, et je suis tombé dans l’eau
             jusqu’aux cuisses. Pourrais-je m’en sortir seul ou est-il judicieux de demander de l’aide à mon ami Tashi,
             bien plus entrainé pour ces situations délicates ?
-
         </p>
+
+        <div class="wrapper">
+            <div class="audio">
+                <a href="#" title="Listen to the song" class="player-controls" id="player-controls4">
+                    <span class="play"></span>
+                    <span class="pause"></span>
+                </a>
+                <audio class="player">
+                <source src="audios/chute-de-jacques-.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <span class="audio-text except-color">
+                <a class="modal-toggle" title="Textes audio"><i class="fas fa-align-justify"></i></a>
+            </span>
+        </div>
+
+        <div class="modal">
+            <div class="modal-wrapper modal-transition">
+
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="textes-audio">
+                            <i class="fas fa-align-justify"></i>
+                            <br>
+                            Textes audio
+                        </div>
+                        <p class="modal-content-text">
+                            À plusieurs reprises, nous mettons les pieds dans l'eau gelée,
+                            en nous déchaussant. La glace sur laquelle nous marchons 
+                            est très fragile et peut se rompre à tout moment. À tel point 
+                            que bientôt certains endroits seront infranchissables.
+                        </p>
+                        <div class="close-btn">
+                            <a class="modal-toggle"><i class="fas fa-times"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="anim"></div>
         <button class="choice1 next seul">S'en sortir seul</button>
@@ -262,6 +355,45 @@
             de la montagne. "</p>
         <p id="txt-rewalk" class="txt-p">Ces escalades scabreuses nous paraissent encore plus dangereuses que la
             progression sur la glace. Au moindre faux pas c’est la chute mortelle.</p>
+        <div class="wrapper">
+            <div class="audio">
+                <a href="#"  title="Listen to the song" class="player-controls" id="player-controls2">
+                    <span class="play"></span>
+                    <span class="pause"></span>
+                </a>
+                <audio class="player">
+                    <source src="audios/reprendre-la-marche-.mp3" type="audio/mp3">
+                </audio>
+            </div>
+            <span class="audio-text except-color">
+                <a class="modal-toggle" title="Textes audio"><i class="fas fa-align-justify"></i></a>
+            </span>
+        </div>
+        <div class="modal">
+            <div class="modal-wrapper modal-transition">
+
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <div class="textes-audio">
+                            <i class="fas fa-align-justify"></i>
+                            <br>
+                            Textes audio
+                        </div>
+                        <p class="modal-content-text">
+                            Nos amis ne semblent pas être gênés avec leur charge sur le dos,
+                            ils ont toujours la force de nous venir en aide.
+                            Ils savent se frayer un chemin même quand cela paraît impossible.
+                            Sans leur aide précieuse, jamais nous ne pourrions franchir certains
+                            passages.
+                        </p>
+                        <div class="close-btn-except">
+                            <a class="modal-toggle"><i class="fas fa-times"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="gl5" class="gl"
              data-imageOriginal="img/11.jpg"
              data-imageDepth="img/11-prof.jpg"
@@ -355,6 +487,7 @@
     </section>
 </div>
 <!--<script src="js/map.js"></script>-->
+<script src="js/modal.js"></script>
 <script src="js/audio.js"></script>
 </body>
 </html>

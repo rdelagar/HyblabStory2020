@@ -3,21 +3,20 @@
    position: absolute;
    top: 50vh;
    left: 100px;
-   border: 2px solid #000000!important;
    padding: 20px;
    z-index: 9999;
 }
 
 .wrapper .audio-text {
-   border: 1px solid #000000;
+   border: 2px solid #74B8C1;
    margin-top: 20px;
-   display: block;
-   border-radius: 80px;
-   
+   display: block!important;
+   border-radius: 80px!important;
 }
 
 .wrapper .audio-text i {
    padding: 10px;
+   color: #74B8C1;
 }
 
 .wrapper  .player-controls {
@@ -37,9 +36,9 @@
    display: block;
    background: url('https://www.dropbox.com/s/aukpnwpj8b77tqy/play.svg?raw=1') no-repeat 0 0;
    background-size: 100% 100%;
-   background-color: blueviolet;
+   background-color: #74B8C1;
    border-radius: 20px;
-   border-color: #000000!important;
+   border: 2px solid #74B8C1!important;
    height: 1em;
    position: absolute;
    width: 1em;
