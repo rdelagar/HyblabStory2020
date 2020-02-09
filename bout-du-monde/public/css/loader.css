@@ -1,33 +1,39 @@
-* {
+.loader {
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f5f6;
+    z-index: 200;
+    position: relative;
+    font-family: Dosis;
+    font-size: 40px;
+    color: #485F62;
+}
+
+.txt-loader {
+    position: absolute;
+    padding: 0;
     margin: 0;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
 }
 
-#overlay {
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: white;
-    transition: 1s 0.4s;
-}
-
-#progress {
-    height: 1px;
-    background: black;
-    position: absolute;
-    width: 0;
-    top: 50%;
-}
-
-#progstat {
-    font-size: 0.7em;
-    letter-spacing: 3px;
+.pourcent {
+    z-index: 201;
+    background-color: #f1f5f6;
+    padding: 2px;
+    margin: 0;
     position: absolute;
     top: 50%;
-    margin-top: -40px;
-    width: 100%;
-    text-align: center;
-    color: black;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bar {
+    position: absolute;
+    height: 2px;
+    width: 0vw;
+    background-color: #485F62;
+    top: 50%;
+    transform: translateY(-50%);
 }

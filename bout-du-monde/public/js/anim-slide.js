@@ -1,4 +1,6 @@
-$(document).ready(function () {
+$(window).on("load", function () {
+
+    $(".loader").hide();
 
     $("section").hide();
     $("section").first().show().addClass("active");
@@ -25,7 +27,7 @@ $(document).ready(function () {
         scrollStop();
     });
 
-    $("button.next").on("click", function () {
+    $(".next").on("click", function () {
         let s = $("section:visible").first();
 
         if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
@@ -36,6 +38,11 @@ $(document).ready(function () {
         }
     });
 
+    $(".back-svg").on("click", function () {
+        let s = $("section:visible").first();
+        slideR(s);
+    });
+
     $(".puce").hover(function () {
         $(".fond-popup").show();
     }, function () {
@@ -43,14 +50,15 @@ $(document).ready(function () {
     });
 
     $(".puce-n1").hover(function () {
-        $(".popup1").show().css({"top": $(this).offset().top, "left": $(this).offset().left})
+        let right = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+        $(".popup1").show().css({"top": $(this).offset().top, "right": right})
     }, function () {
         $(".popup1").hide();
     });
 
     $(".puce-n2").hover(function () {
         let right = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
-        $(".popup2").show().css({"top": $(this).offset().top, "right": right})
+        $(".popup2").show().css({"top": $(this).offset().top, "left": $(this).offset().left})
     }, function () {
         $(".popup2").hide();
     });
@@ -82,11 +90,11 @@ $(document).ready(function () {
             loadAnim(3, "json/anim-seul.json", true);
         } else if (s.next().hasClass("anim-grotte")) {
             loadAnim(4, "json/anim-grotte.json", true);
-        } else if(s.next().hasClass("sec-txt-help")) {
+        } else if (s.next().hasClass("sec-txt-walk")) {
             displayPopup(1);
-        } else if(s.next().hasClass("sec-txt-walk")) {
+        } else if (s.next().hasClass("sec-txt-help")) {
             displayPopup(2);
-        } else if(s.next().hasClass("sec-txt-tentes")) {
+        } else if (s.next().hasClass("sec-txt-tentes")) {
             displayPopup(3);
         }
     }
@@ -100,11 +108,11 @@ $(document).ready(function () {
         s.prev().show("slide", {direction: "left"}, 1000);
         s.prev().children(".div-txt").delay(1000).show(0);
 
-        if(s.prev().hasClass("sec-txt-help")) {
+        if (s.prev().hasClass("sec-txt-walk")) {
             displayPopup(1);
-        } else if(s.prev().hasClass("sec-txt-walk")) {
+        } else if (s.prev().hasClass("sec-txt-help")) {
             displayPopup(2);
-        } else if(s.prev().hasClass("sec-txt-tentes")) {
+        } else if (s.prev().hasClass("sec-txt-tentes")) {
             displayPopup(3);
         }
     }
@@ -152,6 +160,106 @@ $(document).ready(function () {
     $(".secret").on("click", function () {
         let s = $("section:visible").first();
         slideL(s);
-    })
+    });
+
+    let svg = $("object")[0].contentDocument.documentElement;
+    let BDM = svg.getElementsByClassName("BDM");
+    let Audencia = svg.getElementsByClassName("Audencia");
+    let AGR = svg.getElementsByClassName("AGR");
+    let Polytech = svg.getElementsByClassName("Polytech");
+
+    let Hyblab = svg.getElementsByClassName("Hyblab");
+    let Medialab = svg.getElementsByClassName("Medialab");
+    let OpenSource = svg.getElementsByClassName("Open-Source");
+    let UnivNantes = svg.getElementsByClassName("Univ-Nantes");
+    let CC = svg.getElementsByClassName("CC");
+
+    let AR = svg.getElementsByClassName("AR");
+    let SP = svg.getElementsByClassName("SP");
+    let RG = svg.getElementsByClassName("RG");
+    let JG = svg.getElementsByClassName("JG");
+    let RD = svg.getElementsByClassName("RD");
+    let TOD = svg.getElementsByClassName("TOD");
+    let ZP = svg.getElementsByClassName("ZP");
+    let JBG = svg.getElementsByClassName("JBG");
+    let AL = svg.getElementsByClassName("AL");
+
+    $(svg.getElementsByClassName("svg-lien")).hover(function () {
+        $(this).css({"cursor": "pointer"});
+    }, function () {
+
+    });
+
+    $(BDM).on("click", function () {
+        window.open("https://www.revue-boutsdumonde.com/");
+    });
+
+    $(AGR).on("click", function () {
+        window.open("https://www.agrnantes.fr/");
+    });
+
+    $(Audencia).on("click", function () {
+        window.open("https://www.audencia.com/");
+    });
+
+    $(Polytech).on("click", function () {
+        window.open("https://polytech.univ-nantes.fr/");
+    });
+
+    $(Hyblab).on("click", function () {
+        window.open("https://www.hyblab.fr/");
+    });
+
+    $(Medialab).on("click", function () {
+        window.open("https://medialab.sciencespo.fr/");
+    });
+
+    $(OpenSource).on("click", function () {
+        window.open("https://opensource.org/");
+    });
+
+    $(UnivNantes).on("click", function () {
+        window.open("https://www.univ-nantes.fr/");
+    });
+
+    $(CC).on("click", function () {
+        window.open("https://creativecommons.org/licenses/by/2.0/");
+    });
+
+    $(AR).on("click", function () {
+        window.open("https://www.linkedin.com/in/ad%C3%A8le-rafii/");
+    });
+
+    $(SP).on("click", function () {
+        window.open("https://www.linkedin.com/in/st%C3%A9phen-proux-a01929194/");
+    });
+
+    $(RG).on("click", function () {
+        window.open("https://www.linkedin.com/in/roxanne-guillaume");
+    });
+
+    $(JG).on("click", function () {
+        window.open("https://www.linkedin.com/in/juliette-guihard/");
+    });
+
+    $(RD).on("click", function () {
+        window.open("https://www.linkedin.com/in/r%C3%A9mi-delagarde-676492151/");
+    });
+
+    $(TOD).on("click", function () {
+        window.open("https://www.linkedin.com/in/thierno-oumar-diallo-114b31163/");
+    });
+
+    /*$(ZP).on("click", function () {
+        window.open("https://creativecommons.org/licenses/by/2.0/");
+    });*/
+
+    $(JBG).on("click", function () {
+        window.open("https://www.linkedin.com/in/jean-baptiste-guy-84a6a3177/");
+    });
+
+    $(AL).on("click", function () {
+        window.open("https://www.linkedin.com/in/anthony-lusteau-336ab1154/");
+    });
 
 });

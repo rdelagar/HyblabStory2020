@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/map.css">
 
     <!--LOADER-->
-    <script src="js/loader.js" defer></script>
+    <script src="js/loader.js"></script>
     <link rel="stylesheet" href="css/loader.css">
 
     <!--FONT-->
@@ -40,11 +40,17 @@
 </head>
 <body>
 
+<div class="loader">
+    <p class="txt-loader">Chargement de l'histoire...</p>
+    <p class="pourcent">0%</p>
+    <div class="bar"></div>
+</div>
+
 <!--LOADER-->
-<div id="overlay">
+<!--<div id="overlay">
     <div id="progstat"></div>
     <div id="progress"></div>
-</div>
+</div>-->
 
 <!--ANIM SCROLL-->
 <!--<div class="center-con">
@@ -298,6 +304,13 @@
              data-horizontalThreshold="80" data-verticalThreshold="80"></div>
         <button class="abo">Vivez d'autres récits</button>
         <div class="div-txt"></div>
+        <img class="credit next" src="img/credits.svg">
+    </section>
+
+    <section class="anim-img sec-credits wait-scroll">
+        <div class="div-txt "></div>
+        <object data="img/credits-names.svg" type="image/svg+xml" id="credits-names"></object>
+        <img class="back-svg" src="img/retour.svg">
     </section>
 
 </div>

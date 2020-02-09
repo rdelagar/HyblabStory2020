@@ -11,6 +11,11 @@ section {
     background-color: white;
 }
 
+section button.abo {
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
 section button {
     font-family: Dosis;
     font-weight: bold;
@@ -52,19 +57,6 @@ section button:hover:after {
     height: 100%;
 }
 
-section button.abo {
-    color: #485F62;
-    background: #f1f5f6;
-    opacity: 0.7;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
-section button.abo:hover {
-    opacity: 1;
-    background: white;
-}
-
 section button.choice1 {
     right: 350px;
 }
@@ -97,13 +89,13 @@ section img {
 }
 
 .puce-n1 {
-    top: 45%;
-    right: 30%;
+    top: 2%;
+    right: 19%;
 }
 
 .puce-n2 {
-    top: 2%;
-    right: 19%;
+    top: 45%;
+    right: 30%;
 }
 
 .puce-n3 {
@@ -165,14 +157,14 @@ section img {
 .popup1 {
     position: absolute;
     z-index: 52;
-    width: 20%;
+    width: 25%;
     display: none;
 }
 
 .popup2 {
     position: absolute;
     z-index: 52;
-    width: 25%;
+    width: 20%;
     display: none;
 }
 
@@ -181,4 +173,33 @@ section img {
     z-index: 52;
     width: 25%;
     display: none;
+}
+
+section img.credit {
+    position: fixed;
+    z-index: 50;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 10px;
+    height: auto;
+    cursor: pointer;
+}
+
+section img.back-svg {
+    position: fixed;
+    z-index: 50;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10px;
+    height: auto;
+    cursor: pointer;
+}
+
+#credits-names {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    height: 80%;
+    width: 100%;
 }

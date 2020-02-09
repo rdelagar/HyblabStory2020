@@ -1,5 +1,8 @@
 $(document).ready(function () {
     let gn = new GyroNorm();
+    let loader = 0;
+    let totalLoader = 9;
+    let pourcent = 0;
 
     class Sketch {
         constructor(id) {
@@ -178,6 +181,15 @@ $(document).ready(function () {
             // start application
             //this.resize();
             this.render();
+            loader++;
+            pourcent = loader/totalLoader*100;
+
+            if(pourcent > 100) {
+                pourcent = 100;
+            }
+
+            $(".pourcent").html(pourcent.toFixed(0) + "%");
+            $(".bar").css("width", pourcent + "vw");
         }
 
 
