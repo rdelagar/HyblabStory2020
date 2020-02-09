@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
 .div-txt {
+    display: none;
     font-style: normal;
-    z-index: 52;
+    z-index: 40;
     color: white;
     position: fixed;
 }
@@ -140,6 +141,10 @@
         font-size: 22px;
         line-height: 28px;
     }
+
+    section button {
+        font-size: 22px;
+    }
 }
 
 @media screen and (max-width: 1500px) {
@@ -151,6 +156,10 @@
     .txt-p {
         font-size: 19px;
         line-height: 24px;
+    }
+
+    section button {
+        font-size: 19px;
     }
 }
 
@@ -164,6 +173,10 @@
         font-size: 16px;
         line-height: 18px;
     }
+
+    section button {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -176,6 +189,10 @@
         font-size: 14px;
         line-height: 21px;
     }
+
+    section button {
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -187,5 +204,9 @@
     .txt-p {
         font-size: 10px;
         line-height: 14px;
+    }
+
+    section button {
+        font-size: 10px;
     }
 }
