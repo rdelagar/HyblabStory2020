@@ -17,3 +17,7 @@
     width: 80vw;
     right: 0;
 }
+
+.anim-fleuve div.anim {
+    bottom: 0;
+}

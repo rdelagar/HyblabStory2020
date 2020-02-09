@@ -3,19 +3,15 @@
     width: 100vw;
     background-color: #f1f5f6;
     z-index: 200;
-    position: relative;
+    position: fixed;
     font-family: Dosis;
     font-size: 40px;
     color: #485F62;
 }
 
 .txt-loader {
-    position: absolute;
     padding: 0;
     margin: 0;
-    left: 50%;
-    top: 30%;
-    transform: translateX(-50%);
 }
 
 .pourcent {
@@ -36,4 +32,19 @@
     background-color: #485F62;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.loader-info {
+    position: absolute;
+    height: 50%;
+    z-index: 51;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.loader-perso {
+    padding: 10px;
+    height: 65%;
 }

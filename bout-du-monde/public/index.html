@@ -41,34 +41,13 @@
 <body>
 
 <div class="loader">
-    <p class="txt-loader">Chargement de l'histoire...</p>
+    <div class="loader-info">
+        <img class="loader-perso" src="img/loader.png">
+        <p class="txt-loader">Chargement du récit...</p>
+    </div>
     <p class="pourcent">0%</p>
     <div class="bar"></div>
 </div>
-
-<!--LOADER-->
-<!--<div id="overlay">
-    <div id="progstat"></div>
-    <div id="progress"></div>
-</div>-->
-
-<!--ANIM SCROLL-->
-<!--<div class="center-con">
-    <button class="container-scroll">
-        <span class="text-scroll">Scroll</span>
-        <span class="arrow primera next-scroll "></span>
-        <span class="arrow segunda next-scroll "></span>
-    </button>
-</div>-->
-
-<!--
-<div class="div-txt div-txt-map">
-            <p class="txt txt-title txt-title-map"></p>
-            <p class="txt txt-p txt-p-map"></p>
-        </div>
--->
-
-<button class="secret" style="position: fixed; top:0; z-index: 50">Partir seul</button>
 
 <div class="puce puce-n1">
     <div class="puce1">
@@ -115,16 +94,22 @@
                 refaire ce périple.
             </p>
         </div>
+        <img class="scroll-svg scroll-plane" src="img/scroll.svg">
     </section>
 
-    <section class="no-back">
-        <div class="div-txt"></div>
-        <img src="img/2.svg" style="height: 100vh; width: 100vw; background-color: #f0f4f5">
+    <section class="no-back anim-fleuve">
+        <div class="anim"></div>
+        <div class="div-txt div-txt-fleuve div-txt-anim">
+            <p class="txt txt-title txt-title-fleuve">“Notre seul chemin possible est de traverser le fleuve gelé”</p>
+            <p class="txt txt-p txt-p-fleuve1">En hiver, pendant huit mois, le Zanskar est coupé du monde. L’unique route permettant d’atteindre les villages est impraticable.</p>
+            <p class="txt txt-p txt-p-fleuve2">Appelée Chadar lorsqu’elle est gelée, elle est accessible durant les mois les plus froids, en janvier et février.</p>
+        </div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="no-scroll anim-attaque">
         <div class="anim"></div>
-        <button class="next">Partir à l'aventure</button>
+        <button class="next btn-story">Partir à l'aventure</button>
         <div class="div-txt"></div>
     </section>
 
@@ -137,8 +122,8 @@
                 ?</p>
         </div>
         <div class="anim"></div>
-        <button class="choice1 next tashi">Rejoindre Tashi</button>
-        <button class="choice2 next seul">Partir Seul</button>
+        <button class="choice1 next tashi btn-story">Rejoindre Tashi</button>
+        <button class="choice2 next seul btn-story">Partir Seul</button>
     </section>
 
     <section class="no-scroll no-back anim-img sec-txt-seul">
@@ -157,7 +142,7 @@
         <div id="gl1" class="gl" data-imageOriginal="img/5.jpg" data-imageDepth="img/5-prof.jpg"
              data-horizontalThreshold="40" data-verticalThreshold="40">
         </div>
-        <button class="next">Retour</button>
+        <button class="next btn-story">Rejoindre Tashi</button>
     </section>
 
     <section class="no-back anim-img sec-txt-tashi wait-scroll">
@@ -169,7 +154,8 @@
                 Nous tombons dans leurs bras avec la même complicité qu’autrefois.</p>
         </div>
         <div id="gl2" class="gl" data-imageOriginal="img/6.jpg" data-imageDepth="img/6-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="anim-img sec-txt-walk wait-scroll">
@@ -181,7 +167,8 @@
                 n’hésitent pas à nous venir en aide malgré les tentes et affaires qu’ils transportent.</p>
         </div>
         <div id="gl3" class="gl" data-imageOriginal="img/7.jpg" data-imageDepth="img/7-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="no-scroll anim-chute">
@@ -192,8 +179,8 @@
                 ami Tashi, bien plus entrainé pour ces situations délicates ?</p>
         </div>
         <div class="anim"></div>
-        <button class="choice1 next seul">S'en sortir seul</button>
-        <button class="choice2 next aide">Demander de l'aide</button>
+        <button class="choice1 next seul btn-story">S'en sortir seul</button>
+        <button class="choice2 next aide btn-story">Demander de l'aide</button>
     </section>
 
     <section class=" no-scroll no-back anim-seul">
@@ -205,7 +192,7 @@
                 situation dangereuse.</p>
         </div>
         <div class="anim"></div>
-        <button class="next">Retour</button>
+        <button class="next btn-story">Demander de l'aide</button>
     </section>
 
     <section class="no-back anim-img sec-txt-help wait-scroll">
@@ -216,7 +203,8 @@
                 circonstances, nous ont aidé à sortir de l’eau. Et, David, mon fils, s’est empressé de nous sécher.</p>
         </div>
         <div id="gl4" class="gl" data-imageOriginal="img/10.jpg" data-imageDepth="img/10-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="anim-img sec-txt-rewalk wait-scroll">
@@ -227,7 +215,8 @@
                 progression sur la glace. Au moindre faux pas c’est la chute mortelle.</p>
         </div>
         <div id="gl5" class="gl" data-imageOriginal="img/11.jpg" data-imageDepth="img/11-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="no-scroll anim-grotte">
@@ -243,8 +232,8 @@
                 devrait-on chercher une grotte ou profiter du confort des tentes ?</p>
         </div>
         <div class="anim"></div>
-        <button class="choice1 next grotte">Trouver une grotte</button>
-        <button class="choice2 next tentes">S'installer en tentes</button>
+        <button class="choice1 next grotte btn-story">Trouver une grotte</button>
+        <button class="choice2 next tentes btn-story">S'installer en tentes</button>
     </section>
 
     <section class="no-scroll no-back anim-img sec-txt-grotte">
@@ -256,8 +245,8 @@
                 indéniable pour notre voyage.</p>
         </div>
         <div id="gl6" class="gl" data-imageOriginal="img/13.jpg" data-imageDepth="img/13-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
-        <button class="next">Retour</button>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <button class="next btn-story">S'installer en tentes</button>
     </section>
 
     <section class="no-back anim-img sec-txt-tentes wait-scroll">
@@ -271,7 +260,8 @@
                 riz, lentilles et épices. Bien loin des soupes réchauffées au feu de camp.</p>
         </div>
         <div id="gl7" class="gl" data-imageOriginal="img/14.jpg" data-imageDepth="img/14-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="anim-img sec-txt-meet">
@@ -284,7 +274,8 @@
                 sortir du Zanskar par les cols.</p>
         </div>
         <div id="gl8" class="gl" data-imageOriginal="img/15.jpg" data-imageDepth="img/15-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="anim-img sec-txt-back wait-scroll">
@@ -296,12 +287,13 @@
                 capitale du Zanskar, à Leh, la capitale du Ladakh. Il en faudra encore autant pour la terminer.</p>
         </div>
         <div id="gl9" class="gl" data-imageOriginal="img/16.jpg" data-imageDepth="img/16-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
+        <img class="scroll-svg next" src="img/scroll.svg">
     </section>
 
     <section class="no-scroll anim-img">
         <div id="gl10" class="gl" data-imageOriginal="img/17.jpg" data-imageDepth="img/17-prof.jpg"
-             data-horizontalThreshold="80" data-verticalThreshold="80"></div>
+             data-horizontalThreshold="40" data-verticalThreshold="40"></div>
         <button class="abo">Vivez d'autres récits</button>
         <div class="div-txt"></div>
         <img class="credit next" src="img/credits.svg">

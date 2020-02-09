@@ -188,7 +188,7 @@ $(document).ready(function () {
                 pourcent = 100;
             }
 
-            $(".pourcent").html(pourcent.toFixed(0) + "%");
+            $(".pourcent").html(pourcent.toFixed(0) + "%").attr("pourcent", pourcent);
             $(".bar").css("width", pourcent + "vw");
         }
 

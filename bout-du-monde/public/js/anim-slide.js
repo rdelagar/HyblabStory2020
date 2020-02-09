@@ -1,10 +1,21 @@
+$('html, body').css({
+    overflow: 'hidden'
+});
+
 $(window).on("load", function () {
 
     $(".loader").hide();
 
+    $('html, body').css({
+        overflowY: 'scroll',
+    });
+
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+    }, 1)
+
     $("section").hide();
     $("section").first().show().addClass("active");
-    $("section").first().children(".div-txt").show();
 
     let scroll = false;
     let launch = false;
@@ -28,6 +39,7 @@ $(window).on("load", function () {
     });
 
     $(".next").on("click", function () {
+
         let s = $("section:visible").first();
 
         if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
@@ -35,6 +47,19 @@ $(window).on("load", function () {
             slideL(s.next());
         } else {
             slideL(s);
+        }
+    });
+
+    let one = false;
+
+    $(".scroll-plane").on("click", function () {
+        if (!launch) {
+            window.scrollTo(0, $(window).scrollTop() + 200);
+            scrollMap();
+        } else if(!one) {
+            console.log("ok")
+            $(".next").first().trigger("click");
+            one = true;
         }
     });
 
@@ -80,16 +105,19 @@ $(window).on("load", function () {
 
         s.next().children(".div-txt").delay(1000).show(0);
 
-        if (s.next().hasClass("anim-attaque")) {
-            loadAnim(0, "json/anim-attaque.json", false);
+        if(s.next().hasClass("anim-fleuve")) {
+            loadAnim(0, "json/anim-fleuve.json", false);
+            displayTxt();
+        } else if (s.next().hasClass("anim-attaque")) {
+            loadAnim(1, "json/anim-attaque.json", false);
         } else if (s.next().hasClass("anim-arrivee")) {
-            loadAnim(1, "json/anim-arrivee.json", true);
+            loadAnim(2, "json/anim-arrivee.json", true);
         } else if (s.next().hasClass("anim-chute")) {
-            loadAnim(2, "json/anim-chute.json", true);
+            loadAnim(3, "json/anim-chute.json", true);
         } else if (s.next().hasClass("anim-seul")) {
-            loadAnim(3, "json/anim-seul.json", true);
+            loadAnim(4, "json/anim-seul.json", true);
         } else if (s.next().hasClass("anim-grotte")) {
-            loadAnim(4, "json/anim-grotte.json", true);
+            loadAnim(5, "json/anim-grotte.json", true);
         } else if (s.next().hasClass("sec-txt-walk")) {
             displayPopup(1);
         } else if (s.next().hasClass("sec-txt-help")) {
@@ -150,17 +178,30 @@ $(window).on("load", function () {
     function startAnim(anim) {
         setTimeout(function () {
             anim.play();
-        }, 200);
+        }, 500);
     }
 
     function displayPopup(id) {
         $(".puce-n" + id).delay(1000).show(0);
     }
 
-    $(".secret").on("click", function () {
-        let s = $("section:visible").first();
-        slideL(s);
-    });
+    function displayTxt() {
+        $(".txt-title-fleuve").hide();
+        $(".txt-p-fleuve1").hide();
+        $(".txt-p-fleuve2").hide();
+
+        setTimeout(function () {
+            $(".txt-title-fleuve").show();
+        }, 1000);
+
+        setTimeout(function () {
+            $(".txt-p-fleuve1").show();
+        }, 2000);
+
+        setTimeout(function () {
+            $(".txt-p-fleuve2").show();
+        }, 2500);
+    }
 
     let svg = $("object")[0].contentDocument.documentElement;
     let BDM = svg.getElementsByClassName("BDM");
@@ -261,5 +302,4 @@ $(window).on("load", function () {
     $(AL).on("click", function () {
         window.open("https://www.linkedin.com/in/anthony-lusteau-336ab1154/");
     });
-
 });

@@ -5,18 +5,13 @@
     left: 0;
 }
 
-.to-hide {
-    /*visibility: hidden;*/
-    z-index: 1000;
-}
-
 /* Story */
-
 .text {
     font-size: 100vh;
 }
 
 .text p {
+    margin: 0px;
     padding-top: 250vh;
     padding-bottom: 250vh;
 }

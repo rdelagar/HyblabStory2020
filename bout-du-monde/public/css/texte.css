@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
 .div-txt {
-    display: none;
     font-style: normal;
     z-index: 40;
     color: white;
@@ -129,6 +128,33 @@
     left: 15.39%;
     right: 40%;
     top: 5.15%;
+}
+
+.div-txt-fleuve {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.txt-title-fleuve {
+    position: absolute;
+    left: 10%;
+    right: 55%;
+    top: 5.15%;
+}
+
+.txt-p-fleuve1 {
+    position: absolute;
+    left: 10%;
+    right: 55%;
+    bottom: 10%;
+}
+
+.txt-p-fleuve2 {
+    position: absolute;
+    left: 45%;
+    right: 30%;
+    top: 37%;
 }
 
 @media screen and (max-width: 1700px) {
