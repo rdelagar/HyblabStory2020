@@ -146,6 +146,10 @@ function finished(btn) {
    
    //background: 
    btn.previousElementSibling.children[1].style.background = "url('https://www.dropbox.com/s/aukpnwpj8b77tqy/play.svg?raw=1') no-repeat 0 0";
-   //console.log(btn.previousElementSibling.children[1]);
-   //transition: all 0.25s linear;
+   
+   $(".pause::after").css("-webkit-animation", "none");
+   $(".pause::after").css("-moz-animation", "none");
+   $(".pause::after").css("-ms-animation", "none");
+   $("player-controls .pause::after").css("animation", "none !important");
+
 }
