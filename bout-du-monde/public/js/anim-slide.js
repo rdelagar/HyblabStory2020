@@ -97,4 +97,9 @@ $(document).ready(function () {
         }, 200);
     }
 
+    $(".secret").on("click", function () {
+        let s = $("section:visible").first();
+        slideL(s);
+    })
+
 });

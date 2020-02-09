@@ -1,14 +1,19 @@
 .anim {
     position: absolute;
     height: 100vh;
-    width: 100vw;
     background-color: #f1f5f6;
+    width: 100vw;
 }
 
-.anim-arrivee div {
+.anim-arrivee div.anim {
     right: 0;
 }
 
-.anim-chute div {
-    background-image: url("../json/anim-chute/img_3.jpg");
+.anim-grotte {
+    background-color: #f1f5f6;
+}
+
+.anim-grotte div.anim {
+    width: 80vw;
+    right: 0;
 }

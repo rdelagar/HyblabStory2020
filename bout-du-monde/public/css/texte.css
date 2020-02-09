@@ -1,41 +1,191 @@
 @import url(http://fonts.googleapis.com/css?family=EB+Garamond);
 
-* {
+.div-txt {
+    font-style: normal;
+    z-index: 52;
+    color: white;
+    position: fixed;
+}
+
+.div-txt-anim {
     color: #485F62;
 }
 
-section p {
-    position: absolute;
-    font-style: normal;
-    color: #FFFFFF;
-    z-index: 5;
-}
-
-.txt-p {
-    font-family: Dosis;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
-}
-
-.txt-titre {
+.txt-title {
     font-family: Adobe Garamond;
     font-weight: 600;
     font-size: 40px;
     line-height: 48px;
+    margin-bottom: 25px;
 }
 
-#txt-titre-seul {
-    width: 857px;
-    height: 157px;
-    left: 261px;
-    top: 226px;
+.txt-p {
+    font-family: Dosis;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 32px;
 }
 
-#txt-seul {
-    width: 672px;
-    height: 312px;
-    left: 261px;
-    top: 408px;
+.div-txt-map {
+    left: 13.39%;
+    right: 50%;
+    top: 40.15%;
 }
 
+.div-txt-arrivee {
+    left: 6.39%;
+    right: 56%;
+    top: 10.15%;
+}
+
+.div-txt-seul {
+    left: 10.39%;
+    right: 37%;
+    top: 25.15%;
+}
+
+.txt-p-seul {
+    margin-right: 20%;
+}
+
+.div-txt-tashi {
+    left: 30.39%;
+    right: 17%;
+    top: 20.15%;
+}
+
+.txt-p-tashi {
+    margin-right: 20%;
+}
+
+.div-txt-walk {
+    left: 10.39%;
+    right: 57%;
+    top: 20.15%;
+}
+
+.div-txt-chute {
+    left: 20.39%;
+    right: 27%;
+    top: 10.15%;
+}
+
+.txt-p-chute {
+    margin-right: 20%;
+}
+
+.div-txt-seul2 {
+    left: 7.39%;
+    right: 70%;
+    top: 20.15%;
+}
+
+.txt-title-seul2 {
+    margin-right: 20%;
+}
+
+.div-txt-help {
+    left: 20.39%;
+    right: 30%;
+    top: 35.15%;
+}
+
+.txt-p-help {
+    margin-right: 35%;
+}
+
+.div-txt-rewalk {
+    left: 15.39%;
+    right: 50%;
+    bottom: 5.15%;
+}
+
+.div-txt-grotte {
+    left: 4.39%;
+    right: 71%;
+    top: 20.15%;
+}
+
+.div-txt-grotte2 {
+    left: 15.39%;
+    right: 50%;
+    bottom: 30.15%;
+}
+
+.div-txt-tentes {
+    left: 15.39%;
+    right: 40%;
+    top: 5.15%;
+}
+
+.div-txt-meet {
+    left: 6.39%;
+    right: 51%;
+    bottom: 12.15%;
+}
+
+.div-txt-back {
+    left: 15.39%;
+    right: 40%;
+    top: 5.15%;
+}
+
+@media screen and (max-width: 1700px) {
+    .txt-title {
+        font-size: 35px;
+        line-height: 42px;
+    }
+
+    .txt-p {
+        font-size: 22px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .txt-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .txt-p {
+        font-size: 19px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .txt-title {
+        font-size: 26px;
+        line-height: 31px;
+    }
+
+    .txt-p {
+        font-size: 16px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .txt-title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .txt-p {
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .txt-title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .txt-p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
