@@ -56,7 +56,7 @@ $(window).on("load", function () {
         if (!launch) {
             window.scrollTo(0, $(window).scrollTop() + 200);
             scrollMap();
-        } else if(!one) {
+        } else if (!one) {
             console.log("ok")
             $(".next").first().trigger("click");
             one = true;
@@ -94,6 +94,60 @@ $(window).on("load", function () {
         $(".popup3").hide();
     });
 
+    $(".svg-audio").hover(function () {
+        if (!$(this).hasClass("sound")) {
+            $(this).attr("src", "img/audio-hover.svg");
+        }
+    }, function () {
+        if (!$(this).hasClass("sound")) {
+            $(this).attr("src", "img/audio.svg");
+        }
+    });
+
+    $(".svg-texte").hover(function () {
+        $(this).attr("src", "img/text-hover.svg");
+    }, function () {
+        $(this).attr("src", "img/text.svg");
+    });
+
+    $(".svg-texte").on("click", function () {
+        $("section:visible").first().css("z-index", "auto");
+        $(".fond-popup").show();
+        $(".svg-audio").addClass("click");
+        $(".svg-textes-audios").addClass("click");
+        $(this).addClass("click");
+        $(this).parent().siblings().show();
+    });
+
+    $(".fond-popup, .svg-texte-audio").on("click", function () {
+        $(".fond-popup").hide();
+        $(".svg-texte-audio").hide();
+        $(".svg-texte").removeClass("click");
+        $(".svg-audio").removeClass("click");
+        $(".svg-textes-audios").remove("click");
+    });
+
+    $(".svg-audio").on("click", function () {
+        if(!$(this).hasClass("sound")) {
+            $(this).addClass("sound");
+            $(this).next()[0].play();
+        } else {
+            $(this).removeClass("sound").attr("src", "img/audio.svg")
+            $(this).next()[0].pause();
+        }
+        if ($(this).hasClass("click")) {
+            $(this).attr("src", "img/audio-close-click.svg");
+        } else {
+            $(this).attr("src", "img/audio-close.svg");
+        }
+    });
+
+    $('.svg-audio').next().on('ended', function () {
+        $('.svg-audio').removeClass("sound");
+        $('.svg-audio').attr("src", "img/audio.svg");
+    });
+
+
     function slideL(s) {
         $(".puce").hide();
         s.children(".div-txt").delay(1000).hide(0);
@@ -105,7 +159,7 @@ $(window).on("load", function () {
 
         s.next().children(".div-txt").delay(1000).show(0);
 
-        if(s.next().hasClass("anim-fleuve")) {
+        if (s.next().hasClass("anim-fleuve")) {
             loadAnim(0, "json/anim-fleuve.json", false);
             displayTxt();
         } else if (s.next().hasClass("anim-attaque")) {

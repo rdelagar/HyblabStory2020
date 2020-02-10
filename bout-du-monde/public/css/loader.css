@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100vw;
     background-color: #f1f5f6;
-    z-index: 200;
+    z-index: 99999;
     position: fixed;
     font-family: Dosis;
     font-size: 40px;
