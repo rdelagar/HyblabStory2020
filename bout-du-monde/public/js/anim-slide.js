@@ -2,6 +2,29 @@ $('html, body').css({
     overflow: 'hidden'
 });
 
+animArray = [];
+
+$(document).ready(function () {
+    loadAnim(0, "json/anim-fleuve.json", false);
+    loadAnim(1, "json/anim-attaque.json", false);
+    loadAnim(2, "json/anim-arrivee.json", true);
+    loadAnim(3, "json/anim-chute.json", true);
+    loadAnim(4, "json/anim-seul.json", true);
+    loadAnim(5, "json/anim-grotte.json", true);
+
+    function loadAnim(id, path, loop) {
+        let wrapp = document.getElementsByClassName("anim")[id];
+        let anim = bodymovin.loadAnimation({
+            wrapper: wrapp,
+            animType: 'svg',
+            loop: loop,
+            autoplay: false,
+            path: path
+        });
+        animArray[id] = anim;
+    }
+});
+
 $(window).on("load", function () {
 
     $(".loader").hide();
@@ -160,18 +183,24 @@ $(window).on("load", function () {
         s.next().children(".div-txt").delay(1000).show(0);
 
         if (s.next().hasClass("anim-fleuve")) {
-            loadAnim(0, "json/anim-fleuve.json", false);
+            //loadAnim(0, "json/anim-fleuve.json", false);
+            startAnim(animArray[0]);
             displayTxt();
         } else if (s.next().hasClass("anim-attaque")) {
-            loadAnim(1, "json/anim-attaque.json", false);
+            //loadAnim(1, "json/anim-attaque.json", false);
+            startAnim(animArray[1]);
         } else if (s.next().hasClass("anim-arrivee")) {
-            loadAnim(2, "json/anim-arrivee.json", true);
+            //loadAnim(2, "json/anim-arrivee.json", true);
+            startAnim(animArray[2]);
         } else if (s.next().hasClass("anim-chute")) {
-            loadAnim(3, "json/anim-chute.json", true);
+            //loadAnim(3, "json/anim-chute.json", true);
+            startAnim(animArray[3]);
         } else if (s.next().hasClass("anim-seul")) {
-            loadAnim(4, "json/anim-seul.json", true);
+            //loadAnim(4, "json/anim-seul.json", true);
+            startAnim(animArray[4]);
         } else if (s.next().hasClass("anim-grotte")) {
-            loadAnim(5, "json/anim-grotte.json", true);
+            //loadAnim(5, "json/anim-grotte.json", true);
+            startAnim(animArray[5]);
         } else if (s.next().hasClass("sec-txt-walk")) {
             displayPopup(1);
         } else if (s.next().hasClass("sec-txt-help")) {
@@ -217,24 +246,6 @@ $(window).on("load", function () {
         }
     }
 
-    function loadAnim(id, path, loop) {
-        let wrapp = document.getElementsByClassName("anim")[id];
-        let anim = bodymovin.loadAnimation({
-            wrapper: wrapp,
-            animType: 'svg',
-            loop: loop,
-            autoplay: false,
-            path: path
-        });
-        startAnim(anim);
-    }
-
-    function startAnim(anim) {
-        setTimeout(function () {
-            anim.play();
-        }, 500);
-    }
-
     function displayPopup(id) {
         $(".puce-n" + id).delay(1000).show(0);
     }
@@ -255,6 +266,12 @@ $(window).on("load", function () {
         setTimeout(function () {
             $(".txt-p-fleuve2").show();
         }, 2500);
+    }
+
+    function startAnim(anim) {
+        setTimeout(function () {
+            anim.play();
+        }, 500);
     }
 
     let svg = $("object")[0].contentDocument.documentElement;
