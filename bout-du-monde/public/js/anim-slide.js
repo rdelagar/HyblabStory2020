@@ -45,6 +45,8 @@ $(window).on("load", function () {
 
     $("section").on("wheel", function (e) {
 
+        $(".scroll-svg").hide();
+
         if (!launch) {
             scrollMap();
         } else if (scroll) {
@@ -75,7 +77,7 @@ $(window).on("load", function () {
 
     let one = false;
 
-    $(".scroll-plane").on("click", function () {
+    /*$(".scroll-plane").on("click", function () {
         if (!launch) {
             window.scrollTo(0, $(window).scrollTop() + 200);
             scrollMap();
@@ -84,7 +86,7 @@ $(window).on("load", function () {
             $(".next").first().trigger("click");
             one = true;
         }
-    });
+    });*/
 
     $(".back-svg").on("click", function () {
         let s = $("section:visible").first();
@@ -172,6 +174,10 @@ $(window).on("load", function () {
     $('.svg-audio').next().on('ended', function () {
         $('.svg-audio').removeClass("sound");
         $('.svg-audio').attr("src", "img/audio.svg");
+    });
+
+    $(".abo").on("click", function () {
+        window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
     });
 
 

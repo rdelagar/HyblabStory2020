@@ -53,11 +53,11 @@ section button.btn-story:hover:after {
 }
 
 section button.choice1 {
-    right: 15%;
+    right: 20%;
 }
 
 section button.choice2 {
-    left: 15%;
+    left: 20%;
 }
 
 section button.abo {
@@ -65,8 +65,18 @@ section button.abo {
     transform: translate(0, -50%);
 }
 
+section button.btn-white {
+    border-color: white;
+    color: white;
+}
+
+section button.btn-white:hover {
+    border: none;
+}
+
 section button.abo:hover {
-    background-color: white;
+    border: white solid 2px;
+    background-color: rgba(241, 245, 246, 0.3);
 }
 
 /*section img {
@@ -179,11 +189,11 @@ section button.abo:hover {
     display: none;
 }
 
-section img.credit {
+section img.credits {
     height: 8%;
     position: fixed;
     z-index: 50;
-    bottom: 10px;
+    bottom: 20px;
     cursor: pointer;
     left: 50%;
     transform: translateX(-50%);
@@ -193,7 +203,7 @@ section img.back-svg {
     height: 8%;
     position: fixed;
     z-index: 50;
-    top: 10px;
+    top: 20px;
     cursor: pointer;
     left: 50%;
     transform: translateX(-50%);
@@ -203,7 +213,7 @@ section img.scroll-svg {
     height: 8%;
     position: fixed;
     z-index: 50;
-    bottom: 10px;
+    bottom: 20px;
     cursor: pointer;
     left: 50%;
     transform: translateX(-50%);

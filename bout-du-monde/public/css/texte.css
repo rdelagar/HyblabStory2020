@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(//db.onlinewebfonts.com/c/6da1de192f592a384680f395c7a371ff?family=Garamond+Premier+Pro);
 
 .div-txt {
     font-style: normal;
@@ -14,7 +14,7 @@
 }
 
 .txt-title {
-    font-family: Adobe Garamond;
+    font-family: Adobe Garamond Semibold;
     font-weight: 600;
     font-size: 40px;
     line-height: 48px;
