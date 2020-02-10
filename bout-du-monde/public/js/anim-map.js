@@ -24,7 +24,7 @@
     (0, s.default)({
         textContainer: document.querySelector(".text"),
         mapSrc: "img/carte.svg",
-        trailVisitedColor: "#47DBB4",
+        trailVisitedColor: "#EC5630",
         fontPresentColor: "#5D5C56"
     }).appendTo(".map-container")
 }, function(t, e, i) {
@@ -3545,7 +3545,7 @@
                             },
                             h = function(e, i) {
                                 var r, n, s = 15;
-                                t.ctx.font = u(i, "normal", "bold") + " " + u(i, s, 1.2 * s) + "px Arial", t.ctx.textAlign = "left", t.ctx.textBaseline = "middle", t.ctx.fillStyle = u(i, t.props.fontPastColor, t.props.fontPresentColor, t.props.fontFutureColor), t.ctx.strokeStyle = "#FDFCEC", t.ctx.lineWidth = 6;
+                                t.ctx.font = u(i, "bold", "bold") + " " + u(i, s, 1.8 * s) + "px Dosis", t.ctx.textAlign = "left", t.ctx.textBaseline = "middle", t.ctx.fillStyle = u(i, t.props.fontPastColor, t.props.fontPresentColor, t.props.fontFutureColor), t.ctx.strokeStyle = "transparent", t.ctx.lineWidth = 6;
                                 var o = (0, m.add)(e, {
                                     x: 20 * j,
                                     y: 0

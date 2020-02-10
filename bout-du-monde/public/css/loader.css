@@ -5,13 +5,8 @@
     z-index: 99999;
     position: fixed;
     font-family: Dosis;
-    font-size: 30px;
+    font-size: 20px;
     color: #485F62;
-}
-
-.txt-loader {
-    padding: 0;
-    margin: 0;
 }
 
 .pourcent {
@@ -35,16 +30,22 @@
 }
 
 .loader-info {
-    position: absolute;
     height: 50%;
     z-index: 51;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    position: relative;
 }
 
 .loader-perso {
-    padding: 10px;
-    height: 65%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 70%;
+}
+
+.txt-loader {
+    text-align: center;
 }

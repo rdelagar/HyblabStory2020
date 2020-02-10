@@ -118,36 +118,40 @@ $(window).on("load", function () {
     });
 
     $(".svg-audio").hover(function () {
-        if (!$(this).hasClass("sound")) {
+        if (!$(this).hasClass("sound") && !$(this).hasClass("click")) {
             $(this).attr("src", "img/audio-hover.svg");
         }
     }, function () {
-        if (!$(this).hasClass("sound")) {
+        if (!$(this).hasClass("sound") && !$(this).hasClass("click")) {
             $(this).attr("src", "img/audio.svg");
         }
     });
 
     $(".svg-texte").hover(function () {
-        $(this).attr("src", "img/text-hover.svg");
+        if (!$(this).hasClass("click")) {
+            $(this).attr("src", "img/text-hover.svg");
+        }
     }, function () {
-        $(this).attr("src", "img/text.svg");
+        if (!$(this).hasClass("click")) {
+            $(this).attr("src", "img/text.svg");
+        }
     });
 
     $(".svg-texte").on("click", function () {
         $("section:visible").first().css("z-index", "auto");
         $(".fond-popup").show();
-        $(".svg-audio").addClass("click");
-        $(".svg-textes-audios").addClass("click");
-        $(this).addClass("click");
+        $(".svg-audio").addClass("click").attr("src", "img/audio-white.svg");
+        $(".svg-textes-audios").addClass("click").attr("src", "img/text-white.svg");
+        $(this).addClass("click").attr("src", "img/texts-audios-white.svg");
         $(this).parent().siblings().show();
     });
 
     $(".fond-popup, .svg-texte-audio").on("click", function () {
         $(".fond-popup").hide();
         $(".svg-texte-audio").hide();
-        $(".svg-texte").removeClass("click");
-        $(".svg-audio").removeClass("click");
-        $(".svg-textes-audios").remove("click");
+        $(".svg-texte").removeClass("click").attr("src", "img/text.svg");
+        $(".svg-audio").removeClass("click").attr("src", "img/audio.svg");
+        $(".svg-textes-audios").remove("click").attr("src", "img/texts-audios.svg");
     });
 
     $(".svg-audio").on("click", function () {
@@ -159,7 +163,7 @@ $(window).on("load", function () {
             $(this).next()[0].pause();
         }
         if ($(this).hasClass("click")) {
-            $(this).attr("src", "img/audio-close-click.svg");
+            $(this).attr("src", "img/audio-close-white.svg");
         } else {
             $(this).attr("src", "img/audio-close.svg");
         }

@@ -2,12 +2,14 @@
 
 .div-txt {
     font-style: normal;
-    z-index: 40;
+    z-index: 60;
     color: white;
     position: fixed;
+    left: 13.8%;
+    top: 15.2%;
 }
 
-.div-txt-anim {
+.div-txt-anim, .txt-anim {
     color: #485F62;
 }
 
@@ -16,7 +18,7 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 48px;
-    margin-bottom: 25px;
+    margin: 0px 0px 30px;
 }
 
 .txt-p {
@@ -27,134 +29,70 @@
 }
 
 .div-txt-map {
-    left: 13.39%;
-    right: 50%;
-    top: 40.15%;
-}
-
-.div-txt-arrivee {
-    left: 6.39%;
-    right: 56%;
-    top: 10.15%;
-}
-
-.div-txt-seul {
-    left: 10.39%;
-    right: 37%;
-    top: 25.15%;
-}
-
-.txt-p-seul {
-    margin-right: 20%;
-}
-
-.div-txt-tashi {
-    left: 30.39%;
-    right: 17%;
-    top: 20.15%;
-}
-
-.txt-p-tashi {
-    margin-right: 20%;
-}
-
-.div-txt-walk {
-    left: 10.39%;
-    right: 57%;
-    top: 20.15%;
-}
-
-.div-txt-chute {
-    left: 20.39%;
-    right: 27%;
-    top: 10.15%;
-}
-
-.txt-p-chute {
-    margin-right: 20%;
-}
-
-.div-txt-seul2 {
-    left: 7.39%;
-    right: 70%;
-    top: 20.15%;
-}
-
-.txt-title-seul2 {
-    margin-right: 20%;
-}
-
-.div-txt-help {
-    left: 20.39%;
-    right: 30%;
-    top: 35.15%;
-}
-
-.txt-p-help {
-    margin-right: 35%;
-}
-
-.div-txt-rewalk {
-    left: 15.39%;
-    right: 50%;
-    bottom: 5.15%;
-}
-
-.div-txt-grotte {
-    left: 4.39%;
-    right: 71%;
-    top: 20.15%;
-}
-
-.div-txt-grotte2 {
-    left: 15.39%;
-    right: 50%;
-    bottom: 30.15%;
-}
-
-.div-txt-tentes {
-    left: 15.39%;
-    right: 40%;
-    top: 5.15%;
-}
-
-.div-txt-meet {
-    left: 6.39%;
-    right: 51%;
-    bottom: 12.15%;
-}
-
-.div-txt-back {
-    left: 15.39%;
-    right: 40%;
-    top: 5.15%;
-}
-
-.div-txt-fleuve {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-
-.txt-title-fleuve {
-    position: absolute;
-    left: 10%;
-    right: 55%;
-    top: 5.15%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .txt-p-fleuve1 {
     position: absolute;
-    left: 10%;
-    right: 55%;
-    bottom: 10%;
+    bottom: 18.6%;
+    left: 13.8%;
+}
+
+.txt-p-fleuve1 {
+    position: absolute;
+    bottom: 18.6%;
+    left: 16.4%;
 }
 
 .txt-p-fleuve2 {
     position: absolute;
-    left: 45%;
-    right: 30%;
-    top: 37%;
+    top: 36.8%;
+    right: 24.9%;
+}
+
+.div-txt-seul {
+    top: 20.7%;
+}
+
+.div-txt-tashi {
+    top: 23.8%;
+}
+
+.div-txt-walk {
+    top: 20.2%;
+}
+
+.div-txt-chute {
+    top: 24.8%;
+}
+
+.div-txt-seul2 {
+    top: 25.1%;
+}
+
+.div-txt-help {
+    top: 36%;
+}
+
+.div-txt-rewalk {
+    top: 65.1%;
+}
+
+.div-txt-grotte {
+    top: 30.4%;
+}
+
+.div-txt-grotte2 {
+    top: 56.6%;
+}
+
+.div-txt-meet {
+    top: 59.4%;
+}
+
+.div-txt-back {
+    top: 21%;
 }
 
 @media screen and (max-width: 1700px) {
