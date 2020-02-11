@@ -50,3 +50,7 @@
    display: none;
    cursor: pointer;
 }
+
+.player:hover .player-txt {
+   visibility: visible !important;
+}

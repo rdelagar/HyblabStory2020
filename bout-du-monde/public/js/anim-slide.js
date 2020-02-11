@@ -9,7 +9,7 @@ $(document).ready(function () {
     loadAnim(1, "json/anim-attaque.json", false);
     loadAnim(2, "json/anim-arrivee.json", false);
     loadAnim(3, "json/anim-chute.json", false);
-    loadAnim(4, "json/anim-seul.json", true);
+    loadAnim(4, "json/anim-seul.json", false);
     loadAnim(5, "json/anim-grotte.json", true);
 
     function loadAnim(id, path, loop) {
@@ -119,7 +119,7 @@ $(window).on("load", function () {
         $(".popup3").hide();
     });
 
-    $(".player").hover(function () {
+    /*$(".player").hover(function () {
         if (!$(this).hasClass("click")) {
             $(this).attr("src", "img/player-hover.svg");
             $(".player-txt").css("visibility", "");
@@ -175,7 +175,7 @@ $(window).on("load", function () {
             $(".player-txt").attr("src", "img/player-txt-close.svg");
             $(this).addClass("click");
         }
-    });
+    });*/
 
     let first = true;
     $(".player-html").on('ended', function () {
@@ -385,7 +385,7 @@ $(window).on("load", function () {
     function startAnim(anim) {
         setTimeout(function () {
             anim.play();
-        }, 500);
+        }, 1100);
     }
 
     let svg = $("object")[0].contentDocument.documentElement;
