@@ -241,6 +241,6 @@ section img.scroll-svg {
     right: 25px;
     top: 50%;
     transform: translateY(-50%);
-    height: 30%;
+    height: 25%;
     z-index: 55;
 }
