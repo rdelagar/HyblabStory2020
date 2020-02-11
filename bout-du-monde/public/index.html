@@ -74,6 +74,13 @@
 <img class="popup2" src="img/Frame2.svg">
 <img class="popup3" src="img/Frame3.svg">
 
+<div class="sound-icon">
+    <img class="sound player-txt" src="img/player-txt.svg" style="visibility: hidden">
+    <img class="sound player" src="img/player.svg">
+    <img class="sound script" src="img/script.svg">
+    <img class="sound script-txt" src="img/script-txt.svg" style="visibility: hidden">
+</div>
+
 <div class="fond-popup"></div>
 
 <!--SECTION HISTOIRE-->
@@ -100,14 +107,11 @@
         </div>
         <img class="scroll-svg" src="img/scroll.svg">
         <div class="wrapper">
-            <img class="svg-audio" src="img/audio.svg">
-            <audio class="player">
+            <audio class="player-html">
                 <source src="audios/screen1.mp3" type="audio/mp3">
             </audio>
-            <img class="svg-texte" src="img/text.svg">
-            <img class="svg-textes-audios" src="img/texts-audios.svg" hidden>
         </div>
-        <img class="svg-texte-audio" src="img/text-audio-1.svg">
+        <img class="wrapper-popup" src="img/text-audio-1.svg">
     </section>
 
     <section class="no-back sec-anim anim-fleuve">
@@ -122,6 +126,11 @@
         <p class="txt txt-p txt-p-fleuve2 txt-anim">Appelée Chadar lorsqu’elle est gelée, elle est accessible<br/>
             durant les mois
             les plus froids, en janvier et février.</p>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/eau-qui-coule.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-scroll sec-anim anim-attaque">
@@ -129,14 +138,11 @@
         <button class="next btn-story">Partir à l'aventure</button>
         <div class="div-txt"></div>
         <div class="wrapper">
-            <img class="svg-audio" src="img/audio.svg">
-            <audio class="player">
+            <audio class="player-html">
                 <source src="audios/hover-jacques.mp3" type="audio/mp3">
             </audio>
-            <img class="svg-texte" src="img/text.svg">
-            <img class="svg-textes-audios" src="img/texts-audios.svg">
         </div>
-        <img class="svg-texte-audio" src="img/text-audio-2.svg">
+        <img class="wrapper-popup" src="img/text-audio-2.svg">
     </section>
 
     <section class="no-scroll sec-anim anim-arrivee">
@@ -154,6 +160,11 @@
         <div class="anim"></div>
         <button class="choice1 next tashi btn-story">Rejoindre Tashi</button>
         <button class="choice2 next seul btn-story">Partir Seul</button>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-scroll no-back anim-img sec-txt-seul">
@@ -176,6 +187,11 @@
         <div id="gl1" class="gl" data-imageOriginal="img/5.jpg" data-imageDepth="img/5-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20">
         </div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/pas-neige-2.mp3" type="audio/mp3">
+            </audio>
+        </div>
         <button class="next btn-story btn-white">Rejoindre Tashi</button>
     </section>
 
@@ -191,6 +207,11 @@
         </div>
         <div id="gl2" class="gl" data-imageOriginal="img/6.jpg" data-imageDepth="img/6-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/eau-qui-coule.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="anim-img sec-txt-walk wait-scroll">
@@ -206,6 +227,11 @@
         </div>
         <div id="gl3" class="gl" data-imageOriginal="img/7.jpg" data-imageDepth="img/7-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/pas-neige-2.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-scroll sec-anim anim-chute">
@@ -220,14 +246,14 @@
         <button class="choice1 next seul btn-story">S'en sortir seul</button>
         <button class="choice2 next aide btn-story">Demander de l'aide</button>
         <div class="wrapper">
-            <img class="svg-audio" src="img/audio.svg">
-            <audio class="player">
+            <audio class="player-html">
+                <source src="audios/chute-eau.mp3" type="audio/mp3">
+            </audio>
+            <audio class="player-html">
                 <source src="audios/chute-de-jacques-.mp3" type="audio/mp3">
             </audio>
-            <img class="svg-texte" src="img/text.svg">
-            <img class="svg-textes-audios" src="img/texts-audios.svg">
         </div>
-        <img class="svg-texte-audio" src="img/text-audio-3.svg">
+        <img class="wrapper-popup" src="img/text-audio-3.svg">
     </section>
 
     <section class=" no-scroll no-back sec-anim anim-seul">
@@ -243,6 +269,11 @@
         </div>
         <div class="anim"></div>
         <button class="next btn-story">Demander de l'aide</button>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/eau-qui-coule.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-back anim-img sec-txt-help wait-scroll">
@@ -257,6 +288,11 @@
         </div>
         <div id="gl4" class="gl" data-imageOriginal="img/10.jpg" data-imageDepth="img/10-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/eau-qui-coule.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="anim-img sec-txt-rewalk wait-scroll">
@@ -270,14 +306,11 @@
         <div id="gl5" class="gl" data-imageOriginal="img/11.jpg" data-imageDepth="img/11-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
         <div class="wrapper">
-            <img class="svg-audio" src="img/audio.svg">
-            <audio class="player">
+            <audio class="player-html">
                 <source src="audios/reprendre-la-marche-.mp3" type="audio/mp3">
             </audio>
-            <img class="svg-texte" src="img/text.svg">
-            <img class="svg-textes-audios" src="img/texts-audios.svg">
         </div>
-        <img class="svg-texte-audio" src="img/text-audio-4.svg">
+        <img class="wrapper-popup" src="img/text-audio-4.svg">
     </section>
 
     <section class="no-scroll sec-anim anim-grotte">
@@ -298,6 +331,11 @@
         <div class="anim"></div>
         <button class="choice1 next grotte btn-story">Trouver une grotte</button>
         <button class="choice2 next tentes btn-story">S'installer en tentes</button>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-scroll no-back anim-img sec-txt-grotte">
@@ -313,6 +351,11 @@
         <div id="gl6" class="gl" data-imageOriginal="img/13.jpg" data-imageDepth="img/13-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
         <button class="next btn-story btn-white">S'installer en tentes</button>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/eau-qui-coule.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-back anim-img sec-txt-tentes wait-scroll">
@@ -330,6 +373,11 @@
         </div>
         <div id="gl7" class="gl" data-imageOriginal="img/14.jpg" data-imageDepth="img/14-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="anim-img sec-txt-meet">
@@ -346,14 +394,11 @@
         <div id="gl8" class="gl" data-imageOriginal="img/15.jpg" data-imageDepth="img/15-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
         <div class="wrapper">
-            <img class="svg-audio" src="img/audio.svg">
-            <audio class="player">
+            <audio class="player-html">
                 <source src="audios/rencontre.mp3" type="audio/mp3">
             </audio>
-            <img class="svg-texte" src="img/text.svg">
-            <img class="svg-textes-audios" src="img/texts-audios.svg">
         </div>
-        <img class="svg-texte-audio" src="img/text-audio-5.svg">
+        <img class="wrapper-popup" src="img/text-audio-5.svg">
     </section>
 
     <section class="anim-img sec-txt-back wait-scroll">
@@ -369,6 +414,11 @@
         </div>
         <div id="gl9" class="gl" data-imageOriginal="img/16.jpg" data-imageDepth="img/16-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="no-scroll anim-img">
@@ -377,6 +427,11 @@
         <button class="abo btn-white">Vivez d'autres récits</button>
         <div class="div-txt"></div>
         <img class="credits next" src="img/credits.svg">
+        <div class="wrapper">
+            <audio class="player-html">
+                <source src="audios/musique-ambiance.mp3" type="audio/mp3">
+            </audio>
+        </div>
     </section>
 
     <section class="anim-img sec-credits wait-scroll">

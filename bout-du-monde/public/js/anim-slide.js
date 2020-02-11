@@ -119,7 +119,78 @@ $(window).on("load", function () {
         $(".popup3").hide();
     });
 
-    $(".svg-audio").hover(function () {
+    $(".player").hover(function () {
+        if(!$(this).hasClass("click")) {
+            $(this).attr("src", "img/player-hover.svg");
+            $(".player-txt").css("visibility", "");
+        } else {
+            $(".player-txt").css("visibility", "");
+        }
+    }, function () {
+        if(!$(this).hasClass("click")) {
+            $(this).attr("src", "img/player.svg");
+            $(".player-txt").css("visibility", "hidden");
+        } else {
+            $(".player-txt").css("visibility", "hidden");
+        }
+    });
+
+    $(".script").hover(function () {
+        $(this).attr("src", "img/script-hover.svg");
+        $(".script-txt").css("visibility", "");
+    }, function () {
+        $(this).attr("src", "img/script.svg");
+        $(".script-txt").css("visibility", "hidden");
+    });
+
+    $(".script").on("click", function (e) {
+        if(!$(this).hasClass("clicked")) {
+            $("section:visible").first().css("z-index", "auto");
+            e.stopPropagation();
+            $(".wrapper:visible").next().show();
+            $(".fond-popup").show();
+            $(this).addClass("clicked");
+        } else {
+            $(this).removeClass("clicked");
+        }
+    });
+
+    $(".player").on("click", function (e) {
+        e.stopPropagation();
+        if ($(this).attr("src") === "img/player-close.svg") {
+            $(this).attr("src", "img/player.svg");
+            $(".player-txt").attr("src", "img/player-txt.svg");
+            $(this).removeClass("click");
+            $(".wrapper:visible").children()[0].pause();
+        } else {
+            $(".wrapper:visible").children()[0].play();
+            $(this).attr("src", "img/player-close.svg");
+            $(".player-txt").attr("src", "img/player-txt-close.svg");
+            $(this).addClass("click");
+        }
+    });
+
+    let first = true;
+    $(".player-html").on('ended', function () {
+        if($(".wrapper:visible audio").children().length > 1 && first) {
+            $(".wrapper:visible audio")[1].play();
+            first = false
+        } else {
+            first = true;
+            $(".player").attr("src", "img/player.svg");
+            $(".player-txt").attr("src", "img/player-txt.svg");
+            $(".player").removeClass("click");
+        }
+    });
+
+    $(window).on("click", function () {
+       $(".wrapper-popup").hide();
+       $(".fond-popup").hide();
+        $(".script").removeClass("clicked");
+    });
+
+
+    /*$(".svg-audio").hover(function () {
         if (!$(this).hasClass("sound") && !$(this).hasClass("click")) {
             $(this).attr("src", "img/audio-hover.svg");
         }
@@ -174,14 +245,26 @@ $(window).on("load", function () {
     $('.svg-audio').next().on('ended', function () {
         $('.svg-audio').removeClass("sound");
         $('.svg-audio').attr("src", "img/audio.svg");
-    });
+    });*/
 
     $(".abo").on("click", function () {
         window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
     });
 
+    function soundReinit() {
+        if($(".wrapper:visible audio").children().length > 1) {
+            $(".wrapper:visible audio")[1].pause();
+        }
+        $(".wrapper:visible audio")[0].pause();
+        $(".wrapper:visible").children()[0].pause();
+        $(".player").attr("src", "img/player.svg");
+        $(".player-txt").attr("src", "img/player-txt.svg");
+        $(window).trigger("click");
+    }
+
 
     function slideL(s) {
+        soundReinit()
         $(".puce").hide();
         s.children(".div-txt").delay(1000).hide(0);
 
@@ -221,6 +304,8 @@ $(window).on("load", function () {
     }
 
     function slideR(s) {
+        soundReinit()
+
         s.children(".div-txt").delay(1000).hide(0);
         $(".puce").hide();
         s.css("z-index", "-1");
