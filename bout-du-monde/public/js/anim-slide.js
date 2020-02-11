@@ -7,8 +7,8 @@ animArray = [];
 $(document).ready(function () {
     loadAnim(0, "json/anim-fleuve.json", false);
     loadAnim(1, "json/anim-attaque.json", false);
-    loadAnim(2, "json/anim-arrivee.json", true);
-    loadAnim(3, "json/anim-chute.json", true);
+    loadAnim(2, "json/anim-arrivee.json", false);
+    loadAnim(3, "json/anim-chute.json", false);
     loadAnim(4, "json/anim-seul.json", true);
     loadAnim(5, "json/anim-grotte.json", true);
 
