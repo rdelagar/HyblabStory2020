@@ -281,7 +281,7 @@ $(window).on("load", function () {
         /*if($(s).next().hasClass("sound-w")) {
             allw();
         }*/
-        soundReinit()
+        soundReinit();
         $(".puce").hide();
         s.children(".div-txt").delay(1000).hide(0);
 
@@ -357,6 +357,8 @@ $(window).on("load", function () {
             launch = true;
             let s = $("section:visible").first();
             $("section").css({"top": $(".main").height() - s.next().height()});
+        } else if($(window).scrollTop() + $(window).height() + 400 >= $(document).height()) {
+            $(".menu:visible").attr("src", "img/menu/menu2.svg")
         }
     }
 
