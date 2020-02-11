@@ -249,3 +249,26 @@ section img.scroll-svg {
     -o-transition: height 0.5s ease;
     transition: height 0.5s ease;
 }
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 90;
+    height: 100vh;
+    width: 100vw;
+    background-color: #77BDC4;
+}
+
+.img-bdm {
+    height: 2%;
+}
+
+.div-btn-intro {
+    text-align: center;
+}
+
+.btn-intro {
+    width: 40%;
+}
