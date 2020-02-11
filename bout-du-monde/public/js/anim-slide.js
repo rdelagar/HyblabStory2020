@@ -196,6 +196,17 @@ $(window).on("load", function () {
         $(".script").removeClass("clicked");
     });
 
+    $(".menu").hover(function () {
+        $(this).attr("src", $(this).attr("data") + "-h.svg");
+        $(this).css("height", '35%');
+    }, function () {
+        $(this).attr("src", $(this).attr("data") + ".svg");
+        $(this).css("top", '50%');
+        $(this).css("transform", "translateY(-50%)")
+        $(this).css("height", '25%');
+    });
+
+
 
     /*$(".svg-audio").hover(function () {
         if (!$(this).hasClass("sound") && !$(this).hasClass("click")) {
