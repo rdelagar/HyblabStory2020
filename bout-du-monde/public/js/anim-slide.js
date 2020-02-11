@@ -120,14 +120,14 @@ $(window).on("load", function () {
     });
 
     $(".player").hover(function () {
-        if(!$(this).hasClass("click")) {
+        if (!$(this).hasClass("click")) {
             $(this).attr("src", "img/player-hover.svg");
             $(".player-txt").css("visibility", "");
         } else {
             $(".player-txt").css("visibility", "");
         }
     }, function () {
-        if(!$(this).hasClass("click")) {
+        if (!$(this).hasClass("click")) {
             $(this).attr("src", "img/player.svg");
             $(".player-txt").css("visibility", "hidden");
         } else {
@@ -136,22 +136,29 @@ $(window).on("load", function () {
     });
 
     $(".script").hover(function () {
-        $(this).attr("src", "img/script-hover.svg");
-        $(".script-txt").css("visibility", "");
+        if (!$("section:visible").first().hasClass("no-script")) {
+            $(this).attr("src", "img/script-hover.svg");
+            $(".script-txt").css("visibility", "");
+            $(this).css("cursor", "pointer");
+        } else {
+            $(this).css("cursor", "auto");
+        }
     }, function () {
         $(this).attr("src", "img/script.svg");
         $(".script-txt").css("visibility", "hidden");
     });
 
     $(".script").on("click", function (e) {
-        if(!$(this).hasClass("clicked")) {
-            $("section:visible").first().css("z-index", "auto");
-            e.stopPropagation();
-            $(".wrapper:visible").next().show();
-            $(".fond-popup").show();
-            $(this).addClass("clicked");
-        } else {
-            $(this).removeClass("clicked");
+        if (!$("section:visible").first().hasClass("no-script")) {
+            if (!$(this).hasClass("clicked")) {
+                $("section:visible").first().css("z-index", "auto");
+                e.stopPropagation();
+                $(".wrapper:visible").next().show();
+                $(".fond-popup").show();
+                $(this).addClass("clicked");
+            } else {
+                $(this).removeClass("clicked");
+            }
         }
     });
 
@@ -172,7 +179,7 @@ $(window).on("load", function () {
 
     let first = true;
     $(".player-html").on('ended', function () {
-        if($(".wrapper:visible audio").children().length > 1 && first) {
+        if ($(".wrapper:visible audio").children().length > 1 && first) {
             $(".wrapper:visible audio")[1].play();
             first = false
         } else {
@@ -184,8 +191,8 @@ $(window).on("load", function () {
     });
 
     $(window).on("click", function () {
-       $(".wrapper-popup").hide();
-       $(".fond-popup").hide();
+        $(".wrapper-popup").hide();
+        $(".fond-popup").hide();
         $(".script").removeClass("clicked");
     });
 
@@ -252,7 +259,7 @@ $(window).on("load", function () {
     });
 
     function soundReinit() {
-        if($(".wrapper:visible audio").children().length > 1) {
+        if ($(".wrapper:visible audio").children().length > 1) {
             $(".wrapper:visible audio")[1].pause();
         }
         $(".wrapper:visible audio")[0].pause();
@@ -262,8 +269,18 @@ $(window).on("load", function () {
         $(window).trigger("click");
     }
 
+    function allw() {
+        $(".player").attr("src", "img/player-w.svg");
+        $(".script").attr("src", "img/script-w.svg");
+        $(".player-txt").attr("src", "img/player-txt-w.svg");
+        $(".script-txt").attr("src", "img/script-txt-w.svg");
+    }
+
 
     function slideL(s) {
+        /*if($(s).next().hasClass("sound-w")) {
+            allw();
+        }*/
         soundReinit()
         $(".puce").hide();
         s.children(".div-txt").delay(1000).hide(0);
@@ -305,7 +322,9 @@ $(window).on("load", function () {
 
     function slideR(s) {
         soundReinit()
-
+        /*if($(s).next().hasClass("sound-w")) {
+            allw();
+        }*/
         s.children(".div-txt").delay(1000).hide(0);
         $(".puce").hide();
         s.css("z-index", "-1");
