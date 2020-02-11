@@ -206,6 +206,22 @@ $(window).on("load", function () {
         $(this).css("height", '25%');
     });
 
+    $(".script").hover(function () {
+        $(this).attr("src", $(this).attr("data") + "-h.svg");
+        $(".script-txt").css("visibility", "");
+    }, function () {
+        $(this).attr("src", $(this).attr("data") + ".svg");
+        $(".script-txt").css("visibility", "hidden");
+    });
+
+    $(".player").hover(function () {
+        $(this).attr("src", $(this).attr("data") + "-h.svg");
+        $(".player-txt").css("visibility", "");
+    }, function () {
+        $(this).attr("src", $(this).attr("data") + ".svg");
+        $(".player-txt").css("visibility", "hidden");
+    });
+
 
 
     /*$(".svg-audio").hover(function () {
@@ -269,7 +285,7 @@ $(window).on("load", function () {
         window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
     });
 
-    function soundReinit() {
+    /*function soundReinit() {
         if ($(".wrapper:visible audio").children().length > 1) {
             $(".wrapper:visible audio")[1].pause();
         }
@@ -278,21 +294,22 @@ $(window).on("load", function () {
         $(".player").attr("src", "img/player.svg");
         $(".player-txt").attr("src", "img/player-txt.svg");
         $(window).trigger("click");
-    }
+    }*/
 
+    /*
     function allw() {
         $(".player").attr("src", "img/player-w.svg");
         $(".script").attr("src", "img/script-w.svg");
         $(".player-txt").attr("src", "img/player-txt-w.svg");
         $(".script-txt").attr("src", "img/script-txt-w.svg");
-    }
+    }*/
 
 
     function slideL(s) {
         /*if($(s).next().hasClass("sound-w")) {
             allw();
         }*/
-        soundReinit();
+        //soundReinit();
         $(".puce").hide();
         s.children(".div-txt").delay(1000).hide(0);
 
@@ -332,7 +349,7 @@ $(window).on("load", function () {
     }
 
     function slideR(s) {
-        soundReinit()
+        //soundReinit()
         /*if($(s).next().hasClass("sound-w")) {
             allw();
         }*/
@@ -382,15 +399,15 @@ $(window).on("load", function () {
 
         setTimeout(function () {
             $(".txt-title-fleuve").show();
-        }, 1000);
-
-        setTimeout(function () {
-            $(".txt-p-fleuve1").show();
         }, 2000);
 
         setTimeout(function () {
+            $(".txt-p-fleuve1").show();
+        }, 2600);
+
+        setTimeout(function () {
             $(".txt-p-fleuve2").show();
-        }, 2500);
+        }, 2800);
     }
 
     function startAnim(anim) {
