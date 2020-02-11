@@ -119,6 +119,14 @@ $(window).on("load", function () {
         $(".popup3").hide();
     });
 
+    $(".btn-intro1").on("click", function () {
+       $(".intro").hide();
+    });
+
+    $(".btn-intro2").on("click", function () {
+        window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
+    });
+
     /*$(".player").hover(function () {
         if (!$(this).hasClass("click")) {
             $(this).attr("src", "img/player-hover.svg");
