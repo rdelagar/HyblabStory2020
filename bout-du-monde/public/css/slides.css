@@ -252,6 +252,25 @@ section img.scroll-svg {
     height: 30%;
 }
 
+.img-casque {
+    height: 22%;
+}
+
+
+.bar-casque {
+    height: 10px;
+    width: 50%;
+    background: white;
+    border-radius: 10px;
+    margin: 90px 10px 10px;
+}
+
+.bar2-casque {
+    background-color: #485F62;
+    height: 10px;
+    border-radius: 10px;
+}
+
 .btn-intro {
     font-family: Dosis;
     font-weight: bold;
@@ -263,8 +282,7 @@ section img.scroll-svg {
     border: none;
     color: #77BDC4;
     width: 300px;
-    margin: 10px;
-    margin-top: 90px;
+    margin: 90px 10px 10px;
 }
 
 .btn-intro:hover {

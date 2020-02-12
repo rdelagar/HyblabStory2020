@@ -10,7 +10,11 @@ function jsCall() {
 
 window.onload = jsCall;
 
+
 $(document).ready(function () {
+    $(".intro1").show();
+    $(".intro2").hide();
+
 
     $("svg").attr("height", "150px");
 
@@ -128,10 +132,30 @@ function load() {
 
     $(".btn-intro1").on("click", function () {
         $(".intro").hide();
-        $('html, body').css({
-            overflowY: 'scroll',
-        });
+        $(".intro2").show();
+        f();
     });
+
+    let size = 100;
+    let i = 0;
+    function f() {
+        $(".bar2-casque").css("width", i + "%");
+        i++;
+        if( i <= size ){
+            setTimeout( f, 60 );
+        } else {
+            $(".intro2").hide();
+            $('html, body').css({
+                overflowY: 'scroll',
+            });
+        }
+    }
+
+    /*$('html, body').css({
+        overflowY: 'scroll',
+    });*/
+
+
 
     $(".btn-intro2").on("click", function () {
         window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
