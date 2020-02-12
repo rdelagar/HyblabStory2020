@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bouts du monde</title>
 
     <!--JQUERY-->
-    <script src="js/jquery3.1.0.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
+    <script src="js/lib/jquery3.1.0.min.js"></script>
+    <script src="js/lib/jquery-ui.min.js"></script>
 
+    <!--MAP-->
     <link rel="stylesheet" href="css/map.css">
+    <script src="js/map.js"></script>
+
+    <!--AUDIO-->
     <link rel="stylesheet" href="css/audio.css">
 
     <!--LOADER-->
-    <script src="js/loader.js"></script>
     <link rel="stylesheet" href="css/loader.css">
 
-    <!--FONT-->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis&display=swap">-->
-    <!--<link href="//db.onlinewebfonts.com/c/6da1de192f592a384680f395c7a371ff?family=Garamond+Premier+Pro" rel="stylesheet"
-          type="text/css"/>-->
-    <link rel="stylesheet" href="css/Dosis.css">
-    <link rel="stylesheet" href="css/Garamond-Premier-Pro.css">
+    <!--FONTS-->
+    <link rel="stylesheet" href="css/fonts/Dosis.css">
+    <link rel="stylesheet" href="css/fonts/Garamond-Premier-Pro.css">
 
+    <!--IMAGES 3D-->
+    <link rel="stylesheet" href="css/images-3d.css">
+    <script src="js/lib/gyronorm.js"></script>
+    <script src="js/images-3d.js"></script>
 
-    <!--ANIM IMAGE-->
-    <script src="js/lib/gyronorm.js" defer></script>
-    <script src="js/src.js" defer></script>
+    <!--SLIDES-->
+    <link rel="stylesheet" href="css/slides.css">
+    <script src="js/slides.js"></script>
 
-    <!--ANIM SLIDE-->
-    <link rel="stylesheet" href="css/anim-slide.css">
-    <link rel="stylesheet" href="css/anim-img.css">
-    <link rel="stylesheet" href="css/texte.css">
-    <script src="js/anim-slide.js" defer></script>
+    <!--TEXTS-->
+    <link rel="stylesheet" href="css/texts.css">
 
-    <!--BODYMOVIN-->
-    <script src="js/bodymovin.js" defer></script>
-
-    <!--DETECT CHANGE DOM-->
-    <link rel="stylesheet" href="css/anim-illus.css">
+    <!--ANIMATIONS-->
+    <link rel="stylesheet" href="css/animations.css">
+    <script src="js/lib/bodymovin.js"></script>
 
 </head>
 <body>
 
+<!--LOADER-->
 <div class="loader">
     <div class="loader-info">
-        <img class="loader-perso" src="img/loader.png">
+        <img class="loader-perso" src="img/loader/jacques.png">
     </div>
     <div>
         <p class="pourcent">0%</p>
@@ -55,6 +55,7 @@
     <div class="bar"></div>
 </div>
 
+<!--PUCES INFORMATION-->
 <div class="puce puce-n1">
     <div class="puce1">
         <div class="puce2"></div>
@@ -71,41 +72,30 @@
     </div>
 </div>
 
-<img class="popup1" src="img/Frame1.svg">
-<img class="popup2" src="img/Frame2.svg">
-<img class="popup3" src="img/Frame3.svg">
-<!--
-<div class="sound-icon">
-    <img class="sound player-txt" src="img/player-txt.svg" style="visibility: hidden">
-    <img class="sound player" src="img/player.svg">
-    <img class="sound script" src="img/script.svg">
-    <img class="sound script-txt" src="img/script-txt.svg" style="visibility: hidden">
-</div>
-<div class="sound-icon">
-    <img class="sound player-txt" src="img/player-txt-w.svg" style="visibility: hidden">
-    <img class="sound player" src="img/player-w.svg">
-    <img class="sound script" src="img/script-w.svg">
-    <img class="sound script-txt" src="img/script-txt-w.svg" style="visibility: hidden">
-</div>
--->
+<!--POPUPS INFORMATION-->
+<img class="popup1" src="img/popups/popup1.svg">
+<img class="popup2" src="img/popups/popup2.svg">
+<img class="popup3" src="img/popups/popup3.svg">
 <div class="fond-popup"></div>
 
+<!--POPUP INTRO-->
 <div class="intro">
-        <img class="img-bdm" src="img/bdm.svg">
-        <div class="div-btn-intro" style="display: flex">
-            <button class="btn-intro1 btn-intro">Découvrir l'histoire de Jacques</button>
-            <button class="btn-intro2 btn-intro">Découvrir d'autres récits</button>
-        </div>
+    <img class="img-bdm" src="img/intro/bouts-du-monde.svg">
+    <div class="div-btn-intro" style="display: flex">
+        <button class="btn-intro1 btn-intro">Découvrir l'histoire de Jacques</button>
+        <button class="btn-intro2 btn-intro">Découvrir d'autres récits</button>
+    </div>
 </div>
 
 <!--SECTION HISTOIRE-->
 <div class="container">
 
+    <!--MAP-->
     <section class="">
         <div class="main">
             <div class="map-container"></div>
             <div class="text">
-                <div class="js-section" data-zoom-middle="2" data-icon="img/plane.svg">
+                <div class="js-section" data-zoom-middle="2" data-icon="img/map/plane.svg">
                     <p class="to-hide">1</p>
                 </div>
                 <div class="js-section" data-zoom-start="2"></div>
@@ -120,16 +110,19 @@
                 refaire ce périple.
             </p>
         </div>
-        <img class="scroll-svg" src="img/scroll.svg">
-        <img class="wrapper-popup" src="img/text-audio-1.svg">
+        <img class="scroll-svg" src="img/pictos/scroll.svg">
+        <img class="wrapper-popup" src="img/audios/texts/text-audio-1.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--FLEUVE-->
     <section class="no-script no-back sec-anim anim-fleuve">
         <div class="anim"></div>
         <div class="div-txt div-txt-fleuve div-txt-anim">
@@ -143,28 +136,34 @@
             durant les mois
             les plus froids, en janvier et février.</p>
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--JACQUES-->
     <section class="no-scroll sec-anim anim-attaque">
         <div class="anim"></div>
         <button class="next btn-story">Partir à l'aventure</button>
         <div class="div-txt"></div>
 
-        <img class="wrapper-popup" src="img/text-audio-2.svg">
+        <img class="wrapper-popup" src="img/audios/texts/text-audio-2.svg">
         <img class="menu" data="img/menu/menu1" src="img/menu/menu1.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--ARRIVEE-->
     <section class="no-script no-scroll sec-anim anim-arrivee">
         <div class="div-txt div-txt-arrivee div-txt-anim">
             <p class="txt txt-title txt-title-arrivee">“À l’orée de mes 70 ans,<br/>j’ai décidé de refaire ce périple”
@@ -183,13 +182,16 @@
 
         <img class="menu" data="img/menu/menu2" src="img/menu/menu2.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--PARTIR SEUL-->
     <section class="no-script no-scroll no-back anim-img sec-txt-seul">
         <div class="div-txt div-txt-seul">
             <p class="txt txt-title txt-title-seul">“De nombreuses agences indiennes présentent ce trek<br/> comme étant
@@ -207,41 +209,48 @@
                 préparation. L’altitude ne pardonne pas.<br/> Par prudence, nous prendrons donc la route avec Tashi et
                 Lundup.</p>
         </div>
-        <div id="gl1" class="gl" data-imageOriginal="img/5.jpg" data-imageDepth="img/5-prof.jpg"
+        <div id="gl1" class="gl" data-imageOriginal="img/photos/5.jpg" data-imageDepth="img/photos/5-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20">
         </div>
 
         <button class="next btn-story btn-white">Rejoindre Tashi</button>
         <img class="menu" data="img/menu/menu3-b" src="img/menu/menu3-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
-        </section>
+    </section>
 
+    <!--PARTIR AVEC TASHI-->
     <section class="no-script no-back anim-img sec-txt-tashi sound-w wait-scroll">
         <div class="div-txt div-txt-tashi">
-            <p class="txt txt-title txt-title-tashi">“Je ressens une très forte émotion en reconnaissant<br /> le visage et le sourire de Tashi”</p>
+            <p class="txt txt-title txt-title-tashi">“Je ressens une très forte émotion en reconnaissant<br/> le visage
+                et le sourire de Tashi”</p>
             <p class="txt txt-p txt-p-tashi">Mais, pendant deux secondes, en apercevant Lundup qui avait 6 ans<br/> lors
                 de
                 mon dernier séjour, mon esprit bascule vingt-cinq ans en<br/>arrière, il ressemble tellement à son père
                 !<br/>
                 Nous tombons dans leurs bras avec la même complicité qu’autrefois.</p>
         </div>
-        <div id="gl2" class="gl" data-imageOriginal="img/6.jpg" data-imageDepth="img/6-prof.jpg"
+        <div id="gl2" class="gl" data-imageOriginal="img/photos/6.jpg" data-imageDepth="img/photos/6-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
         <img class="menu" data="img/menu/menu3-b" src="img/menu/menu3-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
-        </section>
+    </section>
 
+    <!--MARCHE-->
     <section class="no-script anim-img sec-txt-walk sound-w wait-scroll">
         <div class="div-txt div-txt-walk">
             <p class="txt txt-title txt-title-walk">“Après les quelques jours <br/>d’acclimatation obligatoire<br/> à
@@ -253,18 +262,21 @@
                 courageux et
                 n’hésitent pas à nous venir en aide<br/> malgré les tentes et affaires qu’ils transportent.</p>
         </div>
-        <div id="gl3" class="gl" data-imageOriginal="img/7.jpg" data-imageDepth="img/7-prof.jpg"
+        <div id="gl3" class="gl" data-imageOriginal="img/photos/7.jpg" data-imageDepth="img/photos/7-prof.jpg"
              data-horizontalThreshold="5" data-verticalThreshold="5"></div>
 
         <img class="menu" data="img/menu/menu3-b" src="img/menu/menu3-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--CHUTE-->
     <section class="no-scroll sec-anim anim-chute">
         <div class="div-txt div-txt-chute div-txt-anim">
             <p class="txt txt-title txt-title-chute">“La glace sur laquelle nous marchons est très fragile”</p>
@@ -277,16 +289,19 @@
         <button class="choice1 next seul btn-story">S'en sortir seul</button>
         <button class="choice2 next aide btn-story">Demander de l'aide</button>
 
-        <img class="wrapper-popup" src="img/text-audio-3.svg">
+        <img class="wrapper-popup" src="img/audios/texts/text-audio-3.svg">
         <img class="menu" data="img/menu/menu4" src="img/menu/menu4.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--SE SORTIR TOUT SEUL-->
     <section class="no-script no-scroll no-back sec-anim anim-seul">
         <div class="div-txt div-txt-seul2 div-txt-anim">
             <p class="txt txt-title txt-title-seul2">“Je me trouve dans<br/> une situation dangereuse”</p>
@@ -303,13 +318,16 @@
 
         <img class="menu" data="img/menu/menu4" src="img/menu/menu4.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--DEMANDER DE L'AIDE-->
     <section class="no-script no-back anim-img sec-txt-help wait-scroll">
         <div class="div-txt div-txt-help">
             <p class="txt txt-title txt-title-help">“Tashi en voulant me retenir a subi le même sort”</p>
@@ -320,18 +338,21 @@
                 circonstances, nous ont aidé à sortir de<br/> l’eau. Et, David, mon fils, s’est empressé de nous sécher.
             </p>
         </div>
-        <div id="gl4" class="gl" data-imageOriginal="img/10.jpg" data-imageDepth="img/10-prof.jpg"
+        <div id="gl4" class="gl" data-imageOriginal="img/photos/10.jpg" data-imageDepth="img/photos/10-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
         <img class="menu" data="img/menu/menu5-b" src="img/menu/menu5-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--REPRENDRE LA MARCHE-->
     <section class="anim-img sec-txt-rewalk sound-w wait-scroll">
         <div class="div-txt div-txt-rewalk">
             <p class="txt txt-title txt-title-rewalk">“Parfois aucun passage n’est possible à<br/> moins d’escalader les
@@ -340,19 +361,22 @@
                 la
                 progression sur la glace. Au moindre faux pas c’est la chute mortelle.</p>
         </div>
-        <div id="gl5" class="gl" data-imageOriginal="img/11.jpg" data-imageDepth="img/11-prof.jpg"
+        <div id="gl5" class="gl" data-imageOriginal="img/photos/11.jpg" data-imageDepth="img/photos/11-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
-        <img class="wrapper-popup" src="img/text-audio-4.svg">
+        <img class="wrapper-popup" src="img/audios/texts/text-audio-4.svg">
         <img class="menu" data="img/menu/menu5-b" src="img/menu/menu5-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--OÙ DORMIR-->
     <section class="no-script no-scroll sec-anim anim-grotte">
         <div class="div-txt div-txt-grotte div-txt-anim">
             <p class="txt txt-title txt-title-grotte">“Nous cherchions des<br/> grottes pour passer la nuit.<br/> Des
@@ -374,13 +398,16 @@
 
         <img class="menu" data="img/menu/menu6" src="img/menu/menu6.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt" src="img/audios/player-txt.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player" src="img/audios/player.svg">
-            <img class="sound script" data="img/audios/script" src="img/audios/script.svg">
-            <img class="sound script-txt" data="img/audios/script-txt" src="img/audios/script-txt.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt" src="img/audios/pictos/player-txt.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player" src="img/audios/pictos/player.svg">
+            <img class="sound script" data="img/audios/pictos/script" src="img/audios/pictos/script.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt" src="img/audios/pictos/script-txt.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--GROTTE-->
     <section class="no-script no-scroll no-back anim-img sec-txt-grotte">
         <div class="div-txt div-txt-grotte2">
             <p class="txt txt-title txt-title-grotte2">“L’environnement est différent de<br/> ce que j’ai connu il y a
@@ -391,19 +418,22 @@
                 facilement. Le bois se fait de plus en plus rare. Malgré moi,<br/> les tentes représentent un confort
                 indéniable pour notre voyage.</p>
         </div>
-        <div id="gl6" class="gl" data-imageOriginal="img/13.jpg" data-imageDepth="img/13-prof.jpg"
+        <div id="gl6" class="gl" data-imageOriginal="img/photos/13.jpg" data-imageDepth="img/photos/13-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
         <button class="next btn-story btn-white">S'installer en tentes</button>
 
         <img class="menu" data="img/menu/menu6-b" src="img/menu/menu6-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--TENTES-->
     <section class="no-script no-back sound-w anim-img sec-txt-tentes wait-scroll">
         <div class="div-txt div-txt-tentes">
             <p class="txt txt-title txt-title-tentes">“Lundup, le fils de Tashi, nous a préparé une<br/> expédition avec
@@ -417,18 +447,21 @@
                 poulet,
                 riz, lentilles et épices. Bien loin des soupes<br/> réchauffées au feu de camp.</p>
         </div>
-        <div id="gl7" class="gl" data-imageOriginal="img/14.jpg" data-imageDepth="img/14-prof.jpg"
+        <div id="gl7" class="gl" data-imageOriginal="img/photos/14.jpg" data-imageDepth="img/photos/14-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
         <img class="menu" data="img/menu/menu6-b" src="img/menu/menu6-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--RENCONTRE STOBDAN-->
     <section class="anim-img sec-txt-meet">
         <div class="div-txt div-txt-meet">
             <p class="txt txt-title txt-title-meet">“Il nous accompagnait l’été 1990 pour sortir<br/> du Zanskar, par
@@ -440,19 +473,22 @@
                 rencontre improbable ! Je ne l’avais pas reconnu, et pourtant il nous accompagnait<br/> l’été 1990 pour
                 sortir du Zanskar par les cols.</p>
         </div>
-        <div id="gl8" class="gl" data-imageOriginal="img/15.jpg" data-imageDepth="img/15-prof.jpg"
+        <div id="gl8" class="gl" data-imageOriginal="img/photos/15.jpg" data-imageDepth="img/photos/15-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
-        <img class="wrapper-popup" src="img/text-audio-5.svg">
+        <img class="wrapper-popup" src="img/audios/texts/text-audio-5.svg">
         <img class="menu" data="img/menu/menu7-b" src="img/menu/menu7-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--RETOUR AVEC JEEP-->
     <section class="no-script anim-img sound-w sec-txt-back wait-scroll">
         <div class="div-txt div-txt-back">
             <p class="txt txt-title txt-title-back">“C’est là que s’arrête notre périple sur glace.”</p>
@@ -464,41 +500,46 @@
                 capitale du Zanskar, à Leh, la capitale du Ladakh. Il en<br/> faudra encore autant pour la terminer.
             </p>
         </div>
-        <div id="gl9" class="gl" data-imageOriginal="img/16.jpg" data-imageDepth="img/16-prof.jpg"
+        <div id="gl9" class="gl" data-imageOriginal="img/photos/16.jpg" data-imageDepth="img/photos/16-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
 
         <img class="menu" data="img/menu/menu8-b" src="img/menu/menu8-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--ABONNEMENT-->
     <section class="no-script no-scroll anim-img">
-        <div id="gl10" class="gl" data-imageOriginal="img/17.jpg" data-imageDepth="img/17-prof.jpg"
+        <div id="gl10" class="gl" data-imageOriginal="img/photos/17.jpg" data-imageDepth="img/photos/17-prof.jpg"
              data-horizontalThreshold="20" data-verticalThreshold="20"></div>
         <button class="abo btn-white">Vivez d'autres récits</button>
         <div class="div-txt"></div>
-        <img class="credits next" src="img/credits.svg">
+        <img class="credits next" src="img/credits/credits-icon.svg">
 
         <img class="menu" data="img/menu/menu8-b" src="img/menu/menu8-b.svg">
         <div class="sound-icon">
-            <img class="sound player-txt" data="img/audios/player-txt-b" src="img/audios/player-txt-b.svg" style="visibility: hidden">
-            <img class="sound player" data="img/audios/player-b" src="img/audios/player-b.svg">
-            <img class="sound script" data="img/audios/script-b" src="img/audios/script-b.svg">
-            <img class="sound script-txt" data="img/audios/script-txt-b" src="img/audios/script-txt-b.svg" style="visibility: hidden">
+            <img class="sound player-txt" data="img/audios/pictos/player-txt-b" src="img/audios/pictos/player-txt-b.svg"
+                 style="visibility: hidden">
+            <img class="sound player" data="img/audios/pictos/player-b" src="img/audios/pictos/player-b.svg">
+            <img class="sound script" data="img/audios/pictos/script-b" src="img/audios/pictos/script-b.svg">
+            <img class="sound script-txt" data="img/audios/pictos/script-txt-b" src="img/audios/pictos/script-txt-b.svg"
+                 style="visibility: hidden">
         </div>
     </section>
 
+    <!--CREDITS-->
     <section class="no-script anim-img sec-credits wait-scroll">
         <div class="div-txt "></div>
-        <object data="img/credits-names2.svg" type="image/svg+xml" id="credits-names"></object>
-        <img class="back-svg" src="img/retour.svg">
+        <object data="img/credits/credits.svg" type="image/svg+xml" id="credits-names"></object>
+        <img class="back-svg" src="img/pictos/back.svg">
     </section>
 
 </div>
 </body>
-<script src="js/anim-map.js"></script>
 </html>

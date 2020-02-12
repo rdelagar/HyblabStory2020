@@ -27,11 +27,11 @@ $(document).ready(function () {
 
 $(window).on("load", function () {
 
-    $(".loader").hide();
-
     $('html, body').css({
         overflowY: 'scroll',
     });
+
+    $(".loader").hide();
 
     setTimeout(function () {
         window.scrollTo(0, 0);
