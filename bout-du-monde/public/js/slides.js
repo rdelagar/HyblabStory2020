@@ -27,10 +27,6 @@ $(document).ready(function () {
 
 $(window).on("load", function () {
 
-    $('html, body').css({
-        overflowY: 'scroll',
-    });
-
     $(".loader").hide();
 
     setTimeout(function () {
@@ -121,6 +117,9 @@ $(window).on("load", function () {
 
     $(".btn-intro1").on("click", function () {
        $(".intro").hide();
+        $('html, body').css({
+            overflowY: 'scroll',
+        });
     });
 
     $(".btn-intro2").on("click", function () {
