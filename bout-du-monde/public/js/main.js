@@ -56,16 +56,17 @@ function load() {
 
     $("section").on("wheel", function (e) {
 
-        $(".scroll-svg").hide();
-
         if (!launch) {
+            $(".scroll-svg").hide();
             scrollMap();
         } else if (scroll) {
             let s = $("section:visible").first();
             if (e.originalEvent.deltaY > 0 && !s.hasClass("no-scroll")) { //scroll next
+                $(".scroll-svg").hide();
                 slideL(s);
                 scroll = false;
             } else if (e.originalEvent.deltaY < 0 && !s.hasClass("no-back")) { //scroll back
+                $(".scroll-svg").hide();
                 slideR(s);
                 scroll = false;
             }
@@ -76,13 +77,32 @@ function load() {
 
     $(".next").on("click", function () {
 
-        let s = $("section:visible").first();
+        if(!launch) {
+            $(this).hide();
+            $("html, body").animate({ scrollTop: $(document).height() }, 3000);
+            setTimeout(go, 3100);
 
-        if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
-            s.delay(1000).hide(0);
-            slideL(s.next());
+            function go() {
+                launch = true;
+                let s = $("section:visible").first();
+                $("section").css({"top": $(".main").height() - s.next().height()});
+                $('html, body').css({
+                    overflow: 'hidden'
+                });
+                slideL(s);
+            }
+
+
         } else {
-            slideL(s);
+
+            let s = $("section:visible").first();
+
+            if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
+                s.delay(1000).hide(0);
+                slideL(s.next());
+            } else {
+                slideL(s);
+            }
         }
     });
 
@@ -435,6 +455,8 @@ function load() {
 
     function slideL(s) {
 
+        $(".scroll-svg-story").show();
+
         if (s.next().hasClass("has-menu")) {
             $(".menu").show();
             menu(s.next().attr("menu"), s.next().hasClass("has-menu-b"))
@@ -486,6 +508,8 @@ function load() {
 
     function slideM(scur, snew) {
 
+        $(".scroll-svg-story").show();
+
         if(parseInt(scur.attr("menu")) > parseInt(snew.attr("menu"))) {
             if (snew.hasClass("has-menu-b")) {
                 menu(snew.attr("menu"), true);
@@ -512,6 +536,8 @@ function load() {
     }
 
     function slideR(s) {
+
+        $(".scroll-svg-story").show();
 
         if (s.prev().hasClass("has-menu")) {
             $(".menu").show();

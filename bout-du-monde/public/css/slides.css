@@ -210,13 +210,19 @@ section img.back-svg {
 }
 
 section img.scroll-svg {
-    height: 8%;
+    height: 11%;
     position: fixed;
     z-index: 50;
-    bottom: 20px;
+    bottom: 10px;
     cursor: pointer;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
+    -webkit-transform: translateX(-50%) scale(1);
+}
+
+section img.scroll-svg:hover {
+    transform: translateX(-50%) scale(1.1);
+    -webkit-transform: translateX(-50%) scale(1.1);
 }
 
 #credits-names {
