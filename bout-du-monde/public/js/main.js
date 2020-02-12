@@ -4,7 +4,16 @@ $('html, body').css({
 
 animArray = [];
 
+function jsCall() {
+    load();
+}
+
+window.onload = jsCall;
+
 $(document).ready(function () {
+
+    $("svg").attr("height", "150px");
+
     loadAnim(0, "json/anim-fleuve.json", false);
     loadAnim(1, "json/anim-attaque.json", false);
     loadAnim(2, "json/anim-arrivee.json", false);
@@ -25,7 +34,9 @@ $(document).ready(function () {
     }
 });
 
-$(window).on("load", function () {
+function load() {
+
+    $("svg").attr("width", $("g")[0].getBoundingClientRect().width);
 
     $(".loader").hide();
 
@@ -116,7 +127,7 @@ $(window).on("load", function () {
     });
 
     $(".btn-intro1").on("click", function () {
-       $(".intro").hide();
+        $(".intro").hide();
         $('html, body').css({
             overflowY: 'scroll',
         });
@@ -203,15 +214,12 @@ $(window).on("load", function () {
         $(".script").removeClass("clicked");
     });
 
-    $(".menu").hover(function () {
-        $(this).attr("src", $(this).attr("data") + "-h.svg");
-        $(this).css("height", '35%');
+
+    /*$(".menu").hover(function () {
+        $(".menu-svg").css("scale", '1.5');
     }, function () {
-        $(this).attr("src", $(this).attr("data") + ".svg");
-        $(this).css("top", '50%');
-        $(this).css("transform", "translateY(-50%)")
-        $(this).css("height", '25%');
-    });
+        $(".menu-svg").css("scale", "1")
+    });*/
 
     $(".script").hover(function () {
         $(this).attr("src", $(this).attr("data") + "-h.svg");
@@ -228,7 +236,6 @@ $(window).on("load", function () {
         $(this).attr("src", $(this).attr("data") + ".svg");
         $(".player-txt").css("visibility", "hidden");
     });
-
 
 
     /*$(".svg-audio").hover(function () {
@@ -311,8 +318,106 @@ $(window).on("load", function () {
         $(".script-txt").attr("src", "img/script-txt-w.svg");
     }*/
 
+    $(".line").attr("stroke", "transparent");
+    $(".label").attr("fill", "transparent");
+    $(".circle").attr("fill", "transparent");
+    $(".sel").attr("fill", "transparent");
+    $(".menu").hide();
+
+    $(".sel, .menu").hover(function (e) {
+        let numSec = $("section:visible").first().attr("menu");
+        let numHover = 0;
+        if ("sel" in e.delegateTarget.attributes) {
+            numHover = $(this).attr("menu");
+        }
+        menuHover(numHover, numSec, true);
+        //$(".menu-svg").css("scale", '1.5');
+    }, function () {
+        let numSec = $("section:visible").first().attr("menu");
+        menuHover(0, numSec, false);
+        //$(".menu-svg").css("scale", "1")
+    });
+
+    $(".menu").mouseleave(function() {
+        let numSec = $("section:visible").first().attr("menu");
+        for (let i = 1; i <= numSec; i++) {
+            $("#line-" + i).attr("stroke", "transparent");
+            $("#label-" + i).attr("fill", "transparent");
+        }
+    });
+
+    $(".sel").on("click", function () {
+       slideM($("section:visible").first(), $("section[menu='"+ $(this).attr("menu") +"']").first());
+    });
+
+    function menu(num, white) {
+
+        for(let i=0; i<num; i++) {
+            $(".line").attr("stroke", "transparent");
+            $(".label").attr("fill", "transparent");
+            $(".circle").attr("fill", "transparent");
+            $(".sel").attr("fill", "transparent");
+        }
+
+        if (white) {
+            for (let i = 1; i <= 8; i++) {
+                $(".circle").attr("stroke", "#FFFFFF");
+                $(".vec").attr("stroke", "#FFFFFF");
+            }
+            for (let i = 1; i <= num; i++) {
+                $("#circle-" + i).attr("fill", "#FFFFFF");
+            }
+        } else {
+            for (let i = 1; i <= 8; i++) {
+                $(".circle").attr("stroke", "#485F62");
+                $(".vec").attr("stroke", "#485F62");
+            }
+            for (let i = 1; i <= num; i++) {
+                $("#circle-" + i).attr("fill", "#485F62");
+            }
+        }
+
+
+    }
+
+    function menuHover(numHover, numSec, hover) {
+        if (hover && numHover !== "0" && numHover <= numSec) {
+            if ($("section:visible").first().hasClass("has-menu-b")) {
+                $("#line-" + numHover).attr("stroke", "#FFFFFF");
+                $("#label-" + numHover).attr("fill", "#FFFFFF");
+                $("#line-" + numSec).attr("stroke", "#FFFFFF");
+                $("#label-" + numSec).attr("fill", "#FFFFFF");
+            } else {
+                $("#line-" + numHover).attr("stroke", "#485F62");
+                $("#label-" + numHover).attr("fill", "#485F62")
+                $("#line-" + numSec).attr("stroke", "#485F62");
+                $("#label-" + numSec).attr("fill", "#485F62");
+            }
+        } else if(hover) {
+            if ($("section:visible").first().hasClass("has-menu-b")) {
+                $("#line-" + numSec).attr("stroke", "#FFFFFF");
+                $("#label-" + numSec).attr("fill", "#FFFFFF");
+            } else {
+                $("#line-" + numSec).attr("stroke", "#485F62");
+                $("#label-" + numSec).attr("fill", "#485F62");
+            }
+        } else {
+            for (let i = 1; i < numSec; i++) {
+                $("#line-" + i).attr("stroke", "transparent");
+                $("#label-" + i).attr("fill", "transparent");
+            }
+        }
+    }
 
     function slideL(s) {
+
+        if (s.next().hasClass("has-menu")) {
+            $(".menu").show();
+            menu(s.next().attr("menu"), s.next().hasClass("has-menu-b"))
+        } else {
+            $(".menu").hide();
+        }
+
         /*if($(s).next().hasClass("sound-w")) {
             allw();
         }*/
@@ -355,7 +460,42 @@ $(window).on("load", function () {
         }
     }
 
+    function slideM(scur, snew) {
+
+        if(parseInt(scur.attr("menu")) > parseInt(snew.attr("menu"))) {
+            if (snew.hasClass("has-menu-b")) {
+                menu(snew.attr("menu"), true);
+            } else {
+                menu(snew.attr("menu"), false);
+            }
+
+            scur.children(".div-txt").delay(1000).hide(0);
+            $(".puce").hide();
+            scur.css("z-index", "-1");
+            snew.css("z-index", "1");
+            scur.delay(1000).hide(0);
+            snew.show("slide", {direction: "left"}, 1000);
+            snew.children(".div-txt").delay(1000).show(0);
+
+            if (snew.hasClass("sec-txt-walk")) {
+                displayPopup(1);
+            } else if (snew.hasClass("sec-txt-help")) {
+                displayPopup(2);
+            } else if (snew.hasClass("sec-txt-tentes")) {
+                displayPopup(3);
+            }
+        }
+    }
+
     function slideR(s) {
+
+        if (s.prev().hasClass("has-menu")) {
+            $(".menu").show();
+            menu(s.prev().attr("menu"), s.prev().hasClass("has-menu-b"))
+        } else {
+            $(".menu").hide();
+        }
+
         //soundReinit()
         /*if($(s).next().hasClass("sound-w")) {
             allw();
@@ -522,4 +662,4 @@ $(window).on("load", function () {
     $(AL).on("click", function () {
         window.open("https://www.linkedin.com/in/anthony-lusteau-336ab1154/");
     });
-});
+};

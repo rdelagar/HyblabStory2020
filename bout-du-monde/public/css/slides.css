@@ -236,20 +236,6 @@ section img.scroll-svg {
     scrollbar-width: none;
 }
 
-.menu {
-    cursor: pointer;
-    position: fixed;
-    right: 25px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 25%;
-    z-index: 55;
-    -webkit-transition: height 0.5s ease;
-    -moz-transition: height 0.5s ease;
-    -o-transition: height 0.5s ease;
-    transition: height 0.5s ease;
-}
-
 .intro {
     position: absolute;
     display: flex;
