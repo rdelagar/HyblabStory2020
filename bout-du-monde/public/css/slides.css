@@ -210,7 +210,7 @@ section img.back-svg {
 }
 
 section img.scroll-svg {
-    height: 11%;
+    height: 8%;
     position: fixed;
     z-index: 50;
     bottom: 10px;

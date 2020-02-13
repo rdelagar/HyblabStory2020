@@ -12,6 +12,8 @@ window.onload = jsCall;
 
 
 $(document).ready(function () {
+    $("section").hide();
+
     $(".intro1").show();
     $(".intro2").hide();
 
@@ -48,7 +50,6 @@ function load() {
         window.scrollTo(0, 0);
     }, 1)
 
-    $("section").hide();
     $("section").first().show().addClass("active");
 
     let scroll = false;
@@ -75,6 +76,8 @@ function load() {
         scrollStop();
     });
 
+    let oneTime = false;
+
     $(".next").on("click", function () {
 
         if(!launch) {
@@ -97,7 +100,19 @@ function load() {
 
             let s = $("section:visible").first();
 
-            if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
+            if($(this).hasClass("tashi") && !oneTime) {
+                oneTime = true;
+                startAnimNow(animArray[2]);
+                setTimeout(function () {
+                    slideL(s.next());
+                }, 2500);
+            } else if($(this).hasClass("seul") && !oneTime) {
+                oneTime = true;
+                startAnimNow(animArray[2]);
+                setTimeout(function () {
+                    slideL(s);
+                }, 2500);
+            } else if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
                 s.delay(1000).hide(0);
                 slideL(s.next());
             } else {
@@ -487,7 +502,7 @@ function load() {
             startAnim(animArray[1]);
         } else if (s.next().hasClass("anim-arrivee")) {
             //loadAnim(2, "json/anim-arrivee.json", true);
-            startAnim(animArray[2]);
+            //startAnim(animArray[2]);
         } else if (s.next().hasClass("anim-chute")) {
             //loadAnim(3, "json/anim-chute.json", true);
             startAnim(animArray[3]);
@@ -611,6 +626,10 @@ function load() {
         setTimeout(function () {
             anim.play();
         }, 1100);
+    }
+
+    function startAnimNow(anim) {
+        anim.play();
     }
 
     let svg = $("object")[0].contentDocument.documentElement;
