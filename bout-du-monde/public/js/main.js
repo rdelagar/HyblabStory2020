@@ -243,20 +243,20 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
             }
         });
 
-        /*$(".player").on("click", function (e) {
+        $(".player").on("click", function (e) {
             e.stopPropagation();
             if ($(this).attr("src") === "img/player-close.svg") {
                 $(this).attr("src", "img/player.svg");
                 $(".player-txt").attr("src", "img/player-txt.svg");
                 $(this).removeClass("click");
-                $(".wrapper:visible").children()[0].pause();
+                $("audio:visible")[0].pause();
             } else {
-                $(".wrapper:visible").children()[0].play();
+                $("audio:visible")[0].play();
                 $(this).attr("src", "img/player-close.svg");
                 $(".player-txt").attr("src", "img/player-txt-close.svg");
                 $(this).addClass("click");
             }
-        });*/
+        });
 
         let first = true;
         $(".player-html").on('ended', function () {
@@ -636,7 +636,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
             anim.play();
         }
 
-        let svg = $("object")[0].contentDocument.documentElement;
+        /*let svg = $("object")[0].contentDocument.documentElement;
         let BDM = svg.getElementsByClassName("BDM");
         let Audencia = svg.getElementsByClassName("Audencia");
         let AGR = svg.getElementsByClassName("AGR");
@@ -726,7 +726,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
 
         /*$(ZP).on("click", function () {
             window.open("https://creativecommons.org/licenses/by/2.0/");
-        });*/
+        });
 
         $(JBG).on("click", function () {
             window.open("https://www.linkedin.com/in/jean-baptiste-guy-84a6a3177/");
@@ -734,6 +734,6 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
 
         $(AL).on("click", function () {
             window.open("https://www.linkedin.com/in/anthony-lusteau-336ab1154/");
-        });
+        });*/
     };
 }
