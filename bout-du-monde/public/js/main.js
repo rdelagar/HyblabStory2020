@@ -66,6 +66,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
                 scrollMap();
             } else if (scroll) {
                 let s = $("section:visible").first();
+                console.log(s)
                 if (e.originalEvent.deltaY > 0 && !s.hasClass("no-scroll")) { //scroll next
                     $(".scroll-svg").hide();
                     slideL(s);
@@ -81,9 +82,9 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
         });
 
         let oneTime = false;
+        let oneTime2 = false;
 
         $(".next").on("click", function () {
-
             if (!launch) {
                 $(this).hide();
                 $("html, body").animate({scrollTop: $(document).height()}, 3000);
@@ -109,18 +110,45 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
                     startAnimNow(animArray[2]);
                     setTimeout(function () {
                         slideL(s.next());
+                        s.delay(1000).hide(0);
+                        //scroll = true;
                     }, 2500);
                 } else if ($(this).hasClass("seul") && !oneTime) {
                     oneTime = true;
                     startAnimNow(animArray[2]);
                     setTimeout(function () {
                         slideL(s);
+                        s.delay(1000).hide(0);
+                        //s.hide();
+                        //scroll = true;
                     }, 2500);
+                } else if($(this).hasClass("aide") && !oneTime2) {
+                    oneTime2 = true;
+                    startAnimNow(animArray[3]);
+                    setTimeout(function () {
+                        //s.hide();
+                        s.delay(1000).hide(0);
+                        slideL(s.next());
+                        //scroll = true;
+                    }, 2000);
+                } else if($(this).hasClass("seul2") && !oneTime2) {
+                    oneTime2 = true;
+                    startAnimNow(animArray[3]);
+                    setTimeout(function () {
+                        //s.hide();
+                        slideL(s);
+                        s.delay(1000).hide(0);
+                        //scroll = true;
+                    }, 2000);
                 } else if ($(this).hasClass("tashi") || $(this).hasClass("aide") || $(this).hasClass("tentes")) {
-                    s.delay(1000).hide(0);
+                    //s.hide();
                     slideL(s.next());
+                    s.delay(1000).hide(0);
+                    //scroll = true;
                 } else {
+                    //s.hide();
                     slideL(s);
+                    //scroll = true;
                 }
             }
         });
@@ -202,7 +230,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
 
         /*$(".player").hover(function () {
             if (!$(this).hasClass("click")) {
-                $(this).attr("src", "img/player-hover.svg");
+                $(this).attr("src", "img/player-hover.vg");
                 $(".player-txt").css("visibility", "");
             } else {
                 $(".player-txt").css("visibility", "");
@@ -245,20 +273,35 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
 
         $(".player").on("click", function (e) {
             e.stopPropagation();
-            if ($(this).attr("src") === "img/player-close.svg") {
-                $(this).attr("src", "img/player.svg");
-                $(".player-txt").attr("src", "img/player-txt.svg");
+            if ($(this).attr("src") === "img/audios/pictos/player-c.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b-h.svg" || $(this).attr("src") === "img/audios/pictos/player-c-h.svg") {
+                $(this).attr("src", $(this).attr("data") + ".svg");
+                $(".player-txt:visible").first().attr("src", $(".player-txt:visible").first().attr("data") + ".svg");
                 $(this).removeClass("click");
-                $("audio:visible")[0].pause();
+                $(this).parent().next()[0].pause();
             } else {
-                $("audio:visible")[0].play();
-                $(this).attr("src", "img/player-close.svg");
-                $(".player-txt").attr("src", "img/player-txt-close.svg");
+                $(this).parent().next()[0].play();
+                $(this).attr("src", $(this).attr("datac") + ".svg");
+                $(".player-txt:visible").first().attr("src", $(".player-txt").attr("datac") + ".svg");
                 $(this).addClass("click");
             }
         });
 
-        let first = true;
+        $('audio').on('ended', function(e) {
+            e.stopPropagation();
+            if ($(".player:visible").first().attr("src") === "img/audios/pictos/player-c.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b-h.svg" || $(this).attr("src") === "img/audios/pictos/player-c-h.svg") {
+                $(".player:visible").first().attr("src", $(".player").attr("data") + ".svg");
+                $(".player-txt:visible").first().attr("src", $(".player-txt:visible").first().attr("data") + ".svg");
+                $(".player:visible").first().removeClass("click");
+                $(".player:visible").first().parent().next()[0].pause();
+            } else {
+                $(".player:visible").first().parent().next()[0].play();
+                $(".player:visible").first().attr("src", $(this).attr("datac") + ".svg");
+                $(".player-txt:visible").first().attr("src", $(".player-txt").attr("datac") + ".svg");
+                $(".player:visible").first().addClass("click");
+            }
+        });
+
+        /*let first = true;
         $(".player-html").on('ended', function () {
             if ($(".wrapper:visible audio").children().length > 1 && first) {
                 $(".wrapper:visible audio")[1].play();
@@ -269,7 +312,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
                 $(".player-txt").attr("src", "img/player-txt.svg");
                 $(".player").removeClass("click");
             }
-        });
+        });*/
 
         $(window).on("click", function () {
             $(".wrapper-popup").hide();
@@ -293,11 +336,21 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
         });
 
         $(".player").hover(function () {
-            $(this).attr("src", $(this).attr("data") + "-h.svg");
-            $(".player-txt").css("visibility", "");
+            if($(this).hasClass("click")) {
+                $(this).attr("src", $(this).attr("datac") + "-h.svg");
+                $(".player-txt").css("visibility", "");
+            } else {
+                $(this).attr("src", $(this).attr("data") + "-h.svg");
+                $(".player-txt").css("visibility", "");
+            }
         }, function () {
-            $(this).attr("src", $(this).attr("data") + ".svg");
-            $(".player-txt").css("visibility", "hidden");
+            if($(this).hasClass("click")) {
+                $(this).attr("src", $(this).attr("datac") + ".svg");
+                $(".player-txt").css("visibility", "hidden");
+            } else {
+                $(this).attr("src", $(this).attr("data") + ".svg");
+                $(".player-txt").css("visibility", "hidden");
+            }
         });
 
 
@@ -351,12 +404,12 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
             } else {
                 $(this).attr("src", "img/audio-close.svg");
             }
-        });
+        });*/
 
         $('.svg-audio').next().on('ended', function () {
             $('.svg-audio').removeClass("sound");
             $('.svg-audio').attr("src", "img/audio.svg");
-        });*/
+        });
 
         $(".abo").on("click", function () {
             window.open("https://www.revue-boutsdumonde.com/produit/abonnement/");
@@ -474,8 +527,6 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
 
         function slideL(s) {
 
-            $(".scroll-svg-story").show();
-
             if (s.next().hasClass("has-menu")) {
                 $(".menu").show();
                 menu(s.next().attr("menu"), s.next().hasClass("has-menu-b"))
@@ -509,7 +560,7 @@ if( navigator.userAgent.toLowerCase().indexOf('firefox') > -1 || navigator.userA
                 //startAnim(animArray[2]);
             } else if (s.next().hasClass("anim-chute")) {
                 //loadAnim(3, "json/anim-chute.json", true);
-                startAnim(animArray[3]);
+                //startAnim(animArray[3]);
             } else if (s.next().hasClass("anim-seul")) {
                 //loadAnim(4, "json/anim-seul.json", true);
                 startAnim(animArray[4]);
