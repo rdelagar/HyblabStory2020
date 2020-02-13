@@ -62,6 +62,16 @@
         <rect class="svg-lien Audencia 1" x="500" y="274" width="234" height="59" fill="url(#pattern7)"/>
         <rect class="svg-lien AGR 1" x="866.859" y="211" width="170.283" height="180.588"
               fill="url(#pattern8)"/>
+        <rect class="AL" x="1099" y="575" width="331" height="28" fill=""/>
+        <rect class="ZP" x="1099" y="547" width="331" height="28" fill=""/>
+        <rect class="JBG" x="1099" y="507" width="331" height="28" fill=""/>
+        <rect class="RD" x="1099" y="477" width="331" height="28" fill=""/>
+        <rect class="WM" x="102" y="441" width="331" height="28" fill=""/>
+        <rect class="TOD" x="1099" y="447" width="331" height="28" fill=""/>
+        <rect class="SP" x="789" y="447" width="331" height="28" fill=""/>
+        <rect class="AR" x="789" y="477" width="331" height="28" fill=""/>
+        <rect class="JG" x="459" y="477" width="331" height="28" fill=""/>
+        <rect class="RG" x="459" y="447" width="331" height="28" fill=""/>
     </g>
     <defs>
         <filter id="filter0_i" x="0.398193" y="99.0137" width="1526.54" height="588.785" filterUnits="userSpaceOnUse"
