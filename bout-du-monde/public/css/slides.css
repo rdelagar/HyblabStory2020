@@ -222,8 +222,8 @@ section img.scroll-svg {
 }
 
 section img.scroll-svg:hover {
-    transform: translateX(-50%) scale(1.1);
-    -webkit-transform: translateX(-50%) scale(1.1);
+    /*transform: translateX(-50%) scale(1.1);
+    -webkit-transform: translateX(-50%) scale(1.1);*/
 }
 
 #credits-names {

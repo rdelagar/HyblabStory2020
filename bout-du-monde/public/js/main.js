@@ -20,8 +20,7 @@ $(window).on("load", function () {
     $(".loader").hide();
 
     //menu
-    $("svg").attr("width", $("g")[0].getBoundingClientRect().width);
-    $("svg").attr("height", "150px");
+    $(".menu-svg").attr("height", "150px");
 
     //avion revient au point de départ
     scrollTop();
@@ -50,8 +49,7 @@ $(window).on("load", function () {
         scrollStop();
     });
 
-    let anim1 = false;
-    let anim2 = false;
+    let anim = false;
 
     //boutton action next
     $(".next").on("click", function () { //button action slide
@@ -72,23 +70,19 @@ $(window).on("load", function () {
                 slideL(s);
             }*/
 
-        } else if ($(this).hasClass("tashi") && !anim1) {
-            anim1 = true;
-            startAnimNow(animArray[2], s);
+        } else if ($(this).hasClass("aide") && !anim) {
+            //anim = true;
+            startAnimNow(animArray[3], s.next());
+            setTimeout(function () {
+                s.delay(1000).hide(0);
+            }, 2600);
 
-        } else if ($(this).hasClass("seul") && !anim1) {
-            anim1 = true;
-            startAnimNow(animArray[2], s);
 
-        } else if ($(this).hasClass("aide") && !anim2) {
-            anim2 = true;
+        } else if ($(this).hasClass("seul2") && !anim) {
+            //anim = true;
             startAnimNow(animArray[3], s);
 
-        } else if ($(this).hasClass("seul2") && !anim2) {
-            anim2 = true;
-            startAnimNow(animArray[3], s);
-
-        } else if ($(this).hasClass("aide") || $(this).hasClass("tentes")) {
+        } else if ($(this).hasClass("tashi") || $(this).hasClass("tentes")) {
             slideL(s.next());
             s.delay(1000).hide(0);
 
@@ -264,7 +258,6 @@ $(window).on("load", function () {
         slideM($("section:visible").first(), $("section[menu='" + $(this).attr("menu") + "']").first());
     });
 
-    //let svg = $("#credits-names")[0].contentDocument.documentElement;
     let BDM = $(".BDM");
     let Audencia = $(".Audencia");
     let AGR = $(".AGR");
@@ -386,7 +379,11 @@ function initDocument() {
     $("section").hide();
     $(".intro1").show();
     $(".intro2").hide();
-    $("section").first().show().addClass("active");
+    $(".div-txt").hide();
+    $(".scroll-svg-story").hide();
+
+    $("section").first().show().addClass("active"); //map
+    $(".div-txt").first().show(); //map
 }
 
 function loadAllAnims() {
@@ -396,6 +393,13 @@ function loadAllAnims() {
     loadAnim(3, "json/anim-chute.json", false);
     loadAnim(4, "json/anim-seul.json", false);
     loadAnim(5, "json/anim-grotte.json", true);
+
+    animArray[3].addEventListener('complete', function () {
+        setTimeout(function () {
+            animArray[3].destroy();
+            loadAnim(3, "json/anim-chute.json", false);
+        }, 1500);
+    });
 }
 
 function scrollTop() {
@@ -406,6 +410,7 @@ function scrollTop() {
 
 i = 0;
 size = 100;
+
 function animBarCasque() {
     $(".bar2-casque").css("width", i + "%");
     i++;
@@ -419,7 +424,16 @@ function animBarCasque() {
     }
 }
 
+let menuInit = false;
+let menuSize;
 function menu(num, white) {
+
+    if(!menuInit) {
+        menuSize = $("#menu-g")[0].getBoundingClientRect().width;
+        menuInit = true;
+    }
+
+    $(".menu-svg").attr("width", menuSize);
 
     for (let i = 0; i < num; i++) {
         $(".line").attr("stroke", "transparent");
@@ -481,32 +495,29 @@ function menuHover(numHover, numSec, hover) {
 //slideL
 function slideL(s) {
 
-    if(s.hasClass("playing")) {
+    if (s.hasClass("playing")) {
         $(".player:visible").first().trigger("click");
     }
 
-    if (s.next().hasClass("has-menu")) {
-        $(".menu").show();
-        menu(s.next().attr("menu"), s.next().hasClass("has-menu-b"))
-    } else {
-        $(".menu").hide();
-    }
+    displayInfos(s, "next");
 
     $(".puce").hide();
-    s.children(".div-txt").delay(1000).hide(0);
+    //s.children(".div-txt").delay(1000).hide(0);
 
     s.css("z-index", "-1");
     s.next().css({"z-index": "1"});
     s.delay(1000).hide(0);
     s.next().show("slide", {direction: "right"}, 1000);
 
-    s.next().children(".div-txt").delay(1000).show(0);
+    //s.next().children(".div-txt").delay(1100).show(0);
 
     if (s.next().hasClass("anim-fleuve")) {
         startAnim(animArray[0]);
         displayTxt();
     } else if (s.next().hasClass("anim-attaque")) {
         startAnim(animArray[1]);
+    } else if (s.next().hasClass("anim-arrivee")) {
+        startAnim(animArray[2]);
     } else if (s.next().hasClass("anim-seul")) {
         startAnim(animArray[4]);
     } else if (s.next().hasClass("anim-grotte")) {
@@ -523,18 +534,20 @@ function slideL(s) {
 //clic menu
 function slideM(scur, snew) {
 
-    if(s.hasClass("playing")) {
+    displayInfos(snew, "menu");
+
+    if (scur.hasClass("playing")) {
         $(".player:visible").first().trigger("click");
     }
 
     $(".scroll-svg-story").show();
 
     if (parseInt(scur.attr("menu")) > parseInt(snew.attr("menu"))) {
-        if (snew.hasClass("has-menu-b")) {
+        /*if (snew.hasClass("has-menu-b")) {
             menu(snew.attr("menu"), true);
         } else {
             menu(snew.attr("menu"), false);
-        }
+        }*/
 
         scur.children(".div-txt").delay(1000).hide(0);
         $(".puce").hide();
@@ -542,7 +555,7 @@ function slideM(scur, snew) {
         snew.css("z-index", "1");
         scur.delay(1000).hide(0);
         snew.show("slide", {direction: "left"}, 1000);
-        snew.children(".div-txt").delay(1000).show(0);
+        //snew.children(".div-txt").delay(1000).show(0);
 
         if (snew.hasClass("sec-txt-walk")) {
             displayPopup(1);
@@ -557,18 +570,13 @@ function slideM(scur, snew) {
 //slideR
 function slideR(s) {
 
-    if(s.hasClass("playing")) {
+    displayInfos(s, "back");
+
+    if (s.hasClass("playing")) {
         $(".player:visible").first().trigger("click");
     }
 
     $(".scroll-svg-story").show();
-
-    if (s.prev().hasClass("has-menu")) {
-        $(".menu").show();
-        menu(s.prev().attr("menu"), s.prev().hasClass("has-menu-b"))
-    } else {
-        $(".menu").hide();
-    }
 
     s.children(".div-txt").delay(1000).hide(0);
     $(".puce").hide();
@@ -576,7 +584,7 @@ function slideR(s) {
     s.prev().css("z-index", "1");
     s.delay(1000).hide(0);
     s.prev().show("slide", {direction: "left"}, 1000);
-    s.prev().children(".div-txt").delay(1000).show(0);
+    //s.prev().children(".div-txt").delay(1000).show(0);
 
     if (s.prev().hasClass("sec-txt-walk")) {
         displayPopup(1);
@@ -641,8 +649,56 @@ function startAnim(anim) {
 //start tout de suite
 function startAnimNow(anim, s) {
     anim.play();
-    setTimeout(function () {
-        slideL(s.next());
+    animArray[3].addEventListener('complete', function () {
+        console.log("ok");
+        slideL(s);
         s.delay(1000).hide(0);
-    }, 2500);
+    });
+}
+
+function displayInfos(s, source) {
+
+    if (source === "back") {
+        if (s.prev().hasClass("has-menu")) {
+            $(".menu").show();
+            menu(s.prev().attr("menu"), s.prev().hasClass("has-menu-b"))
+        } else {
+            $(".menu").hide();
+        }
+
+        $(".div-txt").not($(s.prev()).children(".div-txt")).delay(1000).hide(0);
+        $(".scroll-svg-story").not($(s.prev()).children(".scroll-svg-story")).delay(1000).hide(0);
+
+        $(s.prev()).children(".div-txt").delay(1100).show(0);
+        $(s.prev()).children(".scroll-svg-story").delay(1100).show(0);
+
+    } else if (source === "next") {
+
+        if (s.next().hasClass("has-menu")) {
+            $(".menu").show();
+            menu(s.next().attr("menu"), s.next().hasClass("has-menu-b"))
+        } else {
+            $(".menu").hide();
+        }
+
+        $(".div-txt").not($(s.next()).children(".div-txt")).delay(1000).hide(0);
+        $(".scroll-svg-story").not($(s.next()).children(".scroll-svg-story")).delay(1000).hide(0);
+
+        $(s.next()).children(".div-txt").delay(1100).show(0);
+        $(s.next()).children(".scroll-svg-story").delay(1100).show(0);
+
+    } else if (source === "menu") {
+        if (s.hasClass("has-menu")) {
+            $(".menu").show();
+            menu(s.attr("menu"), s.hasClass("has-menu-b"))
+        } else {
+            $(".menu").hide();
+        }
+
+        $(".div-txt").not($(s.children(".div-txt"))).delay(1000).hide(0);
+        $(".scroll-svg-story").not($(s.children(".scroll-svg-story"))).delay(1000).hide(0);
+
+        $(s).children(".div-txt").delay(1100).show(0);
+        $(s).children(".scroll-svg-story").delay(1100).show(0);
+    }
 }
