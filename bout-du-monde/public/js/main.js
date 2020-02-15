@@ -525,9 +525,9 @@ function slideL(s) {
 //clic menu
 function slideM(scur, snew) {
 
-    displayInfos(snew, "menu");
-
     if (parseInt(scur.attr("n")) > parseInt(snew.attr("n"))) {
+
+        displayInfos(snew, "menu");
 
         scur.children(".div-txt").delay(1000).hide(0);
         $(".puce").hide();
