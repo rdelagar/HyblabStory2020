@@ -200,7 +200,7 @@
 <div class="container">
 
     <!--MAP-->
-    <section class="no-back">
+    <section n="1" class="no-back">
         <div class="main">
             <div class="map-container"></div>
             <div class="text">
@@ -237,7 +237,7 @@
     </section>
 
     <!--FLEUVE-->
-    <section class="no-script no-back sec-anim anim-fleuve">
+    <section n="2" class="no-script no-back sec-anim anim-fleuve">
         <div class="anim"></div>
         <div class="div-txt div-txt-fleuve div-txt-anim">
             <p class="txt txt-title txt-title-fleuve">“Notre seul chemin possible <br/> est de traverser le fleuve gelé”
@@ -259,11 +259,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll.svg">
+        <audio class="audio audio1">
+            <source src="audios/eau-qui-coule.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt.svg">
     </section>
 
     <!--JACQUES-->
-    <section menu="1" class="has-menu no-scroll sec-anim anim-attaque">
+    <section menu="1" n="3" class="has-menu no-scroll sec-anim anim-attaque">
         <div class="anim"></div>
         <button class="next btn-story">Partir à l'aventure</button>
         <div class="div-txt"></div>
@@ -285,7 +288,7 @@
     </section>
 
     <!--ARRIVEE-->
-    <section menu="2" class="has-menu no-script no-scroll sec-anim anim-arrivee">
+    <section menu="2" n="4" class="has-menu no-script no-scroll sec-anim anim-arrivee">
         <div class="div-txt div-txt-arrivee div-txt-anim">
             <p class="txt txt-title txt-title-arrivee">“À l’orée de mes 70 ans,<br/>j’ai décidé de refaire ce périple”
             </p>
@@ -311,10 +314,13 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/bol.mp3 " type="audio/mpeg">
+        </audio>
     </section>
 
     <!--PARTIR SEUL-->
-    <section menu="2" class="has-menu has-menu-b no-script no-scroll no-back anim-img sec-txt-seul">
+    <section menu="2" n="5" class="has-menu has-menu-b no-script no-scroll no-back anim-img sec-txt-seul">
         <div class="div-txt div-txt-seul">
             <p class="txt txt-title txt-title-seul">“De nombreuses agences indiennes présentent ce trek<br/> comme étant
                 l’aventure à vivre absolument. <br/> Résultat : plusieurs morts l’an dernier”</p>
@@ -346,10 +352,13 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/pas-neige-2.mp3 " type="audio/mpeg">
+        </audio>
     </section>
 
     <!--PARTIR AVEC TASHI-->
-    <section menu="3" class="has-menu has-menu-b no-script no-back anim-img sec-txt-tashi sound-w wait-scroll">
+    <section menu="3" n="6" class="has-menu has-menu-b no-script no-back anim-img sec-txt-tashi sound-w wait-scroll">
         <div class="div-txt div-txt-tashi">
             <p class="txt txt-title txt-title-tashi">“Je ressens une très forte émotion en reconnaissant<br/> le visage
                 et le sourire de Tashi”</p>
@@ -372,11 +381,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <audio class="audio audio1">
+            <source src="audios/eau-qui-coule.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--MARCHE-->
-    <section menu="3" class="has-menu has-menu-b no-script anim-img sec-txt-walk sound-w wait-scroll">
+    <section menu="3" n="7" class="has-menu has-menu-b no-script anim-img sec-txt-walk sound-w wait-scroll">
         <div class="div-txt div-txt-walk">
             <p class="txt txt-title txt-title-walk">“Après les quelques jours <br/>d’acclimatation obligatoire<br/> à
                 Leh, nous
@@ -400,12 +412,15 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <audio class="audio audio1">
+            <source src="audios/pas-neige-2.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
 
     </section>
 
     <!--CHUTE-->
-    <section menu="4" class="has-menu no-scroll sec-anim anim-chute">
+    <section menu="4" n="8" class="has-menu no-scroll sec-anim anim-chute">
         <div class="div-txt div-txt-chute div-txt-anim">
             <p class="txt txt-title txt-title-chute">“La glace sur laquelle nous marchons est très fragile”</p>
             <p class="txt txt-p txt-p-chute">Mais aujourd’hui la glace a cédé sous mon poids, et je suis tombé<br/> dans
@@ -434,7 +449,7 @@
     </section>
 
     <!--SE SORTIR TOUT SEUL-->
-    <section menu="4" class="has-menu no-script no-scroll no-back sec-anim anim-seul">
+    <section menu="4" n="9" class="has-menu no-script no-scroll no-back sec-anim anim-seul">
         <div class="div-txt div-txt-seul2 div-txt-anim">
             <p class="txt txt-title txt-title-seul2">“Je me trouve dans<br/> une situation dangereuse”</p>
             <p class="txt txt-p txt-p-seul2">Se déplacer sur l’eau gelée demande une concentration constante.<br/> Avec
@@ -458,10 +473,13 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/ice-cracking-02.mp3 " type="audio/mpeg">
+        </audio>
     </section>
 
     <!--DEMANDER DE L'AIDE-->
-    <section menu="4" class="has-menu has-menu-b no-script no-back anim-img sec-txt-help wait-scroll">
+    <section menu="4" n="10" class="has-menu has-menu-b no-script no-back anim-img sec-txt-help wait-scroll">
         <div class="div-txt div-txt-help">
             <p class="txt txt-title txt-title-help">“Tashi en voulant me retenir a subi le même sort”</p>
             <p class="txt txt-p txt-p-help">L’aide de nos compagnons de voyage m’est précieuse.<br/> Malheureusement,
@@ -484,11 +502,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <audio class="audio audio1">
+            <source src="audios/eau-qui-coule.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--REPRENDRE LA MARCHE-->
-    <section menu="5" class="has-menu has-menu-b anim-img sec-txt-rewalk sound-w wait-scroll">
+    <section menu="5" n="11" class="has-menu has-menu-b anim-img sec-txt-rewalk sound-w wait-scroll">
         <div class="div-txt div-txt-rewalk">
             <p class="txt txt-title txt-title-rewalk">“Parfois aucun passage n’est possible à<br/> moins d’escalader les
                 pentes à pic<br/> et glissantes de la montagne.”</p>
@@ -513,11 +534,11 @@
         <audio class="audio audio4">
             <source src="audios/audio4.mp3" type="audio/mpeg">
         </audio>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--OÙ DORMIR-->
-    <section menu="6" class="has-menu no-script no-scroll sec-anim anim-grotte">
+    <section menu="6" n="12" class="has-menu no-script no-scroll sec-anim anim-grotte">
         <div class="div-txt div-txt-grotte div-txt-anim">
             <p class="txt txt-title txt-title-grotte">“Nous cherchions des<br/> grottes pour passer la nuit.<br/> Des
                 nuits à la
@@ -546,10 +567,13 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/grotte.mp3 " type="audio/mpeg">
+        </audio>
     </section>
 
     <!--GROTTE-->
-    <section menu="6" class="has-menu has-menu-b no-script no-scroll no-back anim-img sec-txt-grotte">
+    <section menu="6" n="13" class="has-menu has-menu-b no-script no-scroll no-back anim-img sec-txt-grotte">
         <div class="div-txt div-txt-grotte2">
             <p class="txt txt-title txt-title-grotte2">“L’environnement est différent de<br/> ce que j’ai connu il y a
                 25
@@ -573,10 +597,13 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/grotte.mp3 " type="audio/mpeg">
+        </audio>
     </section>
 
     <!--TENTES-->
-    <section menu="6" class="has-menu has-menu-b no-script no-back sound-w anim-img sec-txt-tentes wait-scroll">
+    <section menu="6" n="14" class="has-menu has-menu-b no-script no-back sound-w anim-img sec-txt-tentes wait-scroll">
         <div class="div-txt div-txt-tentes">
             <p class="txt txt-title txt-title-tentes">“Lundup, le fils de Tashi, nous a préparé une<br/> expédition avec
                 nuits sous tente et cuisinier.”</p>
@@ -602,11 +629,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <audio class="audio audio1">
+            <source src="audios/bol.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--RENCONTRE STOBDAN-->
-    <section menu="7" class="has-menu has-menu-b anim-img sec-txt-meet">
+    <section menu="7" n="15" class="has-menu has-menu-b anim-img sec-txt-meet">
         <div class="div-txt div-txt-meet">
             <p class="txt txt-title txt-title-meet">“Il nous accompagnait l’été 1990 pour sortir<br/> du Zanskar, par
                 les
@@ -634,11 +664,11 @@
         <audio class="audio audio5">
             <source src="audios/audio5.mp3" type="audio/mpeg">
         </audio>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--RETOUR AVEC JEEP-->
-    <section menu="8" class="has-menu has-menu-b no-script anim-img sound-w sec-txt-back wait-scroll">
+    <section menu="8" n="16" class="has-menu has-menu-b no-script anim-img sound-w sec-txt-back wait-scroll">
         <div class="div-txt div-txt-back">
             <p class="txt txt-title txt-title-back">“C’est là que s’arrête notre périple sur glace.”</p>
             <p class="txt txt-p txt-p-back">Deux jeeps nous attendent pour rejoindre le village de Pishu en empruntant
@@ -662,11 +692,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
-        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-b.svg">
+        <audio class="audio audio1">
+            <source src="audios/jeep.mp3 " type="audio/mpeg">
+        </audio>
+        <img class="scroll-svg scroll-svg-story next" src="img/pictos/btn-scroll-txt-b.svg">
     </section>
 
     <!--ABONNEMENT-->
-    <section menu="8" class="has-menu has-menu-b no-script anim-img">
+    <section menu="8" n="17" class="has-menu has-menu-b no-script anim-img">
         <div id="gl10" class="gl" data-imageOriginal="img/photos/17.jpg" data-imageDepth="img/photos/17-prof.jpg"
              data-horizontalThreshold="10" data-verticalThreshold="10"></div>
         <button class="abo btn-white">Vivez d'autres récits</button>
@@ -682,11 +715,14 @@
             <img class="sound script-txt" data="img/audios/pictos/script-txt-n" src="img/audios/pictos/script-txt-n.svg"
                  style="visibility: hidden">
         </div>
+        <audio class="audio audio1">
+            <source src="audios/bol.mp3 " type="audio/mpeg">
+        </audio>
         <img class="scroll-svg scroll-svg-story next" src="img/credits/credits-icon.svg">
     </section>
 
     <!--CREDITS-->
-    <section class="no-script anim-img sec-credits wait-scroll">
+    <section n="18" class="no-script anim-img sec-credits wait-scroll">
         <div class="div-txt"></div>
         <svg id="credits-names" width="1527" height="921" viewBox="0 0 1527 921" fill="none" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink">

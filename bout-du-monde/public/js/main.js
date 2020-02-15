@@ -17,6 +17,14 @@ scroll = false;
 
 $(window).on("load", function () {
 
+    //hide popup
+    $(window).on("click", function (e) {
+        e.stopPropagation();
+        $(".wrapper-popup").hide();
+        $(".fond-popup").hide();
+        $(".script").removeClass("clicked");
+    });
+
     $(".loader").hide();
 
     //menu
@@ -29,7 +37,7 @@ $(window).on("load", function () {
     $("section").on("wheel", function (e) {
 
         if (!planeEnded) {
-            //$(".scroll-svg").hide();
+            $(".scroll-svg").hide();
             scrollMap();
 
         } else if (scroll) {
@@ -49,17 +57,14 @@ $(window).on("load", function () {
         scrollStop();
     });
 
-    let anim = false;
-
     //boutton action next
     $(".next").on("click", function () { //button action slide
         let s = $("section:visible").first();
 
         if (!planeEnded) {
-            /*$(this).hide();
+            $(this).hide();
             $("html, body").animate({scrollTop: $(document).height()}, 3000);
             setTimeout(go, 3100);
-
             function go() {
                 planeEnded = true;
                 let s = $("section:visible").first();
@@ -68,18 +73,15 @@ $(window).on("load", function () {
                     overflow: 'hidden'
                 });
                 slideL(s);
-            }*/
+            }
 
-        } else if ($(this).hasClass("aide") && !anim) {
-            //anim = true;
+        } else if ($(this).hasClass("aide")) {
             startAnimNow(animArray[3], s.next());
             setTimeout(function () {
                 s.delay(1000).hide(0);
             }, 2600);
 
-
-        } else if ($(this).hasClass("seul2") && !anim) {
-            //anim = true;
+        } else if ($(this).hasClass("seul2")) {
             startAnimNow(animArray[3], s);
 
         } else if ($(this).hasClass("tashi") || $(this).hasClass("tentes")) {
@@ -162,17 +164,19 @@ $(window).on("load", function () {
     //audio
     $(".player").on("click", function (e) {
         e.stopPropagation();
-        if ($(this).attr("src") === "img/audios/pictos/player-c.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b-h.svg" || $(this).attr("src") === "img/audios/pictos/player-c-h.svg") {
+        let s = $("section:visible").first();
+        if (s.hasClass("playing")) {
             $("section:visible").first().removeClass("playing");
             $(this).attr("src", $(this).attr("data") + ".svg");
             $(".player-txt:visible").first().attr("src", $(".player-txt:visible").first().attr("data") + ".svg");
             $(this).removeClass("click");
             $(this).parent().next()[0].pause();
+            $(this).parent().next()[0].currentTime = 0;
         } else {
             $("section:visible").first().addClass("playing");
             $(this).parent().next()[0].play();
             $(this).attr("src", $(this).attr("datac") + ".svg");
-            $(".player-txt:visible").first().attr("src", $(".player-txt").attr("datac") + ".svg");
+            $(".player-txt:visible").first().attr("src", $(".player-txt:visible").attr("datac") + ".svg");
             $(this).addClass("click");
         }
     });
@@ -199,25 +203,15 @@ $(window).on("load", function () {
     //audio ended
     $('audio').on('ended', function (e) {
         e.stopPropagation();
-        $("section:visible").first().removeClass("sound")
-        if ($(".player:visible").first().attr("src") === "img/audios/pictos/player-c.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b.svg" || $(this).attr("src") === "img/audios/pictos/player-c-b-h.svg" || $(this).attr("src") === "img/audios/pictos/player-c-h.svg") {
-            $(".player:visible").first().attr("src", $(".player").attr("data") + ".svg");
+        let s = $("section:visible").first();
+        if (s.hasClass("playing")) {
+            $("section:visible").first().removeClass("playing");
+            $(".player:visible").first().attr("src", $(".player:visible").attr("data") + ".svg");
             $(".player-txt:visible").first().attr("src", $(".player-txt:visible").first().attr("data") + ".svg");
             $(".player:visible").first().removeClass("click");
             $(".player:visible").first().parent().next()[0].pause();
-        } else {
-            $(".player:visible").first().parent().next()[0].play();
-            $(".player:visible").first().attr("src", $(this).attr("datac") + ".svg");
-            $(".player-txt:visible").first().attr("src", $(".player-txt").attr("datac") + ".svg");
-            $(".player:visible").first().addClass("click");
+            $(".player:visible").first().parent().next()[0] = 0;
         }
-    });
-
-    //hide popup
-    $(window).on("click", function () {
-        $(".wrapper-popup").hide();
-        $(".fond-popup").hide();
-        $(".script").removeClass("clicked");
     });
 
     //button abonnement
@@ -426,9 +420,10 @@ function animBarCasque() {
 
 let menuInit = false;
 let menuSize;
+
 function menu(num, white) {
 
-    if(!menuInit) {
+    if (!menuInit) {
         menuSize = $("#menu-g")[0].getBoundingClientRect().width;
         menuInit = true;
     }
@@ -495,10 +490,6 @@ function menuHover(numHover, numSec, hover) {
 //slideL
 function slideL(s) {
 
-    if (s.hasClass("playing")) {
-        $(".player:visible").first().trigger("click");
-    }
-
     displayInfos(s, "next");
 
     $(".puce").hide();
@@ -536,18 +527,7 @@ function slideM(scur, snew) {
 
     displayInfos(snew, "menu");
 
-    if (scur.hasClass("playing")) {
-        $(".player:visible").first().trigger("click");
-    }
-
-    $(".scroll-svg-story").show();
-
-    if (parseInt(scur.attr("menu")) > parseInt(snew.attr("menu"))) {
-        /*if (snew.hasClass("has-menu-b")) {
-            menu(snew.attr("menu"), true);
-        } else {
-            menu(snew.attr("menu"), false);
-        }*/
+    if (parseInt(scur.attr("n")) > parseInt(snew.attr("n"))) {
 
         scur.children(".div-txt").delay(1000).hide(0);
         $(".puce").hide();
@@ -571,12 +551,6 @@ function slideM(scur, snew) {
 function slideR(s) {
 
     displayInfos(s, "back");
-
-    if (s.hasClass("playing")) {
-        $(".player:visible").first().trigger("click");
-    }
-
-    $(".scroll-svg-story").show();
 
     s.children(".div-txt").delay(1000).hide(0);
     $(".puce").hide();
@@ -650,7 +624,9 @@ function startAnim(anim) {
 function startAnimNow(anim, s) {
     anim.play();
     animArray[3].addEventListener('complete', function () {
-        console.log("ok");
+        if ($(".playing")) {
+            $(".playing").children(".sound-icon").children(".player").trigger("click");
+        }
         slideL(s);
         s.delay(1000).hide(0);
     });
@@ -664,6 +640,10 @@ function displayInfos(s, source) {
             menu(s.prev().attr("menu"), s.prev().hasClass("has-menu-b"))
         } else {
             $(".menu").hide();
+        }
+
+        if ($(".playing")) {
+            $(".playing").children(".sound-icon").children(".player").trigger("click");
         }
 
         $(".div-txt").not($(s.prev()).children(".div-txt")).delay(1000).hide(0);
@@ -681,6 +661,10 @@ function displayInfos(s, source) {
             $(".menu").hide();
         }
 
+        if ($(".playing")) {
+            $(".playing").children(".sound-icon").children(".player").trigger("click");
+        }
+
         $(".div-txt").not($(s.next()).children(".div-txt")).delay(1000).hide(0);
         $(".scroll-svg-story").not($(s.next()).children(".scroll-svg-story")).delay(1000).hide(0);
 
@@ -693,6 +677,10 @@ function displayInfos(s, source) {
             menu(s.attr("menu"), s.hasClass("has-menu-b"))
         } else {
             $(".menu").hide();
+        }
+
+        if ($(".playing")) {
+            $(".playing").children(".sound-icon").children(".player").trigger("click");
         }
 
         $(".div-txt").not($(s.children(".div-txt"))).delay(1000).hide(0);
